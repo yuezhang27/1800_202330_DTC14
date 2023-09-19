@@ -58,4 +58,4 @@ It has the following subfolders and files:
 
 ```
 
-
+Hi, my name is Kim Yue Zhang! I am excited to start this journey of creating a web application!
