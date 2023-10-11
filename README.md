@@ -8,7 +8,7 @@ This browser based web application to ...
 List team members and/or short bio's here... 
 * Hi, my name is Kim Yue Zhang! I am excited to start this journey of creating a web application!
 * Hi, my name is Caroline! I am excited to start this project!
-* Hi, my name is Matthew! I would like to pass this course
+* Hi, my name is Matthew! I would like to pass this course 
 	
 ## 3. Technologies and Resources Used
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.

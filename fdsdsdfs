@@ -1,0 +1,63 @@
+[33mcommit 9037a034e4693f68f4eadb8f3b0b4a99d527212a[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: d21eb47 bfdd29b
+Author: Caroline Su <caroline77899@gmail.com>
+Date:   Tue Sep 19 16:33:07 2023 -0700
+
+    Conflict on README resolved by Caroline
+
+[33mcommit d21eb47981b2876ea2a9020985cc473a29be33be[m
+Merge: a83a07a e101daf
+Author: Caroline Su <caroline77899@gmail.com>
+Date:   Tue Sep 19 16:31:10 2023 -0700
+
+    Conflict on README resolved by Caroline
+
+[33mcommit bfdd29ba21505ec9d36e7fd022f83388b247f9a9[m
+Author: Matthew Yoon <myoon11@my.bcit.ca>
+Date:   Tue Sep 19 16:29:56 2023 -0700
+
+    README fixed by matthew
+
+[33mcommit a83a07a1379b507e153ab4d7554b609eed5eefbc[m
+Merge: 0ecb210 d1fdcbe
+Author: Caroline Su <caroline77899@gmail.com>
+Date:   Tue Sep 19 16:27:30 2023 -0700
+
+    Conflict on README resolved by Caroline
+
+[33mcommit e101daf77e0e587fb9a1d577e5167a993e07c71b[m
+Merge: e14804f d1fdcbe
+Author: Matthew Yoon <myoon11@my.bcit.ca>
+Date:   Tue Sep 19 16:27:08 2023 -0700
+
+    Conflict on README resolved by matthew
+
+[33mcommit e14804ff492205913f4c8656344670c0476b3aa4[m
+Author: Matthew Yoon <myoon11@my.bcit.ca>
+Date:   Tue Sep 19 16:16:29 2023 -0700
+
+    Added one line intro to README file for mstthew
+
+[33mcommit d1fdcbed57b65d351c42ccc69192a458afdb2262[m
+Author: yuezhang27 <yzhanged@gmail.com>
+Date:   Tue Sep 19 16:15:19 2023 -0700
+
+    add one sentence at the start of bio
+
+[33mcommit 0ecb2101de9c6578b53495fd8a190c2f344aa48b[m
+Author: Caroline Su <caroline77899@gmail.com>
+Date:   Tue Sep 19 16:09:09 2023 -0700
+
+    add one line intro in README file for Caroline
+
+[33mcommit 17bf43e24e2140d3f832b8bc0069ef338345c094[m
+Author: yuezhang27 <yzhanged@gmail.com>
+Date:   Tue Sep 19 16:07:11 2023 -0700
+
+    Added one line intro to README file for Kim
+
+[33mcommit c01353a774a313fbf9f372030a887f9ff1dfb9ef[m
+Author: yuezhang27 <104848194+yuezhang27@users.noreply.github.com>
+Date:   Tue Sep 19 15:35:16 2023 -0700
+
+    Initial commit
