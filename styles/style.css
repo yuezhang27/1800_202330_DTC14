@@ -226,3 +226,20 @@ table {
     border-radius: 50vh!important;
     font-size: 2em!important;
 }
+
+/* Bookmark page css */
+.bookmarktitle {
+    margin-top: 5%;
+}
+
+.bmktitle {
+    font-size: 3em;
+}
+
+.bkmiconcontainer{
+    width: 10%;
+}
+
+.bookmarkicon{
+    width: 80%;
+}
