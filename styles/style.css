@@ -140,3 +140,21 @@ table {
 .card {
     margin-top: 4%;
 }
+
+/* Floating Action Button */
+.fab-container {
+    position: fixed;
+    bottom: 20%;
+    right: 5%;
+  }
+  
+#map-view-fab {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+.viewbutton {
+    width: 100%;
+}
