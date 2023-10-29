@@ -137,7 +137,8 @@ table {
 
 }
 
-.card {
+/* CSS of mainpage */
+.maincard {
     margin-top: 4%;
 }
 
@@ -157,4 +158,71 @@ table {
 
 .viewbutton {
     width: 100%;
+}
+
+/* CSS of review page */
+.reviewimgcontainer {
+    width: 45%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 10%;
+}
+
+.checked {
+    color: orange;
+}
+
+.starrating {
+    font-size: 2em;
+}
+
+.goback {
+    width: 8%;
+}
+
+.reviewtitle {
+    margin-bottom: 0!important;
+}
+
+/* .commentscard {
+    border: 2px red!important;
+} */
+
+.givemystars {
+    font-size: 4em;
+}
+
+.username {
+    font-size: 3em;
+    margin-left: 5%;
+}
+
+.usercommentcard {
+    margin-top: 4%;
+}
+
+.addcomment{
+    width: 20%;
+    background-color: lightgrey;
+    margin-bottom: 1%;
+    margin-left: 1%;
+}
+
+.commenticon{
+    width: 100%;
+}
+
+.submitcomment {
+    text-align: center;
+}
+
+.submitbtn {
+    /* padding-left: 50px!important;
+    padding-right: 50px!important; */
+    width: 80vh!important;
+    background-color: lightgrey!important;
+    margin-top: 4vh;
+    height: 10vh;
+    border-radius: 50vh!important;
+    font-size: 2em!important;
 }
