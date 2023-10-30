@@ -18,6 +18,11 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <!-- Other libraries go here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
 
 
 </head>
@@ -28,26 +33,28 @@
     <!-- Your HTML Layout go here -->
     <!------------------------------>
     <!-- Stuff for body goes here -->
-    <main class="container">
-        <div class="input-group">
-            <span class="input-group-text rounded-left" id="basic-addon1"
-                style=" border-radius: 50rem 0 0 50rem!important">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
-                    </path>
-                </svg>
-            </span>
-            <input type="text" class="form-control" placeholder="Search" aria-label="Search"
-                aria-describedby="basic-addon1" style=" border-radius: 0 50rem 50rem 0!important">
-        </div>
-        <div class="filtergroup container-fluid d-flex justify-content-around">
-            <img class="filtericon" src="images/filter.svg" alt="">
-            <input class="btn btn-primary filterbtn" type="button" value="Filter1">
-            <input class="btn btn-primary filterbtn" type="button" value="Filter2">
-            <input class="btn btn-primary filterbtn" type="button" value="Filter3">
-            <input class="btn btn-primary filterbtn" type="button" value="Filter4">
+    <main class="container-fluid">
+        <div class="search-bg orange-bg">
+            <div class="input-group">
+                <span class="input-group-text rounded-left" id="basic-addon1"
+                    style=" border-radius: 50rem 0 0 50rem!important">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
+                        </path>
+                    </svg>
+                </span>
+                <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+                    aria-describedby="basic-addon1" style=" border-radius: 0 50rem 50rem 0!important">
+            </div>
+            <div class="filtergroup container-fluid d-flex justify-content-around">
+                <img class="filtericon" src="images/filter.svg" alt="">
+                <input class="btn btn-primary filterbtn" type="button" value="Filter1">
+                <input class="btn btn-primary filterbtn" type="button" value="Filter2">
+                <input class="btn btn-primary filterbtn" type="button" value="Filter3">
+                <input class="btn btn-primary filterbtn" type="button" value="Filter4">
+            </div>
         </div>
         <div class="welcomemessage">
             <h2>Welcome</h2>
@@ -55,7 +62,7 @@
                 rhoncus sed in purus enim sed varius. Est semper nibh urna tincidunt.</p>
         </div>
 
-        <div class="signup">
+        <div class="signup shadow p-4 mb-5 rounded-3 mx-4">
             <h2>Don't have an account?</h2>
             <input class="btn signupbtn" type="button" value="Sign up">
         </div>
@@ -108,13 +115,13 @@
 
     </main>
     <div class="blank"></div>
-    <div class="footernav container-fluid d-flex justify-content-around">
-        <div class="nav-link active" aria-current="page" href="#">
+    <div class="footernav container-fluid d-flex justify-content-around border-top shadow-sm">
+        <div class="nav-link active" aria-current="page" href="">
             <img class="navpic" src="images/house.svg" alt="">
         </div>
-        <div class="nav-link" href="#">
+        <a class="nav-link" href="./main.html">
             <img class="navpic" src="images/search.svg" alt="">
-        </div>
+        </a>
         <div class="nav-link" href="#">
             <img class="navpic" src="images/bookmarks.svg" alt="">
         </div>

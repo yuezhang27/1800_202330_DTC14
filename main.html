@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Link to styles of your own -->
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/main.css">
     <!-- Bootstrap Library CSS CDN go here -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -29,57 +30,63 @@
     <!-- Your HTML Layout go here -->
     <!------------------------------>
     <!-- Stuff for body goes here -->
-    <main class="container">
-        <div class="input-group">
-            <span class="input-group-text rounded-left" id="basic-addon1"
-                style=" border-radius: 50rem 0 0 50rem!important">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
-                    </path>
-                </svg>
-            </span>
-            <input type="text" class="form-control" placeholder="Search" aria-label="Search"
-                aria-describedby="basic-addon1" style=" border-radius: 0 50rem 50rem 0!important">
-        </div>
-        <div class="filtergroup container-fluid d-flex justify-content-around">
-            <img class="filtericon" src="images/filter.svg" alt="">
-            <input class="btn btn-primary filterbtn" type="button" value="Filter1">
-            <input class="btn btn-primary filterbtn" type="button" value="Filter2">
-            <input class="btn btn-primary filterbtn" type="button" value="Filter3">
-            <input class="btn btn-primary filterbtn" type="button" value="Filter4">
+    <main class="container-fluid">
+        <div class="search-bg green-bg">
+            <div class="input-group">
+                <span class="input-group-text rounded-left" id="basic-addon1"
+                    style=" border-radius: 50rem 0 0 50rem!important">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
+                        </path>
+                    </svg>
+                </span>
+                <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+                    aria-describedby="basic-addon1" style=" border-radius: 0 50rem 50rem 0!important">
+            </div>
+            <div class="filtergroup container-fluid d-flex justify-content-around">
+                <img class="filtericon" src="images/filter.svg" alt="">
+                <input class="btn btn-primary filterbtn" type="button" value="Filter1">
+                <input class="btn btn-primary filterbtn" type="button" value="Filter2">
+                <input class="btn btn-primary filterbtn" type="button" value="Filter3">
+                <input class="btn btn-primary filterbtn" type="button" value="Filter4">
+            </div>
         </div>
         <!-- Cards for Results -->
         <div class="card maincard">
             <div class="card-body">
-              <h4 class="card-title">Result 1</h4>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <h4 class="card-title">Result 1</h4>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
             <img class="card-img-bottom" src="images/hike1.jpg" alt="Card image cap">
         </div>
         <div class="card maincard">
             <div class="card-body">
-              <h4 class="card-title">Result 2</h4>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <h4 class="card-title">Result 2</h4>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
             <img class="card-img-bottom" src="images/hike1.jpg" alt="Card image cap">
         </div>
         <div class="card maincard">
             <div class="card-body">
-              <h4 class="card-title">Result 3</h4>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <h4 class="card-title">Result 3</h4>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
             <img class="card-img-bottom" src="images/hike1.jpg" alt="Card image cap">
         </div>
         <div class="card maincard">
             <div class="card-body">
-              <h4 class="card-title">Result 4</h4>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <h4 class="card-title">Result 4</h4>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
             <img class="card-img-bottom" src="images/hike1.jpg" alt="Card image cap">
         </div>
@@ -90,11 +97,11 @@
                     <img class="viewbutton" src="images/map.svg" alt="">
                 </a>
             </button>
-          </div>
-          
+        </div>
+
 
     </main>
-    <div class="blank"></div>
+    
     <div class="footernav container-fluid d-flex justify-content-around">
         <div class="nav-link active" aria-current="page" href="#">
             <img class="navpic" src="images/house.svg" alt="">

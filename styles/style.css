@@ -1,8 +1,43 @@
-body {
+/* general design */
+/* color1: #FFF8E6 */
+/* color2: #FFD8C3 */
+/* color3: #FFBF57 */
+/* color4: #5C9384 */
+/* color5: #E3F8F3 */
+*{
+    font-family: 'Libre Franklin', sans-serif;
+    /* font-family: 'Lora', serif; */
+    
+}
+h1, h2, h3{
+    font-weight: bold !important;
+}
+.orange-bg{
+    background-color: #FFBF57;
+}
+.green-bg {
+    background-color: #5C9384;
+}
+.container-fluid{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    --bs-gutter-x: 0 !important;
+}
+.search-bg{
+    padding: 4vh;
+    border-radius: 0 0 50px 50px;
+}
+
+/* general design */
+
+body, tbody, tbody>* {
     /* height: 100vh!important; */
     /* confused about this code */
     width: 90vh!important;
     margin: auto!important;
+    background-color: #FFF8E6 !important;
+    
 }
 
 main {
@@ -14,7 +49,6 @@ main {
 
 .input-group {
     height: 100px;
-    margin-top: 4vh;
     margin-left: auto;
     margin-right: auto;
 }
@@ -44,12 +78,15 @@ main {
 .signup {
     text-align: center;
     margin-top: 4vh;
+    background-color: white;
+
+    
 }
 .signupbtn {
     /* padding-left: 50px!important;
     padding-right: 50px!important; */
     width: 40vh;
-    background-color: lightgrey!important;
+    background-color: #FFBF57 !important;
     font-weight: bold!important;
     margin-top: 2vh;
     height: 10vh;
@@ -90,11 +127,11 @@ main {
 
 .footernav {
     /* margin-top: 8vh!important; */
-    background-color: lightgrey;
+    background-color: white;
     padding-top: 5%;
     padding-bottom: 5%;
-    border-top-left-radius: 4vh;
-    border-top-right-radius: 4vh;
+    /* border-top-left-radius: 4vh;
+    border-top-right-radius: 4vh; */
     position: fixed;
     left: 0;
     bottom: 0;
@@ -133,7 +170,8 @@ table {
     margin-top: 4vh;
 }
 .blank{
-    height: 15vh;
+    height: 370px;
+    display: block;
 
 }
 
