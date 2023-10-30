@@ -1,9 +1,9 @@
 /* general design */
-/* color1: #FFF8E6 */
-/* color2: #FFD8C3 */
-/* color3: #FFBF57 */
-/* color4: #5C9384 */
-/* color5: #E3F8F3 */
+/* color1: #FFF8E6 light yellow*/
+/* color2: #FFD8C3 light orange*/
+/* color3: #FFBF57 yellow*/
+/* color4: #5C9384 green*/
+/* color5: #E3F8F3 light green*/
 *{
     font-family: 'Libre Franklin', sans-serif;
     /* font-family: 'Lora', serif; */
@@ -27,6 +27,14 @@ h1, h2, h3{
 .search-bg{
     padding: 4vh;
     border-radius: 0 0 50px 50px;
+}
+.map_container{
+    margin: 20px;
+    width: 95vw;
+    height: 98vh;
+}
+.fixed-bar{
+    position: fixed;
 }
 
 /* general design */
@@ -90,7 +98,8 @@ main {
     /* padding-left: 50px!important;
     padding-right: 50px!important; */
     width: 40vh;
-    background-color: #FFBF57 !important;
+    background-color: #5C9384 !important;
+    color: white !important;
     font-weight: bold!important;
     margin-top: 2vh;
     height: 10vh;
