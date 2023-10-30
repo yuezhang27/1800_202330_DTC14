@@ -40,6 +40,10 @@ body, tbody, tbody>* {
     
 }
 
+tbody>*>*{
+    background-color: #FFF8E6 !important;
+}
+
 main {
     /* height: 170%; */
 }
@@ -183,19 +187,19 @@ table {
 /* Floating Action Button */
 .fab-container {
     position: fixed;
-    bottom: 20%;
+    bottom: 15%;
     right: 5%;
   }
   
 #map-view-fab {
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     font-size: 24px;
   }
 
 .viewbutton {
-    width: 100%;
+    width: 85%;
 }
 
 /* CSS of review page */
