@@ -9,6 +9,16 @@
     /* font-family: 'Lora', serif; */
     
 }
+html{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    /* test--------------------------- */
+    border: 1px solid black;
+}
+body{
+    width: 100%;
+}
 h1, h2, h3{
     font-weight: bold !important;
 }
@@ -84,8 +94,6 @@ main {
     text-align: center;
     margin-top: 4vh;
     background-color: white;
-
-    
 }
 .signupbtn {
     /* padding-left: 50px!important;
