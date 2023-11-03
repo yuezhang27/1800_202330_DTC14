@@ -45,7 +45,7 @@ h1, h2, h3{
 body, tbody, tbody>* {
     /* height: 100vh!important; */
     /* confused about this code */
-    width: 90vh!important;
+    width: 100vw!important;
     margin: auto!important;
     background-color: #FFF8E6 !important;
     
@@ -68,7 +68,7 @@ main {
     margin-right: auto;
 }
 .filtericon {
-    height: 8vh;
+    height: 8vw;
 }
 
 .filtergroup {
@@ -166,10 +166,6 @@ h2 {
 
 h4 {
     font-size: 2em!important;
-}
-
-input {
-    font-size: 1.5em!important;
 }
 
 .welcome1{
