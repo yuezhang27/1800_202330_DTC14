@@ -24,8 +24,8 @@ mapViewButton.addEventListener('click', function () {
 function readMessage(day) {
     db.collection("testing").doc(day)                                                      //name of the collection and documents should matach excatly with what you have in Firestore
         .onSnapshot(dayInfo => {                                                               //arrow notation
-            console.log("current document data: " + dayInfo.data())
-            quoteOfTheDay = dayInfo.data().quote                          //.data() returns data object
+            console.log("current document data: " + dayInfo.data().message)
+            quoteOfTheDay = dayInfo.data().message                          //.data() returns data object
             document.getElementById("quote-goes-here").innerHTML = quoteOfTheDay;      //using javascript to display the data on the right place
 
             //Here are other ways to access key-value data fields
