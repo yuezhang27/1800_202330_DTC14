@@ -13,9 +13,9 @@ html{
     width: 100%;
     margin: 0;
     padding: 0;
-    /* test--------------------------- */
-    border: 1px solid black;
+
 }
+
 body{
     width: 100%;
 }
@@ -35,7 +35,7 @@ h1, h2, h3{
     --bs-gutter-x: 0 !important;
 }
 .search-bg{
-    padding: 4vh;
+    padding: 4vh 4vw 0 4vw;
     border-radius: 0 0 50px 50px;
 }
 
@@ -63,7 +63,7 @@ main {
 }
 
 .input-group {
-    height: 100px;
+    height: 50px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -72,7 +72,7 @@ main {
 }
 
 .filtergroup {
-    margin-top: 4vh;
+    margin-top: 2vh;
     height: 8vh;
 }
 
@@ -81,7 +81,8 @@ main {
     background-color: white!important;
     color: black!important;
     border-color: gray!important;
-    width: 18vh;
+    width: 18vw;
+    height: 5vh;
 }
 
 .welcomemessage {
@@ -98,14 +99,15 @@ main {
 .signupbtn {
     /* padding-left: 50px!important;
     padding-right: 50px!important; */
-    width: 40vh;
+    width: 90%;
     background-color: #5C9384 !important;
     color: white !important;
     font-weight: bold!important;
-    margin-top: 2vh;
-    height: 10vh;
     border-radius: 50vh!important;
     font-size: 2em!important;
+    display: inline-block;
+    padding: 10px 0 !important;
+    max-width: 365px;
 }
 
 .infoguide {
@@ -195,14 +197,14 @@ table {
     position: fixed;
     bottom: 15%;
     right: 5%;
-  }
+}
   
 #map-view-fab {
     border-radius: 50%;
     width: 80px;
     height: 80px;
     font-size: 24px;
-  }
+}
 
 .viewbutton {
     width: 85%;
