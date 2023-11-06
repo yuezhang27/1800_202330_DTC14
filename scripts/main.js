@@ -71,3 +71,55 @@ function writeResources() {
 }
 
 writeResources();
+
+
+// Time Stamp to xx h: xx min : xx s
+function formatTimestamp(timestamp) {
+    const fullTimestamp = timestamp.seconds + timestamp.nanoseconds / 1e9;
+    const date = new Date(fullTimestamp*1000);
+
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    const seconds = date.getSeconds().toString().padStart(2, '0');
+
+    const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+
+    return formattedDateTime;
+}
+
+// display the cards we can read
+//------------------------------------------------------------------------------
+// Input parameter is a string representing the collection we are reading from
+//------------------------------------------------------------------------------
+function displayCardsDynamically(collection) {
+    let cardTemplate = document.getElementById("resultTemplate"); // Retrieve the HTML element with the ID "resultTemplate" and store it in the cardTemplate variable. 
+
+    db.collection(collection).get()   //the collection called "hikes"
+        .then(allResources=> {
+            //var i = 1;  //Optional: if you want to have a unique ID for each hike
+            allResources.forEach(doc => { //iterate thru each doc
+                var title = doc.data().name;       // get value of the "name" key
+                var description = doc.data().description;  // get value of the "description" key
+                var updateTime = doc.data().last_updated;
+                realTime = formatTimestamp(updateTime);
+				var resourceCode = doc.data().code;    //get ID to each resource to be used for fetching right image
+                let newcard = cardTemplate.content.cloneNode(true); // Clone the HTML template to create a new card (newcard) that will be filled with Firestore data.
+
+                //update title and text and image
+                newcard.querySelector('.card-title').innerHTML = title;
+                newcard.querySelector('.text-muted').innerHTML = "Last update: "+realTime;
+                newcard.querySelector('.description').innerHTML = description;
+                newcard.querySelector('.card-img-bottom').src = `./images/${resourceCode}.jpg`; //Example: NV01.jpg
+
+                //attach to gallery, Example: "hikes-go-here"
+                document.getElementById(collection + "-go-here").appendChild(newcard);
+
+                //i++;   //Optional: iterate variable to serve as unique ID
+            })
+        })
+}
+
+displayCardsDynamically("resources");  //input param is the name of the collection
