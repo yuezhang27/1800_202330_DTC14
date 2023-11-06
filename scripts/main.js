@@ -107,6 +107,7 @@ function displayCardsDynamically(collection) {
                 var updateTime = doc.data().last_updated;
                 realTime = formatTimestamp(updateTime);
 				var resourceCode = doc.data().code;    //get ID to each resource to be used for fetching right image
+                var docID = doc.id;
                 let newcard = cardTemplate.content.cloneNode(true); // Clone the HTML template to create a new card (newcard) that will be filled with Firestore data.
 
                 //update title and text and image
@@ -117,6 +118,16 @@ function displayCardsDynamically(collection) {
 
                 //attach to gallery, Example: "hikes-go-here"
                 document.getElementById(collection + "-go-here").appendChild(newcard);
+                
+                //function to send each card to an info page when div is clicked
+                const maincard = document.querySelectorAll(".maincard");
+
+                maincard.forEach(function(div) {
+                    div.addEventListener('click', function () {
+                        console.log("card has been clicked")
+                        window.location.href = "each_info.html?docID=" +docID;  
+                    }); 
+                });
 
                 //i++;   //Optional: iterate variable to serve as unique ID
             })
@@ -124,3 +135,4 @@ function displayCardsDynamically(collection) {
 }
 
 displayCardsDynamically("resources");  //input param is the name of the collection
+
