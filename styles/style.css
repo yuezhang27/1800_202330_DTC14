@@ -234,6 +234,10 @@ table {
     margin-bottom: 0!important;
 }
 
+#review-card-title {
+    color: black
+}
+
 /* .commentscard {
     border: 2px red!important;
 } */

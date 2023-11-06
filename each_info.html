@@ -18,6 +18,16 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <!-- Other libraries go here -->
+    <!------------------------------------------------------->
+    <!-- Firebase 8 library related CSS, JS, JQuery go here-->
+    <!------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <!-- Other libraries go here -->
     <!-- Font Awesome Icon Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -35,7 +45,7 @@
             <div class="card-body">
                 <div class="info-section">
                     <img src="images/chevron-left.svg" alt="" class="goback">
-                    <h1 class="card-title reviewtitle">Result 1</h1>
+                    <h1 class="card-title reviewtitle" id="review-card-title">Result 1</h1>
                     <!-- Star -->
                     <div class="container row justify-content-">
                         <div class="starrating">
@@ -50,11 +60,11 @@
 
 
             </div>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+            <p class="card-text description">This is a wider card with supporting text below as a natural lead-in to additional
                 content. This content is a little bit longer. </p>
 
             <div class="info_container">
-                <img class="card-img-bottom" src="images/hike1.jpg" alt="Card image cap">
+                <img class="card-img-bottom" src="" alt="Card image cap">
             </div>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae corporis illum fugiat ipsa hic eveniet ea
                 recusandae ad.
