@@ -71,7 +71,7 @@ readMessage("monday");        //calling the function
 //     });
 // }
 
-writeResources();
+// writeResources();
 
 
 // Time Stamp to xx h: xx min : xx s
