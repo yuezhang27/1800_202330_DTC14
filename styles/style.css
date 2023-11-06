@@ -195,6 +195,10 @@ table {
     margin-top: 4%;
 }
 
+.no_underline{
+    text-decoration: none;
+}
+
 /* Floating Action Button */
 .fab-container {
     position: fixed;
@@ -235,6 +239,10 @@ table {
 
 .reviewtitle {
     margin-bottom: 0!important;
+}
+
+#review-card-title {
+    color: black
 }
 
 /* .commentscard {
