@@ -40,35 +40,36 @@ readMessage("monday");        //calling the function
 
 // ---------------------------------------------------
 // Data in Firebase
-function writeResources() {
-    //define a variable for the collection you want to create in Firestore to populate data
-    var resourcesRef = db.collection("resources");
+// commented out becasue it keeps printing more entires in database
+// function writeResources() {
+//     //define a variable for the collection you want to create in Firestore to populate data
+//     var resourcesRef = db.collection("resources");
 
-    resourcesRef.add({
-        code: "AM01",
-        name: "Food Stash Foundation",
-        city: "Anmore",
-        province: "BC",
-		description: "The gift of family food baskets is one that continues to give past it's initial generous donation. Loaded with nutritious foods - staples like grains, beans, oil and more - it fills hungry bellies with all the right stuff. Not only is this food basket saving lives, but also preserving futures - particularly for the youngest girls and boys.",
-        last_updated: firebase.firestore.FieldValue.serverTimestamp()  //current system time
-    });
-    resourcesRef.add({
-        code: "BBY01",
-        name: "Greater Vancouver Food Bank", //replace with your own city?
-        city: "Burnaby",
-        province: "BC",
-		description: "Each month we provide healthy food to around 16,000 individuals and families in need and 138 Community Agency Partners across Vancouver, Burnaby, New Westminster, and the North Shore. Our mission is to provide healthy food to those in need.",
-        last_updated: firebase.firestore.FieldValue.serverTimestamp()  //current system time
-    });
-    resourcesRef.add({
-        code: "NV01",
-        name: "North Vancouver Food Bank", //replace with your own city?
-        city: "North Vancouver",
-        province: "BC",
-		description: "Each month we provide healthy food to around 16,000 individuals and families in need and 138 Community Agency Partners across Vancouver, Burnaby, New Westminster, and the North Shore. Our mission is to provide healthy food to those in need.",
-        last_updated: firebase.firestore.FieldValue.serverTimestamp()  //current system time
-    });
-}
+//     resourcesRef.add({
+//         code: "AM01",
+//         name: "Food Stash Foundation",
+//         city: "Anmore",
+//         province: "BC",
+// 		description: "The gift of family food baskets is one that continues to give past it's initial generous donation. Loaded with nutritious foods - staples like grains, beans, oil and more - it fills hungry bellies with all the right stuff. Not only is this food basket saving lives, but also preserving futures - particularly for the youngest girls and boys.",
+//         last_updated: firebase.firestore.FieldValue.serverTimestamp()  //current system time
+//     });
+//     resourcesRef.add({
+//         code: "BBY01",
+//         name: "Greater Vancouver Food Bank", //replace with your own city?
+//         city: "Burnaby",
+//         province: "BC",
+// 		description: "Each month we provide healthy food to around 16,000 individuals and families in need and 138 Community Agency Partners across Vancouver, Burnaby, New Westminster, and the North Shore. Our mission is to provide healthy food to those in need.",
+//         last_updated: firebase.firestore.FieldValue.serverTimestamp()  //current system time
+//     });
+//     resourcesRef.add({
+//         code: "NV01",
+//         name: "North Vancouver Food Bank", //replace with your own city?
+//         city: "North Vancouver",
+//         province: "BC",
+// 		description: "Each month we provide healthy food to around 16,000 individuals and families in need and 138 Community Agency Partners across Vancouver, Burnaby, New Westminster, and the North Shore. Our mission is to provide healthy food to those in need.",
+//         last_updated: firebase.firestore.FieldValue.serverTimestamp()  //current system time
+//     });
+// }
 
 writeResources();
 
