@@ -272,12 +272,15 @@ table {
 .submitbtn {
     /* padding-left: 50px!important;
     padding-right: 50px!important; */
-    width: 80vh!important;
-    background-color: lightgrey!important;
-    margin-top: 4vh;
-    height: 10vh;
-    border-radius: 50vh!important;
-    font-size: 2em!important;
+    width: 90%;
+        background-color: #5C9384 !important;
+        color: white !important;
+        font-weight: bold !important;
+        border-radius: 50vh !important;
+        font-size: 2em !important;
+        display: inline-block;
+        padding: 10px 0 !important;
+        max-width: 365px;
 }
 
 /* Bookmark page css */
