@@ -40,6 +40,7 @@ h1, h2, h3{
 }
 
 
+
 /* general design */
 
 body, tbody, tbody>* {
@@ -150,7 +151,9 @@ main {
     border-top-right-radius: 4vh; */
     position: fixed;
     left: 0;
-    bottom: 0;
+    bottom: -1px;
+    height: 5rem;
+
 }
 
 tr{
@@ -296,8 +299,8 @@ table {
 /* Map page css */
 .map_container {
     margin: 20px;
-    width: 95vw;
-    height: 98vh;
+
+    height: 70vh;
 }
 
 .fixed-bar {
@@ -369,5 +372,11 @@ table {
     padding: 1vh 20vw !important;
     margin-left: auto;
     margin-right: auto;
-
+}
+.btn-logout a{
+    text-decoration: none;
+    color: rgb(223, 71, 89);
+}
+.btn-logout a:hover{
+    color: white;
 }
