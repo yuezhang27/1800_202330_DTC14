@@ -115,22 +115,26 @@ function displayCardsDynamically(collection) {
                 newcard.querySelector('.text-muted').innerHTML = "Last update: "+realTime;
                 newcard.querySelector('.description').innerHTML = description;
                 newcard.querySelector('.card-img-bottom').src = `./images/${resourceCode}.jpg`; //Example: NV01.jpg
+                newcard.querySelector('a').href = "each_info.html?docID=" +docID;
 
                 //attach to gallery, Example: "hikes-go-here"
                 document.getElementById(collection + "-go-here").appendChild(newcard);
                 
                 //function to send each card to an info page when div is clicked
-                const maincard = document.querySelectorAll(".maincard");
+                // const maincard = document.querySelectorAll(".maincard");
 
-                maincard.forEach(function(div) {
-                    div.addEventListener('click', function () {
-                        console.log("card has been clicked")
-                        window.location.href = "each_info.html?docID=" +docID;  
-                    }); 
-                });
+                // maincard.forEach(function(div) {
+                //     div.addEventListener('click', function () {
+
+                //         console.log("card has been clicked");
+                //         window.location.href = "each_info.html?docID=" +docID;  
+                //     }); 
+                // });
+                
 
                 //i++;   //Optional: iterate variable to serve as unique ID
             })
+
         })
 }
 
