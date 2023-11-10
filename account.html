@@ -21,7 +21,15 @@
     <!-- Other libraries go here -->
     <!-- import font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    <!-- Firebase 8 library related CSS, JS, JQuery go here-->
+    <!------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <!-- Other libraries go here -->
 
 </head>
 
@@ -40,10 +48,41 @@
         </div>
         <i class="fas fa-cog" style="font-size: 30px; color: white;"></i>
     </div>
-    <button type="button" class="btn btn-outline-danger btn-logout rounded-pill btn-lg"><a href="./indexBefore.html">Log
+
+
+    <div class="container">
+        <form>
+            <fieldset class="mb-3" id="personalInfoFields" disabled>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label>Age</label>
+                    <input type="number" id="ageInput" class="form-control" placeholder="Enter your age">
+                </div>
+                <div class="form-group">
+                    <label>Gender</label>
+
+                    <select id="genderInput" class="form-control" onchange="chooseGender()">
+                        <option> -- Choose you gender -- </option>
+                        <option value="Male"> Male </option>
+                        <option value="Female"> Female </option>
+                    </select>
+                </div>
+            </fieldset>
+            <div class="d-flex justify-content-end mt-5">
+                <button type="button" class="btn btn-outline-primary" onclick="editUserInfo()">Edit</button>
+                <span style="width: 10px"></span>
+                <button type="button" class="btn btn-primary" onclick="saveUserInfo()">Save</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- logout button -->
+    <button type="button" id="logoutBtn" class="btn btn-outline-danger btn-logout rounded-pill btn-lg"><a
+            href="./indexBefore.html">Log
             out</a></button>
-
-
 
     <!-- </nav> -->
     <div class="footernav container-fluid d-flex justify-content-around border-top">
@@ -60,6 +99,7 @@
             <img class="navpic" src="images/person.svg" alt="">
         </a>
     </div>
+
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
