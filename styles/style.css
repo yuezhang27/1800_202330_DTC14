@@ -214,7 +214,10 @@ table {
 .maincard {
     margin-top: 4%;
 }
-
+.card-img-bottom{
+    height: 300px;
+    object-fit: cover;
+}
 .no_underline{
     text-decoration: none;
 }
