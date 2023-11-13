@@ -10,7 +10,7 @@ function populateUserInfo() {
             //go to the correct user document by referencing to the user uid
             currentUser = db.collection("users").doc(user.uid)
             //get the document for current user.
-            currentUser.set()
+            currentUser.get()
                 .then(userDoc => {
                     //get the data fields of the user
                     var userName = userDoc.data().name;
@@ -22,7 +22,7 @@ function populateUserInfo() {
                         document.getElementById("nameInput").value = userName;
                     }
                     if (userAge != null) {
-                        document.getElementById("birthdayInput").value = userAge;
+                        document.getElementById("ageInput").value = userAge;
                     }
                     if (userGender != null) {
                         document.getElementById("genderInput").value = userGender;
@@ -48,7 +48,7 @@ populateUserInfo();
 // }
 function saveUserInfo() {
     //enter code here
-    console.log("seethisfd")
+    console.log(document.getElementById('ageInput').value)
     //a) get user entered values
     userName = document.getElementById('nameInput').value;       //get the value of the field with id="nameInput"
     userAge = document.getElementById('ageInput').value;     //get the value of the field with id="schoolInput"
