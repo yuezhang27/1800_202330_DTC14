@@ -1,4 +1,4 @@
-function displarResourceInfo() {
+function displayResourceInfo() {
     let params = new URL(window.location.href );  //getting url of search bar
     console.log("params is =", params);
     let ID = params.searchParams.get("docID");     // getting value for key "id"
@@ -11,7 +11,10 @@ function displarResourceInfo() {
         thisResource= doc.data();
         resourceCode = thisResource.code;
         resourceName = doc.data().name;
-        resoucrceDescription =  doc.data().description;
+        resourceDescription = doc.data().description;
+        DescriptionDetail = doc.data().description_detail;
+        resourceLocation = doc.data().location;
+        resourceContact = doc.data().contactPhone;
         
         // only populate title, and image
         document.getElementById( "review-card-title" ).innerHTML = resourceName;
@@ -19,11 +22,14 @@ function displarResourceInfo() {
         // code below is broken version of code above
         // let imgEvent = document.querySelector( ".card-img-bottom" );
         // imgEvent.src = `./images/${resourceCode}.jpg`;
-        document.querySelector('.description').innerHTML = resoucrceDescription;
+        document.querySelector('.description').innerHTML = resourceDescription;
+        document.querySelector('.description_detail').innerHTML = DescriptionDetail;
+        document.querySelector('.resourse_location').innerHTML = resourceLocation;
+        document.querySelector('.resourse_contact').innerHTML = resourceContact;
 
     } );
 }
-displarResourceInfo();
+displayResourceInfo();
 
 // save document ID
 function saveHikeDocumentIDAndRedirect(){
