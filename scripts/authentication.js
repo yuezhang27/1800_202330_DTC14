@@ -25,8 +25,8 @@ var uiConfig = {
           name: user.displayName,                    //"users" collection
           email: user.email,                         //with authenticated user's ID (user.uid)
           bookmarks: [],                            //empty array for bookmarks
-          country: "Canada",                      //optional default profile info      
-          school: "BCIT"                          //optional default profile info
+          gender: "unknown",                      //optional default profile info      
+          age: "unknown",                          //optional default profile info
         }).then(function () {
           console.log("New user added to firestore");
           window.location.assign("main.html");       //re-direct to main.html after signup
