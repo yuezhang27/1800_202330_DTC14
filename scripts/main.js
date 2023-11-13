@@ -41,37 +41,42 @@ mapViewButton.addEventListener('click', function () {
 // ---------------------------------------------------
 // Data in Firebase
 // commented out becasue it keeps printing more entires in database
-// function writeResources() {
-//     //define a variable for the collection you want to create in Firestore to populate data
-//     var resourcesRef = db.collection("resources");
+function writeResources() {
+    //define a variable for the collection you want to create in Firestore to populate data
+    var resourcesRef = db.collection("resources");
 
-//     resourcesRef.add({
-//         code: "AM01",
-//         name: "Food Stash Foundation",
-//         city: "Anmore",
-//         province: "BC",
-// 		description: "The gift of family food baskets is one that continues to give past it's initial generous donation. Loaded with nutritious foods - staples like grains, beans, oil and more - it fills hungry bellies with all the right stuff. Not only is this food basket saving lives, but also preserving futures - particularly for the youngest girls and boys.",
-//         last_updated: firebase.firestore.FieldValue.serverTimestamp()  //current system time
-//     });
-//     resourcesRef.add({
-//         code: "BBY01",
-//         name: "Greater Vancouver Food Bank", //replace with your own city?
-//         city: "Burnaby",
-//         province: "BC",
-// 		description: "Each month we provide healthy food to around 16,000 individuals and families in need and 138 Community Agency Partners across Vancouver, Burnaby, New Westminster, and the North Shore. Our mission is to provide healthy food to those in need.",
-//         last_updated: firebase.firestore.FieldValue.serverTimestamp()  //current system time
-//     });
-//     resourcesRef.add({
-//         code: "NV01",
-//         name: "North Vancouver Food Bank", //replace with your own city?
-//         city: "North Vancouver",
-//         province: "BC",
-// 		description: "Each month we provide healthy food to around 16,000 individuals and families in need and 138 Community Agency Partners across Vancouver, Burnaby, New Westminster, and the North Shore. Our mission is to provide healthy food to those in need.",
-//         last_updated: firebase.firestore.FieldValue.serverTimestamp()  //current system time
-//     });
-// }
+    resourcesRef.add({
+        code: "foodbank1",
+        name: "Greater Vancouver Food Bank",
+        category: "food",
+        city: "Vancouver",
+        province: "BC",
+        description: "A non-profit organization committed to addressing food insecurity in the community. Through various distribution centers, they provide nutritious food to individuals and families in need, fostering a collaborative approach with local partners to maximize their impact on hunger relief.",
+        location: "8345 Winston Street Burnaby, BC V5A 2H3",
+        contactPhone: "(604) 876-3601",
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()  //current system time
+    });
+    resourcesRef.add({
+        code: "foodbank2",
+        name: "Richmond Food Bank Society", 
+        category: "food",
+        city: "Vancouver",
+        province: "BC",
+        description: "A non-profit organization committed to eradicating hunger in the Richmond community. They operate distribution centers, offering essential food assistance to individuals and families while collaborating with local partners to create a comprehensive solution to food insecurity.",
+        location: "5800 Cedarbridge Way #100, Richmond, BC V6X 2A7",
+        contactPhone: "(604) 271-5609",
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()  //current system time
+    });
+    // resourcesRef.add({
+    //     code: "NV01",
+    //     name: "North Vancouver Food Bank", //replace with your own city?
+    //     city: "North Vancouver",
+    //     province: "BC",
+	// 	description: "Each month we provide healthy food to around 16,000 individuals and families in need and 138 Community Agency Partners across Vancouver, Burnaby, New Westminster, and the North Shore. Our mission is to provide healthy food to those in need.",
+    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()  //current system time
+    // });
+}
 
-// writeResources();
 
 
 // Time Stamp to xx h: xx min : xx s
