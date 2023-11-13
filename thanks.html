@@ -40,57 +40,15 @@
     <!------------------------------>
     <!-- Stuff for body goes here -->
     <main class="container-fluid">
-        <div class="search-bg green-bg">
-            <div class="input-group">
-                <span class="input-group-text rounded-left" id="basic-addon1"
-                    style=" border-radius: 50rem 0 0 50rem!important">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                        class="bi bi-search" viewBox="0 0 16 16">
-                        <path
-                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
-                        </path>
-                    </svg>
-                </span>
-                <input type="text" class="form-control" placeholder="Search" aria-label="Search"
-                    aria-describedby="basic-addon1" style=" border-radius: 0 50rem 50rem 0!important">
+        <div class="card text-center">
+            <div class="card-header">
+              Review received successfully!
             </div>
-            <div class="filtergroup container-fluid d-flex justify-content-around">
-                <img class="filtericon" src="images/filter.svg" alt="">
-                <input class="btn btn-primary filterbtn" type="button" value="Filter1">
-                <input class="btn btn-primary filterbtn" type="button" value="Filter2">
-                <input class="btn btn-primary filterbtn" type="button" value="Filter3">
-                <input class="btn btn-primary filterbtn" type="button" value="Filter4">
+            <div class="card-body">
+              <h5 class="card-title">Thanks for submitting your review!</h5>
+              <a href="main.html" class="btn btn-primary">See More Hikes</a>
             </div>
         </div>
-        <!-- quote message testing!!!!!!!!!!!!!!!!!!! -->
-        <p>Today is <span id="quote-goes-here"></span></p>
-        <!-- Cards for Results -->
-        <div id="resources-go-here">
-        </div>
-        <template id="resultTemplate">
-            <a  class="no_underline" href="#">
-                <div class="card maincard">
-                    <div class="card-body">
-                        <h4 class="card-title">Result 1</h4>
-                        <p class="card-text description">This is a wider card with supporting text below as a natural lead-in to additional
-                            content. This content is a little bit longer.</p>
-                        <p class="card-text updateTime"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                    <img class="card-img-bottom" src="images/hike1.jpg" alt="Card image cap">
-                </div>
-            </a>
-        </template>
-        <div class="blank"></div>
-        <!-- Flocating Action Button -->
-        <div class="fab-container">
-            <button id="map-view-fab" class="btn btn-light">
-                <a href="map.html">
-                    <img class="viewbutton" src="images/map.svg" alt="">
-                </a>
-            </button>
-        </div>
-
-
     </main>
 
 

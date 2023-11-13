@@ -29,6 +29,8 @@
     <!-- Other libraries go here -->
     <!-- Font Awesome Icon Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
 
 </head>
 
@@ -44,8 +46,9 @@
             <div class="card-body">
                 <div class="firstlineofreview d-flex justify-content-between">
                     <img src="images/chevron-left.svg" alt="" class="goback">
-                    <h4 class="card-title reviewtitle">Result 1</h4>
-                    <!-- Star -->
+                    <!-- <h4 class="card-title reviewtitle"><span id="resourceName">name</span></h4> -->
+                    <span id="resourceName">name</span>
+                    <!-- Star Overall Result -->
                     <div class="starrating">
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
@@ -53,6 +56,7 @@
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                     </div>
+                    
                 </div>
 
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
@@ -71,16 +75,78 @@
         <!-- Review Box -->
         <div class="card usercommentcard">
             <div class="card-body">
-                <h2 class="card-title username">Username</h2>
+                <!-- <h2 class="card-title username">DISPLAY Username</h2> -->
                 <!-- Star -->
-                <div class="givemystars d-flex justify-content-around">
+                <!-- <div class="givemystars d-flex justify-content-around">
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
                     <span class="fa fa-star"></span>
+                </div> -->
+                <!-- Star: based on DEMO10 -->
+                <div class="card-body starrating">
+                    <p class="reviewformhead">Rate your overall experience:</p>
+                    <span class="material-icons star" id="star1">star_outline</span>
+                    <span class="material-icons star" id="star2">star_outline</span>
+                    <span class="material-icons star" id="star3">star_outline</span>
+                    <span class="material-icons star" id="star4">star_outline</span>
+                    <span class="material-icons star" id="star5">star_outline</span>
                 </div>
-                <div class="card commentscard">
+                <div class="container">
+                    <br>
+                    <br>
+                    <form>
+                        <div class="form-group">
+                            <label class="reviewformhead" for="exampleFormControlInput1">Add a title</label>
+                            <input type="text" class="form-control" id="title" placeholder="Title">
+                        </div><br>
+                        <div class="form-group">
+                            
+                            <label class="reviewformhead" for="exampleFormControlSelect1">How would you rate the ease of accessing this resource</label>
+                            <select class="form-control" id="ease">
+                                <option>Easy</option>
+                                <option>Neutral</option>
+                                <option>Difficult</option>
+                            </select>
+                            <br>
+                            <div class="form-group">
+                                <label class="reviewformhead" for="exampleFormControlSelect1">Did this resource effectively meet your needs?</label>
+                                <select class="form-control" id="effectiveness">
+                                    <option>Completely/Mostly</option>
+                                    <option>Partially</option>
+                                    <option>Barely</option>
+                                    <option>Not At All</option>
+                                </select>
+                                <br>
+                            </div>
+                            <div class="form-group">
+                                <label class="reviewformhead" for="exampleFormControlSelect1">How likely are you to recommend this resource to others?</label>
+                                <select class="form-control" id="likelihood">
+                                    <option>Likely</option>
+                                    <option>Unsure</option>
+                                    <option>Unlikely</option>
+                                </select>
+                                <br>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">What did you think of the resource?</label>
+                                
+                                <div class="card commentscard">
+                                    <div class="card-body">
+                                        <textarea class="form-control" id="description" rows="6"></textarea>
+                                    </div>
+                                    <div class="addcomment">
+                                        <img src="images/plus.svg" class="commenticon" alt="...">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+
+                        </div>
+                    </form>
+                </div>
+                <!-- <div class="card commentscard">
                     <div class="card-body">
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                             additional content. This content is a little bit longer.</p>
@@ -88,9 +154,13 @@
                     <div class="addcomment">
                         <img src="images/plus.svg" class="commenticon" alt="...">
                     </div>
-                </div>
-                <div class="submitcomment">
+                </div> -->
+                <!-- <div class="submitcomment">
                     <input class="btn submitbtn" type="button" value="Submit">
+                </div> -->
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-lg btn-primary pull-right submitbtn"
+                        onclick="writeReview()">Submit</button>
                 </div>
             </div>
         </div>
@@ -120,6 +190,7 @@
     <script src="./scripts/firebaseAPI.js"></script>
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/authentication.js"></script>
+    <script src="scripts/review.js"></script>
     <!-- <script src="./scripts/script.js"></script> -->
 
 </body>

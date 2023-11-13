@@ -250,7 +250,7 @@ table {
 }
 
 .starrating {
-    font-size: 2em;
+    font-size: 1em;
 }
 
 .goback {
@@ -416,4 +416,9 @@ table {
 }
 .btn-logout a:hover{
     color: white;
+}
+
+.reviewformhead {
+    font-size: medium;
+    text-align-last: left;
 }

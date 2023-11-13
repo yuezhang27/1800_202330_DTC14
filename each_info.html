@@ -30,6 +30,7 @@
     <!-- Other libraries go here -->
     <!-- Font Awesome Icon Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
@@ -67,10 +68,67 @@
             <div class="info_container">
                 <img class="card-img-bottom" src="" alt="Card image cap">
             </div>
-            <p>text</p>
-            <input class="btn btn-outline-primary rounded-pill" type="button" value="Add a Review">
+            <!-- <p>text</p> -->
+            <!-- <input class="btn btn-outline-primary rounded-pill" type="button" value="Add a Review"> -->
+            <!-- Write a Review -->
+            <button class="btn btn-primary position-absolute bottom-0 end-0 m-3 rounded-pill" onclick="saveHikeDocumentIDAndRedirect()">Write Review</button>
         </div>
 
+        <!-- Review Boxes
+        <div class="container">
+            <h2>Reviews:</h2>
+            <div id="details-go-here"></div>
+            Here is the container for cards with horizontal scrolling
+            <div class="card-container">
+                <div id="reviewCardGroup" class="row row-cols-auto">
+                    Add your card templates here
+                </div>
+            </div>
+        </div>
+        Review Box Template
+        <template id="reviewCardTemplate">
+            <div class="card bg-secondary">
+                <img class="card-img-top">
+                <div class="card-body bg-light">
+                    <h5 class="title">placeholder</h5>
+                    <p class="star-rating"></p>
+                    <p class="time">placeholder</p>
+                    <p class="level">placeholder</p>
+                    <p class="season">placeholder</p>
+                    <p class="scrambled">placeholder</p>
+                    <p class="flooded">placeholder</p>
+                    <br>
+                    <p class="description">This card has supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </div>
+        </template> -->
+        
+        <!-- Review Boxes -->
+        <div class="container">
+            <h2>Reviews:</h2>
+            <div id="details-go-here"></div>
+            <!-- Here is the container for cards with horizontal scrolling -->
+            <div class="card-container">
+                <div id="reviewCardGroup" class="row row-cols-auto">
+                    <!-- Add your card templates here -->
+                </div>
+            </div>
+        </div>
+        <!-- Review Box Template -->
+        <template id="reviewCardTemplate">
+            <div class="card bg-secondary">
+                <div class="card-body bg-light">
+                    <h5 class="title">placeholder</h5>
+                    <p class="star-rating"></p>
+                    <p class="time">placeholder</p>
+                    <p class="access-level">placeholder</p>
+                    <p class="effectiveness">placeholder</p>
+                    <p class="recommendation">placeholder</p>
+                    <br>
+                    <p class="description">This card has supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </div>
+        </template>
 
     </main>
 
