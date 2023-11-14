@@ -98,7 +98,7 @@ function formatTimestamp(timestamp) {
 function displayCardsDynamically(collection) {
     let cardTemplate = document.getElementById("resultTemplate"); // Retrieve the HTML element with the ID "resultTemplate" and store it in the cardTemplate variable. 
 
-    db.collection(collection).get()   //the collection called "hikes"
+    db.collection(collection).get()   //the collection called "recources"
         .then(allResources=> {
             //var i = 1;  //Optional: if you want to have a unique ID for each hike
             allResources.forEach(doc => { //iterate thru each doc

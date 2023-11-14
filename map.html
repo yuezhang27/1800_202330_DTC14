@@ -28,7 +28,9 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <!-- Other libraries go here -->
-
+    <!-- mapbox -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
 
 </head>
 
@@ -62,6 +64,13 @@
             </div>
         </div>
 
+        <!-- MAPBOX -->
+        <div id='map' style='width: 100%; height: 800px;'></div>
+        
+        
+
+
+
         <!-- Flocating Action Button -->
         <div class="fab-container">
             <button id="map-view-fab" class="btn btn-light">
@@ -74,12 +83,13 @@
 
     </main>
 
-    <div class="container map_container">
+    <!-- googlemap embed commented out to make space for map box -->
+    <!-- <div class="container map_container">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83292.08889920429!2d-123.16169237639363!3d49.27871311327499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548673bf4aaf1655%3A0x73dc2d9f0e4d6928!2sPacific%20Community%20Resources%20Society!5e0!3m2!1sen!2sca!4v1698647474994!5m2!1sen!2sca"
             width="100%" height="100%" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+    </div> -->
     
     <!-- </nav> -->
     <div class="footernav container-fluid d-flex justify-content-around border-top">
@@ -104,6 +114,8 @@
     <script src="./scripts/firebaseAPI.js"></script>
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/authentication.js"></script>
+    <script src="./scripts/map.js"></script>
+  
     <!-- <script src="./scripts/script.js"></script> -->
 
 </body>
