@@ -4,13 +4,13 @@ var resourceDocID = localStorage.getItem("resourceDocID");    //visible to all f
 
 function getResourceName(id) {
     db.collection("resources")
-      .doc(id)
-      .get()
-      .then((thisResource) => {
-        var resourceName = thisResource.data().name;
-        console.log(resourceName)
-        document.getElementById("resourceName").innerHTML = resourceName;
-          });
+        .doc(id)
+        .get()
+        .then((thisResource) => {
+            var resourceName = thisResource.data().name;
+            console.log(resourceName)
+            document.getElementById("resourceName").innerHTML = resourceName;
+        });
 }
 
 getResourceName(resourceDocID);
@@ -88,7 +88,7 @@ function writeReview() {
     console.log("inside write review");
     let reviewTitle = document.getElementById("title").value;
     let accessLevel = document.getElementById("ease").value;
-    let effectiveness = document.getElementById("effectiveness").value; 
+    let effectiveness = document.getElementById("effectiveness").value;
     let recommendationLikelihood = document.getElementById("likelihood").value;
     let reviewDescription = document.getElementById("description").value;
 

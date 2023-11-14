@@ -48,11 +48,11 @@ h1, h2, h3{
     color: #5C9384 !important;
     border: 1px solid #5C9384 !important;
 }
-.btn-primary:hover {
+/* .btn-primary:hover {
     background-color: #E3F8F3 !important;
     color: #5C9384 !important;
     border: 1px solid #5C9384 !important;
-}
+} */
 
 .btn-outline-primary:hover {
     background-color: #5C9384 !important;
@@ -213,6 +213,9 @@ table {
 /* CSS of mainpage */
 .maincard {
     margin-top: 4%;
+}
+.active_filter{
+    background-color: #FFBF57 !important;
 }
 .card-img-bottom{
     height: 300px;
