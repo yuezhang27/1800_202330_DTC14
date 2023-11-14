@@ -32,7 +32,7 @@ function displayResourceInfo() {
 displayResourceInfo();
 
 // save document ID
-function saveHikeDocumentIDAndRedirect(){
+function saveResourceDocumentIDAndRedirect(){
     let params = new URL(window.location.href) //get the url from the search bar
     let ID = params.searchParams.get("docID");
     localStorage.setItem('resourceDocID', ID);
