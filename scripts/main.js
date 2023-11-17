@@ -1,5 +1,23 @@
 const mapViewButton = document.getElementById('map-view-fab');
 let isMapView = true;
+var currentUser;
+
+
+function doAll() {
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            currentUser = db.collection("users").doc(user.uid); //global
+            console.log(currentUser);
+
+            displayCardsDynamically("resources", null)
+        } else {
+            // No user is signed in.
+            console.log("No user is signed in");
+            window.location.href = "login.html";
+        }
+    });
+}
+doAll();
 
 mapViewButton.addEventListener('click', function () {
     if (isMapView) {
@@ -114,12 +132,24 @@ function displayCardsDynamically(collection, category) {
                 newcard.querySelector('.text-muted').innerHTML = "Last update: " + realTime;
                 newcard.querySelector('.description').innerHTML = description;
                 newcard.querySelector('.card-img-bottom').src = `./images/${resourceCode}.jpg`; //Example: NV01.jpg
-                newcard.querySelector('a').href = "each_info.html?docID=" + docID;
+                newcard.querySelector('a.no_underline').href = "each_info.html?docID=" + docID;
+                let iconElement = newcard.querySelector('i');
+                iconElement.id = 'save-' + docID;
+                
+                iconElement.onclick = (event) => updateBookmark(docID, event);
+
+
+                currentUser.get().then(userDoc => {
+                    //get the user name
+                    var bookmarks = userDoc.data().bookmarks;
+                    if (bookmarks.includes(docID)) {
+                        document.getElementById('save-' + docID).innerText = 'bookmark';
+                    }
+                })
 
                 //attach to gallery, Example: "hikes-go-here"
                 document.getElementById(collection + "-go-here").appendChild(newcard);
-                document.querySelector('i').id = 'save-' + docID;   //guaranteed to be unique
-                document.querySelector('i').onclick = () => updateBookmark(docID);
+
 
                 //function to send each card to an info page when div is clicked
                 // const maincard = document.querySelectorAll(".maincard");
@@ -139,7 +169,35 @@ function displayCardsDynamically(collection, category) {
         })
 }
 
-displayCardsDynamically("resources", null)  //input param is the name of the collection
+  //input param is the name of the collection
+
+function updateBookmark(resourceDocID) {
+    currentUser.get().then(userDoc => {
+        let bookmarks = userDoc.data().bookmarks;
+        let iconID = 'save-' + resourceDocID;
+        let isBookmarked = bookmarks.includes(resourceDocID)//check if thsi hikeID exist in bookmark array
+        console.log(isBookmarked)
+
+        if (isBookmarked) {
+            currentUser.update({
+                bookmarks: firebase.firestore.FieldValue.arrayRemove(resourceDocID)
+            }).then(() => {
+                console.log("item was removed" + resourceDocID)
+                document.getElementById(iconID).innerText = 'bookmark_border'
+            })
+
+        } else {
+            currentUser.update({
+                bookmarks: firebase.firestore.FieldValue.arrayUnion(resourceDocID)
+            }).then(() => {
+                console.log("this item added to the database" + isBookmarked)
+                document.getElementById(iconID).innerText = 'bookmark'
+            })
+        }
+
+    })
+}
+
 
 let isFoodActive = false;
 

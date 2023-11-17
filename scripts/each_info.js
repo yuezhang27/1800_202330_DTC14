@@ -8,14 +8,6 @@ function doAll() {
             currentUser = db.collection("users").doc(user.uid); //global
             console.log(currentUser);
 
-            // figure out what day of the week it is today
-            const weekday = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
-            const d = new Date();
-            let day = weekday[d.getDay()];
-
-            // the following functions are always called when someone is logged in
-            // readQuote(day);
-            // insertNameFromFirestore();
             displayResourceInfo();
         } else {
             // No user is signed in.
@@ -46,7 +38,7 @@ function displayResourceInfo() {
         DescriptionDetail = doc.data().description_detail;
         resourceLocation = doc.data().location;
         resourceContact = doc.data().contactPhone;
-        
+        docID = doc.id; 
         // only populate title, and image
         document.getElementById( "review-card-title" ).innerHTML = resourceName;
         document.querySelector(".card-img-bottom").src = `./images/${resourceCode}.jpg`;
@@ -59,6 +51,14 @@ function displayResourceInfo() {
         document.querySelector('.resourse_contact').innerHTML = resourceContact;
         document.querySelector('i').id = 'save-' + ID;   //guaranteed to be unique
         document.querySelector('i').onclick = () => updateBookmark(ID);
+        
+        currentUser.get().then(userDoc => {
+            //get the user name
+            var bookmarks = userDoc.data().bookmarks;
+            if (bookmarks.includes(docID)) {
+                document.getElementById('save-' + docID).innerText = 'bookmark';
+            }
+        })
 
     } );
 }
@@ -96,6 +96,11 @@ function populateReviews() {
                 var time = doc.data().timestamp.toDate();
                 var rating = doc.data().rating; // Get the rating value
 
+                
+                
+
+                
+
                 let reviewCard = reviewCardTemplate.content.cloneNode(true);
                 reviewCard.querySelector(".title").innerHTML = title;
                 reviewCard.querySelector(".time").innerHTML = new Date(time).toLocaleString();
@@ -103,8 +108,6 @@ function populateReviews() {
                 reviewCard.querySelector(".effectiveness").innerHTML = `Effectiveness: ${effectiveness}`;
                 reviewCard.querySelector(".recommendation").innerHTML = `Recommendation: ${recommendation}`;
                 reviewCard.querySelector(".description").innerHTML = `Description: ${description}`;
-                
-                
 
 
                 // Populate the star rating

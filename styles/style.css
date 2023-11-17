@@ -224,6 +224,19 @@ table {
 .no_underline{
     text-decoration: none;
 }
+#resources-go-here h4{
+    width: 80%;
+}
+.result-each-card{
+    position: relative;
+}
+.bookmark-icon{
+    position: absolute;
+    display: block;
+    right: 7%;
+    top: 3%;
+    font-size: 50px !important;
+}
 
 /* Floating Action Button */
 .fab-container {
@@ -431,12 +444,14 @@ table {
 
 /* eachinfo */
 #info-section .material-icons,
-#info-resultTemplate .material-icons{
+#resources-go-here .material-icons{
     float: right;
     font-size: 30px;
     color: #5C9384;
     cursor: pointer;
+    z-index: 2;
 }
 .info-top-section{
     height: 5%;
 }
+
