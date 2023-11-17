@@ -108,6 +108,7 @@ function displayCardsDynamically(collection, category) {
                 var docID = doc.id;
                 let newcard = cardTemplate.content.cloneNode(true); // Clone the HTML template to create a new card (newcard) that will be filled with Firestore data.
 
+
                 //update title and text and image
                 newcard.querySelector('.card-title').innerHTML = title;
                 newcard.querySelector('.text-muted').innerHTML = "Last update: " + realTime;
@@ -117,6 +118,8 @@ function displayCardsDynamically(collection, category) {
 
                 //attach to gallery, Example: "hikes-go-here"
                 document.getElementById(collection + "-go-here").appendChild(newcard);
+                document.querySelector('i').id = 'save-' + docID;   //guaranteed to be unique
+                document.querySelector('i').onclick = () => updateBookmark(docID);
 
                 //function to send each card to an info page when div is clicked
                 // const maincard = document.querySelectorAll(".maincard");

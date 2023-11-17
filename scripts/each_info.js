@@ -1,3 +1,34 @@
+//Global variable pointing to the current user's Firestore document
+var currentUser;
+
+//Function that calls everything needed for the main page  
+function doAll() {
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            currentUser = db.collection("users").doc(user.uid); //global
+            console.log(currentUser);
+
+            // figure out what day of the week it is today
+            const weekday = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+            const d = new Date();
+            let day = weekday[d.getDay()];
+
+            // the following functions are always called when someone is logged in
+            // readQuote(day);
+            // insertNameFromFirestore();
+            displayResourceInfo();
+        } else {
+            // No user is signed in.
+            console.log("No user is signed in");
+            window.location.href = "login.html";
+        }
+    });
+}
+doAll();
+
+
+
+
 function displayResourceInfo() {
     let params = new URL(window.location.href );  //getting url of search bar
     console.log("params is =", params);
@@ -26,6 +57,8 @@ function displayResourceInfo() {
         document.querySelector('.description_detail').innerHTML = DescriptionDetail;
         document.querySelector('.resourse_location').innerHTML = resourceLocation;
         document.querySelector('.resourse_contact').innerHTML = resourceContact;
+        document.querySelector('i').id = 'save-' + ID;   //guaranteed to be unique
+        document.querySelector('i').onclick = () => updateBookmark(ID);
 
     } );
 }
@@ -70,6 +103,9 @@ function populateReviews() {
                 reviewCard.querySelector(".effectiveness").innerHTML = `Effectiveness: ${effectiveness}`;
                 reviewCard.querySelector(".recommendation").innerHTML = `Recommendation: ${recommendation}`;
                 reviewCard.querySelector(".description").innerHTML = `Description: ${description}`;
+                
+                
+
 
                 // Populate the star rating
                 let starRating = "";
@@ -87,4 +123,39 @@ function populateReviews() {
 }
 
 populateReviews();
+
+
+
+function updateBookmark(resourceDocID) {
+    currentUser.get().then(userDoc => {
+        let bookmarks = userDoc.data().bookmarks;
+        let iconID = 'save-' + resourceDocID;
+        let isBookmarked = bookmarks.includes(resourceDocID)//check if thsi hikeID exist in bookmark array
+        console.log(isBookmarked)
+
+        if (isBookmarked) {
+            currentUser.update({
+                bookmarks: firebase.firestore.FieldValue.arrayRemove(resourceDocID)
+            }).then(() => {
+                console.log("item was removed" + resourceDocID)
+                document.getElementById(iconID).innerText = 'bookmark_border'
+            })
+
+        } else {
+            currentUser.update({
+                bookmarks: firebase.firestore.FieldValue.arrayUnion(resourceDocID)
+            }).then(() => {
+                console.log("this item added to the database" + isBookmarked)
+                document.getElementById(iconID).innerText = 'bookmark'
+            })
+        }
+
+    })
+}
+
+//-----------------------------------------------------------------------------
+// This function is called whenever the user clicks on the "bookmark" icon.
+// It adds the hike to the "bookmarks" array
+// Then it will change the bookmark icon from the hollow to the solid version. 
+//-----------------------------------------------------------------------------
 

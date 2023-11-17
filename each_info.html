@@ -28,9 +28,9 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <!-- Other libraries go here -->
-    <!-- Font Awesome Icon Library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Font google icon Library -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
 </head>
 
@@ -43,12 +43,18 @@
     <main id="info-section" class="container">
         <!-- Review Page Resource Info -->
         <div class="card reviewcard">
+            <div class="info-top-section">
+                <a href="./main.html">
+                    <img src="images/chevron-left.svg" alt="" class="goback">
+                </a>
+                <i class="material-icons">bookmark_border</i>
+                
+            </div>
             <div class="card-body">
                 <div class="info-section">
-                    <a href="./main.html">
-                        <img src="images/chevron-left.svg" alt="" class="goback">
-                    </a>
+                    
                     <h1 class="card-title reviewtitle" id="review-card-title">Result 1</h1>
+                    
                     <!-- Star -->
                     <div class="container row justify-content-">
                         <div class="starrating">
@@ -76,7 +82,8 @@
             <!-- <p>text</p> -->
             <!-- <input class="btn btn-outline-primary rounded-pill" type="button" value="Add a Review"> -->
             <!-- Write a Review -->
-            <button class="btn btn-primary  rounded-pill" onclick="saveHikeDocumentIDAndRedirect()">Write Review</button>
+            <button class="btn btn-primary  rounded-pill" onclick="saveResourceDocumentIDAndRedirect()">Write
+                Review</button>
         </div>
 
         <!-- Review Boxes
@@ -107,7 +114,7 @@
                 </div>
             </div>
         </template> -->
-        
+
         <!-- Review Boxes -->
         <div class="container">
             <h2>Reviews:</h2>
@@ -130,11 +137,12 @@
                     <p class="effectiveness">placeholder</p>
                     <p class="recommendation">placeholder</p>
                     <br>
-                    <p class="description">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <p class="description">This card has supporting text below as a natural lead-in to additional
+                        content.</p>
                 </div>
             </div>
         </template>
-<div class="blank"></div>
+        <div class="blank"></div>
     </main>
 
     <!-- Floating Action Button -->
@@ -167,7 +175,7 @@
 
     <!-- Link to scripts of your own -->
     <script src="./scripts/firebaseAPI.js"></script>
-    <script src="./scripts/authentication.js"></script>
+    <!-- <script src="./scripts/authentication.js"></script> -->
     <script src="./scripts/skeleton.js"></script>
     <script src="scripts/each_info.js"></script>
     <!-- <script src="./scripts/script.js"></script> -->
