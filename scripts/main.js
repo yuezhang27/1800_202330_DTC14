@@ -114,6 +114,10 @@ function displayCardsDynamically(collection, category) {
                 newcard.querySelector('.description').innerHTML = description;
                 newcard.querySelector('.card-img-bottom').src = `./images/${resourceCode}.jpg`; //Example: NV01.jpg
                 newcard.querySelector('a').href = "each_info.html?docID=" + docID;
+                newcard.querySelector('i').id = 'save-' + docID;   //guaranteed to be unique
+                // newcard.querySelector('i').onclick = saveBookmark(docID);
+                newcard.querySelector('i').onclick = (event) => saveBookmark(event, docID);
+
 
                 //attach to gallery, Example: "hikes-go-here"
                 document.getElementById(collection + "-go-here").appendChild(newcard);
@@ -136,8 +140,30 @@ function displayCardsDynamically(collection, category) {
         })
 }
 
-displayCardsDynamically("resources", null)  //input param is the name of the collection
+//-----------------------------------------------------------------------------
+// This function is called whenever the user clicks on the "bookmark" icon.
+// It adds the hike to the "bookmarks" array
+// Then it will change the bookmark icon from the hollow to the solid version. 
+//-----------------------------------------------------------------------------
+function saveBookmark(event, resourceDocID) {
+    console.log("call save bookmark")
+    // Manage the backend process to store the hikeDocID in the database, recording which hike was bookmarked by the user.
+currentUser.update({
+                    // Use 'arrayUnion' to add the new bookmark ID to the 'bookmarks' array.
+            // This method ensures that the ID is added only if it's not already present, preventing duplicates.
+        bookmarks: firebase.firestore.FieldValue.arrayUnion(resourceDocID)
+    })
+            // Handle the front-end update to change the icon, providing visual feedback to the user that it has been clicked.
+    .then(function () {
+        console.log("bookmark has been saved for" + resourceDocID);
+        var iconID = 'save-' + resourceDocID;
+        //console.log(iconID);
+                    //this is to change the icon of the hike that was saved to "filled"
+        document.getElementById(iconID).innerText = 'bookmark';
+    });
+}
 
+displayCardsDynamically("resources",null)  //input param is the name of the collection
 let isFoodActive = false;
 
 // add clicked function on food filter button
@@ -218,3 +244,25 @@ function toggleWork() {
         button.classList.remove('active_filter'); // Remove active styling
     }
 }
+
+//Global variable pointing to the current user's Firestore document
+var currentUser;   
+
+//Function that calls everything needed for the main page  
+function doAll() {
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            currentUser = db.collection("users").doc(user.uid); //global
+            console.log(currentUser);
+
+            // the following functions are always called when someone is logged in
+            displayCardsDynamically("resources");
+        } else {
+            // No user is signed in.
+            console.log("No user is signed in");
+            window.location.href = "login.html";
+        }
+    });
+}
+doAll();
+

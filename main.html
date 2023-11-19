@@ -28,7 +28,7 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <!-- Other libraries go here -->
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
@@ -66,17 +66,22 @@
         <div id="resources-go-here">
         </div>
         <template id="resultTemplate">
-            <a  class="no_underline" href="#">
+            <!-- <a  class="no_underline" href="#"> -->
                 <div class="card maincard">
                     <div class="card-body">
+                        <a  class="no_underline" href="#">
                         <h4 class="card-title">Result 1</h4>
                         <p class="card-text description">This is a wider card with supporting text below as a natural lead-in to additional
                             content. This content is a little bit longer.</p>
                         <p class="card-text updateTime"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </a>
+                        <!-- bookmark button -->
+                        <!-- <button class="save">Save as bookmark</button> -->
+                        <i class="material-icons save">bookmark_border</i>
                     </div>
                     <img class="card-img-bottom" src="images/hike1.jpg" alt="Card image cap">
                 </div>
-            </a>
+            <!-- </a> -->
         </template>
         <div class="blank"></div>
         <!-- Flocating Action Button -->
