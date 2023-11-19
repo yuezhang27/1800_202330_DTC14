@@ -7,7 +7,6 @@ function doAll() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             currentUser = db.collection("users").doc(user.uid); //global
-            console.log(currentUser);
 
             displayCardsDynamically("resources", null)
         } else {
@@ -23,15 +22,9 @@ mapViewButton.addEventListener('click', function () {
     if (isMapView) {
         // Switch to List View
         mapViewButton.textContent = 'List View';
-        // Add code to switch to the list view here
-        // 1. url to main.html
-        // 2. icon to "List"
     } else {
         // Switch to Map View
         mapViewButton.textContent = 'Map View';
-        // Add code to switch to the map view here
-        // 1. url to map.html
-        // 2. icon to "Map"
     }
     isMapView = !isMapView;
 });
@@ -98,10 +91,7 @@ function formatTimestamp(timestamp) {
     return formattedDateTime;
 }
 
-// display the cards we can read
-//------------------------------------------------------------------------------
-// Input parameter is a string representing the collection we are reading from
-//------------------------------------------------------------------------------
+// display content according to the filter and database
 function displayCardsDynamically(collection, category) {
     let cardTemplate = document.getElementById("resultTemplate"); // Retrieve the HTML element with the ID "resultTemplate" and store it in the cardTemplate variable. 
     let gallery = document.getElementById(collection + "-go-here");
@@ -114,17 +104,16 @@ function displayCardsDynamically(collection, category) {
     if (category !== null) {
         query = query.where("category", "==", category)
     }
-    query.get()   //the collection called "hikes"
-        .then(allResources => {
-            //var i = 1;  //Optional: if you want to have a unique ID for each hike
-            allResources.forEach(doc => { //iterate thru each doc
-                var title = doc.data().name;       // get value of the "name" key
-                var description = doc.data().description;  // get value of the "description" key
+    query.get().then(allResources => {
+            allResources.forEach(doc => { 
+                var title = doc.data().name;
+                var description = doc.data().description;
                 var updateTime = doc.data().last_updated;
                 realTime = formatTimestamp(updateTime);
-                var resourceCode = doc.data().code;    //get ID to each resource to be used for fetching right image
+                var resourceCode = doc.data().code;
+                //get ID to each resource to be used for fetching right image
                 var docID = doc.id;
-                let newcard = cardTemplate.content.cloneNode(true); // Clone the HTML template to create a new card (newcard) that will be filled with Firestore data.
+                let newcard = cardTemplate.content.cloneNode(true); 
 
 
                 //update title and text and image
@@ -133,87 +122,45 @@ function displayCardsDynamically(collection, category) {
                 newcard.querySelector('.description').innerHTML = description;
                 newcard.querySelector('.card-img-bottom').src = `./images/${resourceCode}.jpg`; //Example: NV01.jpg
                 newcard.querySelector('a').href = "each_info.html?docID=" + docID;
-                newcard.querySelector('i').id = 'save-' + docID;   //guaranteed to be unique
+                newcard.querySelector('i').id = 'save-' + docID;
+                //guaranteed to be unique
                 // newcard.querySelector('i').onclick = saveBookmark(docID);
                 newcard.querySelector('i').onclick = (event) => saveBookmark(event, docID);
 
-
-                //attach to gallery, Example: "hikes-go-here"
                 document.getElementById(collection + "-go-here").appendChild(newcard);
-
-
-                //function to send each card to an info page when div is clicked
-                // const maincard = document.querySelectorAll(".maincard");
-
-                // maincard.forEach(function(div) {
-                //     div.addEventListener('click', function () {
-
-                //         console.log("card has been clicked");
-                //         window.location.href = "each_info.html?docID=" +docID;  
-                //     }); 
-                // });
-
-
-                //i++;   //Optional: iterate variable to serve as unique ID
             })
-
         })
 }
 
-//-----------------------------------------------------------------------------
-// This function is called whenever the user clicks on the "bookmark" icon.
-// It adds the hike to the "bookmarks" array
-// Then it will change the bookmark icon from the hollow to the solid version. 
-// //-----------------------------------------------------------------------------
-// function saveBookmark(event, resourceDocID) {
-//     console.log("call save bookmark")
-//     // Manage the backend process to store the hikeDocID in the database, recording which hike was bookmarked by the user.
-// currentUser.update({
-//                     // Use 'arrayUnion' to add the new bookmark ID to the 'bookmarks' array.
-//             // This method ensures that the ID is added only if it's not already present, preventing duplicates.
-//         bookmarks: firebase.firestore.FieldValue.arrayUnion(resourceDocID)
-//     })
-//             // Handle the front-end update to change the icon, providing visual feedback to the user that it has been clicked.
-//     .then(function () {
-//         console.log("bookmark has been saved for" + resourceDocID);
-//         var iconID = 'save-' + resourceDocID;
-//         //console.log(iconID);
-//                     //this is to change the icon of the hike that was saved to "filled"
-//         document.getElementById(iconID).innerText = 'bookmark';
-//     });
-// }
+
 
 function saveBookmark(event, resourceDocID) {
     currentUser.get().then((doc) => {
-        var userData = doc.data();
-        var bookmarks = userData.bookmarks || [];
-        if (bookmarks.includes(resourceDocID)) {
+        // var userData = doc.data();
+        // var bookmarks = userData.bookmarks || [];
+        let bookmarks = doc.data().bookmarks;
+        let iconID = 'save-' + resourceDocID
+        let isBookmarked = bookmarks.includes(resourceDocID)
+        if (isBookmarked) {
             currentUser.update({
                 bookmarks: firebase.firestore.FieldValue.arrayRemove(resourceDocID)
             })
             .then(function () {
-                console.log("Bookmark removed for " + resourceDocID);
-                updateBookmarkIcon(resourceDocID, false);
+                console.log("Bookmark added for " + resourceDocID);
+                document.getElementById(iconID).innerText = 'bookmark'
             });
         } else {
             currentUser.update({
                 bookmarks: firebase.firestore.FieldValue.arrayUnion(resourceDocID)
             })
             .then(function () {
-                console.log("Bookmark added for " + resourceDocID);
-                updateBookmarkIcon(resourceDocID, true);
+                console.log("Bookmark removed for " + resourceDocID);
+                document.getElementById(iconID).innerText = 'bookmark_border'
             });
         }
     });
 }
 
-function updateBookmarkIcon(resourceDocID, isBookmarked) {
-    var iconID = 'save-' + resourceDocID;
-    var icon = document.getElementById(iconID);
-    if (icon) {
-        icon.innerText = isBookmarked ? 'bookmark' : 'bookmark_border';
-    }
-}
 
 function removeActiveStyles() {
     document.querySelectorAll('.filterbtn').forEach(button => {
@@ -222,9 +169,7 @@ function removeActiveStyles() {
 }
 
 
-displayCardsDynamically("resources",null)  //input param is the name of the collection
 let isFoodActive = false;
-
 // add clicked function on food filter button
 
 function toggleFood() {
@@ -304,24 +249,4 @@ function toggleWork() {
     }
 }
 
-//Global variable pointing to the current user's Firestore document
-var currentUser;   
-
-//Function that calls everything needed for the main page  
-function doAll() {
-    firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-            currentUser = db.collection("users").doc(user.uid); //global
-            console.log(currentUser);
-
-            // the following functions are always called when someone is logged in
-            displayCardsDynamically("resources");
-        } else {
-            // No user is signed in.
-            console.log("No user is signed in");
-            window.location.href = "login.html";
-        }
-    });
-}
-doAll();
 

@@ -11,6 +11,13 @@ body{
 }
 
 /* CSS of mainpage */
+.bookmark-icon {
+    position: absolute;
+    display: block;
+    right: 7%;
+    top: 3%;
+    font-size: 40px !important;
+}
 .maincard {
     margin-top: 4%;
 }
@@ -18,7 +25,7 @@ body{
 .card-body{
     color: black!important;
 }
-.active_filter{
+input.active_filter{
     background-color: #FFBF57 !important;
 }
 .card-img-bottom{
@@ -44,6 +51,9 @@ h3 {
 
 h4 {
     font-size: 1.25em!important;
+    width: 80%;
+    font-weight: bold;
+    height: 48px;
 }
 
 

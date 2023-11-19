@@ -8,9 +8,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Link to styles of your own -->
 
-    <link rel="stylesheet" href="./styles/main.css">
     <!-- Bootstrap Library CSS CDN go here -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -29,15 +27,14 @@
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <!-- Other libraries go here -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Link to styles of your own -->
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/style.css">
 
 </head>
 
 <body>
 
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
-    <!-- Stuff for body goes here -->
     <main class="container-fluid">
         <div class="search-bg green-bg">
             <div class="input-group">
@@ -62,31 +59,33 @@
                 <input id="WorkBtn" class="btn btn-primary filterbtn" type="button" value="Work" onclick="toggleWork()">
             </div>
         </div>
-        <!-- quote message testing!!!!!!!!!!!!!!!!!!! -->
-        <!-- <p>Today is <span id="quote-goes-here"></span></p> -->
+
+
         <!-- Cards for Results -->
         <div id="resources-go-here">
         </div>
+
         <template id="resultTemplate">
             <!-- <a  class="no_underline" href="#"> -->
-                <div class="card maincard">
+            <div class="card maincard">
+                <!-- bookmark button -->
+                <!-- <button class="save">Save as bookmark</button> -->
+                <i class="material-icons bookmark-icon save">bookmark_border</i>
+                <a class="no_underline" href="#">
                     <div class="card-body">
-                        <a  class="no_underline" href="#">
                         <h4 class="card-title">Result 1</h4>
-                        <p class="card-text description">This is a wider card with supporting text below as a natural lead-in to additional
+                        <p class="card-text description">This is a wider card with supporting text below as a natural
+                            lead-in to additional
                             content. This content is a little bit longer.</p>
                         <p class="card-text updateTime"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </a>
-                        <!-- bookmark button -->
-                        <!-- <button class="save">Save as bookmark</button> -->
-                        <i class="material-icons save">bookmark_border</i>
+
+                        <img class="card-img-bottom" src="images/hike1.jpg" alt="Card image cap">
                     </div>
-                    <img class="card-img-bottom" src="images/hike1.jpg" alt="Card image cap">
-                </div>
-            <!-- </a> -->
+                </a>
+                <!-- </a> -->
         </template>
         <div class="blank"></div>
-        <!-- Flocating Action Button -->
+        <!-- Floating Action Button -->
         <div class="fab-container">
             <button id="map-view-fab" class="btn btn-light">
                 <a href="map.html">
@@ -115,16 +114,12 @@
             <img class="navpic" src="images/person.svg" alt="">
         </a>
     </div>
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
 
     <!-- Link to scripts of your own -->
     <script src="./scripts/firebaseAPI.js"></script>
     <script src="./scripts/skeleton.js"></script>
-    <!-- <script src="./scripts/authentication.js"></script> -->
     <script src="./scripts/main.js"></script>
-    <!-- <script src="./scripts/script.js"></script> -->
+
 
 </body>
 
