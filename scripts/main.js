@@ -125,7 +125,7 @@ function displayCardsDynamically(collection, category) {
                 newcard.querySelector('i').id = 'save-' + docID;
                 //guaranteed to be unique
                 // newcard.querySelector('i').onclick = saveBookmark(docID);
-                newcard.querySelector('i').onclick = (event) => saveBookmark(event, docID);
+                newcard.querySelector('i').onclick = () => updateBookmark(docID);
 
                 document.getElementById(collection + "-go-here").appendChild(newcard);
             })
@@ -134,7 +134,7 @@ function displayCardsDynamically(collection, category) {
 
 
 
-function saveBookmark(event, resourceDocID) {
+function updateBookmark(resourceDocID) {
     currentUser.get().then((doc) => {
         // var userData = doc.data();
         // var bookmarks = userData.bookmarks || [];
@@ -146,16 +146,16 @@ function saveBookmark(event, resourceDocID) {
                 bookmarks: firebase.firestore.FieldValue.arrayRemove(resourceDocID)
             })
             .then(function () {
-                console.log("Bookmark added for " + resourceDocID);
-                document.getElementById(iconID).innerText = 'bookmark'
+                console.log("Bookmark removed for " + resourceDocID);
+                document.getElementById(iconID).innerText = 'bookmark_border'
             });
         } else {
             currentUser.update({
                 bookmarks: firebase.firestore.FieldValue.arrayUnion(resourceDocID)
             })
             .then(function () {
-                console.log("Bookmark removed for " + resourceDocID);
-                document.getElementById(iconID).innerText = 'bookmark_border'
+                console.log("Bookmark added for " + resourceDocID);
+                document.getElementById(iconID).innerText = 'bookmark'
             });
         }
     });
