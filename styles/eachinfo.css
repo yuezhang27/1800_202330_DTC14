@@ -21,7 +21,15 @@
     height: 300px;
     object-fit: cover;
 }
-
+.material-icons{
+    float: right;
+    font-size: 40px !important;
+    color: #5C9384;
+    cursor: pointer;
+}
+.goback{
+    width: 30px;
+}
 /* .reviewcard {
     width: 98%!important;
     margin-top: 1%;
