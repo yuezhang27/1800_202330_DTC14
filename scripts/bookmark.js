@@ -82,7 +82,7 @@ function getBookmarks(user) {
     
     
 					//Finally, attach this new card to the gallery
-                    hikeCardGroup.appendChild(newcard);
+                    resourceCardGroup.appendChild(newcard);
                 })
             });
         })
