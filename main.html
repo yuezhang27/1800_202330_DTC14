@@ -29,7 +29,6 @@
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <!-- Other libraries go here -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/style.css">
 
 </head>
 
@@ -69,23 +68,22 @@
         <div id="resources-go-here">
         </div>
         <template id="resultTemplate">
-            <div class="result-each-card">
-                <i class="material-icons bookmark-icon">bookmark_border</i>
-                <a class="no_underline" href="#">
-                    <div class="card maincard">
-                        <div class="card-body">
-                            <h4 class="card-title">Result 1</h4>
-                
-                            <p class="card-text description">This is a wider card with supporting text below as a natural
-                                lead-in to additional
-                                content. This content is a little bit longer.</p>
-                                <p class="card-text updateTime"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                            <img class="card-img-bottom" src="images/hike1.jpg" alt="Card image cap">
-                        </div>
+            <!-- <a  class="no_underline" href="#"> -->
+                <div class="card maincard">
+                    <div class="card-body">
+                        <a  class="no_underline" href="#">
+                        <h4 class="card-title">Result 1</h4>
+                        <p class="card-text description">This is a wider card with supporting text below as a natural lead-in to additional
+                            content. This content is a little bit longer.</p>
+                        <p class="card-text updateTime"><small class="text-muted">Last updated 3 mins ago</small></p>
                     </a>
-            </div>
-                
+                        <!-- bookmark button -->
+                        <!-- <button class="save">Save as bookmark</button> -->
+                        <i class="material-icons save">bookmark_border</i>
+                    </div>
+                    <img class="card-img-bottom" src="images/hike1.jpg" alt="Card image cap">
+                </div>
+            <!-- </a> -->
         </template>
         <div class="blank"></div>
         <!-- Flocating Action Button -->

@@ -1,0 +1,52 @@
+.info-section img {
+    position: fixed;
+}
+
+.info-section h1 {
+    text-align: center;
+}
+.info_container img{
+    width: 100%
+}
+#info-section p{
+    padding-top: 10px;
+}
+#info-section .card{
+    padding: 4%;
+    margin: 3%;
+    border: 0px;
+    border-radius: 20px;
+}
+#info-section .btn-outline-primary{
+    background-color: #5C9384;
+    color: white;
+    
+}
+.starrating {
+    width: auto !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* font size */
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.25em!important;
+}
+
+
+p {
+    font-size: 1em;
+    line-height: 1.6;
+}

@@ -132,20 +132,11 @@ function displayCardsDynamically(collection, category) {
                 newcard.querySelector('.text-muted').innerHTML = "Last update: " + realTime;
                 newcard.querySelector('.description').innerHTML = description;
                 newcard.querySelector('.card-img-bottom').src = `./images/${resourceCode}.jpg`; //Example: NV01.jpg
-                newcard.querySelector('a.no_underline').href = "each_info.html?docID=" + docID;
-                let iconElement = newcard.querySelector('i');
-                iconElement.id = 'save-' + docID;
-                
-                iconElement.onclick = (event) => updateBookmark(docID, event);
+                newcard.querySelector('a').href = "each_info.html?docID=" + docID;
+                newcard.querySelector('i').id = 'save-' + docID;   //guaranteed to be unique
+                // newcard.querySelector('i').onclick = saveBookmark(docID);
+                newcard.querySelector('i').onclick = (event) => saveBookmark(event, docID);
 
-
-                currentUser.get().then(userDoc => {
-                    //get the user name
-                    var bookmarks = userDoc.data().bookmarks;
-                    if (bookmarks.includes(docID)) {
-                        document.getElementById('save-' + docID).innerText = 'bookmark';
-                    }
-                })
 
                 //attach to gallery, Example: "hikes-go-here"
                 document.getElementById(collection + "-go-here").appendChild(newcard);
@@ -169,41 +160,75 @@ function displayCardsDynamically(collection, category) {
         })
 }
 
-  //input param is the name of the collection
+//-----------------------------------------------------------------------------
+// This function is called whenever the user clicks on the "bookmark" icon.
+// It adds the hike to the "bookmarks" array
+// Then it will change the bookmark icon from the hollow to the solid version. 
+// //-----------------------------------------------------------------------------
+// function saveBookmark(event, resourceDocID) {
+//     console.log("call save bookmark")
+//     // Manage the backend process to store the hikeDocID in the database, recording which hike was bookmarked by the user.
+// currentUser.update({
+//                     // Use 'arrayUnion' to add the new bookmark ID to the 'bookmarks' array.
+//             // This method ensures that the ID is added only if it's not already present, preventing duplicates.
+//         bookmarks: firebase.firestore.FieldValue.arrayUnion(resourceDocID)
+//     })
+//             // Handle the front-end update to change the icon, providing visual feedback to the user that it has been clicked.
+//     .then(function () {
+//         console.log("bookmark has been saved for" + resourceDocID);
+//         var iconID = 'save-' + resourceDocID;
+//         //console.log(iconID);
+//                     //this is to change the icon of the hike that was saved to "filled"
+//         document.getElementById(iconID).innerText = 'bookmark';
+//     });
+// }
 
-function updateBookmark(resourceDocID) {
-    currentUser.get().then(userDoc => {
-        let bookmarks = userDoc.data().bookmarks;
-        let iconID = 'save-' + resourceDocID;
-        let isBookmarked = bookmarks.includes(resourceDocID)//check if thsi hikeID exist in bookmark array
-        console.log(isBookmarked)
-
-        if (isBookmarked) {
+function saveBookmark(event, resourceDocID) {
+    currentUser.get().then((doc) => {
+        var userData = doc.data();
+        var bookmarks = userData.bookmarks || [];
+        if (bookmarks.includes(resourceDocID)) {
             currentUser.update({
                 bookmarks: firebase.firestore.FieldValue.arrayRemove(resourceDocID)
-            }).then(() => {
-                console.log("item was removed" + resourceDocID)
-                document.getElementById(iconID).innerText = 'bookmark_border'
             })
-
+            .then(function () {
+                console.log("Bookmark removed for " + resourceDocID);
+                updateBookmarkIcon(resourceDocID, false);
+            });
         } else {
             currentUser.update({
                 bookmarks: firebase.firestore.FieldValue.arrayUnion(resourceDocID)
-            }).then(() => {
-                console.log("this item added to the database" + isBookmarked)
-                document.getElementById(iconID).innerText = 'bookmark'
             })
+            .then(function () {
+                console.log("Bookmark added for " + resourceDocID);
+                updateBookmarkIcon(resourceDocID, true);
+            });
         }
+    });
+}
 
-    })
+function updateBookmarkIcon(resourceDocID, isBookmarked) {
+    var iconID = 'save-' + resourceDocID;
+    var icon = document.getElementById(iconID);
+    if (icon) {
+        icon.innerText = isBookmarked ? 'bookmark' : 'bookmark_border';
+    }
+}
+
+function removeActiveStyles() {
+    document.querySelectorAll('.filterbtn').forEach(button => {
+        button.classList.remove('active_filter');
+    });
 }
 
 
+displayCardsDynamically("resources",null)  //input param is the name of the collection
 let isFoodActive = false;
 
 // add clicked function on food filter button
 
 function toggleFood() {
+    removeActiveStyles();
     const button = document.getElementById('FoodBtn');
 
     // Toggle the state
@@ -216,7 +241,6 @@ function toggleFood() {
     } else {
         // Execute another function or no function when the button is not active
         displayCardsDynamically("resources", null)
-        button.classList.remove('active_filter'); // Remove active styling
     }
 }
 
@@ -224,6 +248,7 @@ function toggleFood() {
 let isMoneyActive = false;
 
 function toggleMoney() {
+    removeActiveStyles()
     const button = document.getElementById('MoneyBtn');
 
     // Toggle the state
@@ -236,7 +261,6 @@ function toggleMoney() {
     } else {
         // Execute another function or no function when the button is not active
         displayCardsDynamically("resources", null)
-        button.classList.remove('active_filter'); // Remove active styling
     }
 }
 
@@ -244,6 +268,7 @@ function toggleMoney() {
 let isHousingActive = false;
 
 function toggleHousing() {
+    removeActiveStyles()
     const button = document.getElementById('HousingBtn');
 
     // Toggle the state
@@ -256,7 +281,6 @@ function toggleHousing() {
     } else {
         // Execute another function or no function when the button is not active
         displayCardsDynamically("resources", null)
-        button.classList.remove('active_filter'); // Remove active styling
     }
 }
 
@@ -264,6 +288,7 @@ function toggleHousing() {
 let isWorkActive = false;
 
 function toggleWork() {
+    removeActiveStyles()
     const button = document.getElementById('WorkBtn');
 
     // Toggle the state
@@ -276,6 +301,27 @@ function toggleWork() {
     } else {
         // Execute another function or no function when the button is not active
         displayCardsDynamically("resources", null)
-        button.classList.remove('active_filter'); // Remove active styling
     }
 }
+
+//Global variable pointing to the current user's Firestore document
+var currentUser;   
+
+//Function that calls everything needed for the main page  
+function doAll() {
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            currentUser = db.collection("users").doc(user.uid); //global
+            console.log(currentUser);
+
+            // the following functions are always called when someone is logged in
+            displayCardsDynamically("resources");
+        } else {
+            // No user is signed in.
+            console.log("No user is signed in");
+            window.location.href = "login.html";
+        }
+    });
+}
+doAll();
+

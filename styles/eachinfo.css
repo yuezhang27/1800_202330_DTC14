@@ -1,0 +1,31 @@
+
+.card{
+    margin: 10% 3%;
+    border-radius: 30px !important;
+}
+
+/* CSS of mainpage */
+.reviewcard {
+    width: 98%;
+    margin-top: 4%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
+}
+
+.card-body{
+    color: black!important;
+}
+
+.card-img-bottom{
+    height: 300px;
+    object-fit: cover;
+}
+
+/* .reviewcard {
+    width: 98%!important;
+    margin-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
+} */

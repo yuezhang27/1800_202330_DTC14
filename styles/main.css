@@ -9,3 +9,46 @@ body{
     margin: 10% 3%;
     border-radius: 30px !important;
 }
+
+/* CSS of mainpage */
+.maincard {
+    margin-top: 4%;
+}
+
+.card-body{
+    color: black!important;
+}
+.active_filter{
+    background-color: #FFBF57 !important;
+}
+.card-img-bottom{
+    height: 300px;
+    object-fit: cover;
+}
+.no_underline{
+    text-decoration: none;
+}
+/* font size */
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.25em!important;
+}
+
+
+p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+

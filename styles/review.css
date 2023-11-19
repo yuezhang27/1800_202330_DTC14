@@ -1,0 +1,90 @@
+/* CSS of review page */
+.reviewimgcontainer {
+    width: 45%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 10%;
+}
+
+.checked {
+    color: orange;
+}
+
+.starrating {
+    font-size: 1em;
+}
+
+.goback {
+    width: 8%;
+}
+
+.reviewtitle {
+    margin-bottom: 0!important;
+}
+
+#review-card-title {
+    color: black
+}
+
+.givemystars {
+    font-size: 4em;
+}
+
+.username {
+    font-size: 3em;
+    margin-left: 5%;
+}
+
+.usercommentcard {
+    margin-top: 4%;
+}
+
+.addcomment{
+    width: 20%;
+    background-color: lightgrey;
+    margin-bottom: 1%;
+    margin-left: 1%;
+}
+
+.commenticon{
+    width: 100%;
+}
+
+.submitcomment {
+    text-align: center;
+}
+
+.submitbtn {
+    width: 90%;
+        background-color: #5C9384 !important;
+        color: white !important;
+        font-weight: bold !important;
+        border-radius: 50vh !important;
+        font-size: 2em !important;
+        display: inline-block;
+        padding: 10px 0 !important;
+        max-width: 365px;
+}
+/* font size */
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.25em!important;
+}
+
+
+p {
+    font-size: 1em;
+    line-height: 1.6;
+}
