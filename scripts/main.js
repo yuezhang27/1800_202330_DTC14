@@ -195,6 +195,12 @@ function updateBookmarkIcon(resourceDocID, isBookmarked) {
     }
 }
 
+function removeActiveStyles() {
+    document.querySelectorAll('.filterbtn').forEach(button => {
+        button.classList.remove('active_filter');
+    });
+}
+
 
 displayCardsDynamically("resources",null)  //input param is the name of the collection
 let isFoodActive = false;
@@ -202,6 +208,7 @@ let isFoodActive = false;
 // add clicked function on food filter button
 
 function toggleFood() {
+    removeActiveStyles();
     const button = document.getElementById('FoodBtn');
 
     // Toggle the state
@@ -214,7 +221,6 @@ function toggleFood() {
     } else {
         // Execute another function or no function when the button is not active
         displayCardsDynamically("resources", null)
-        button.classList.remove('active_filter'); // Remove active styling
     }
 }
 
@@ -222,6 +228,7 @@ function toggleFood() {
 let isMoneyActive = false;
 
 function toggleMoney() {
+    removeActiveStyles()
     const button = document.getElementById('MoneyBtn');
 
     // Toggle the state
@@ -234,7 +241,6 @@ function toggleMoney() {
     } else {
         // Execute another function or no function when the button is not active
         displayCardsDynamically("resources", null)
-        button.classList.remove('active_filter'); // Remove active styling
     }
 }
 
@@ -242,6 +248,7 @@ function toggleMoney() {
 let isHousingActive = false;
 
 function toggleHousing() {
+    removeActiveStyles()
     const button = document.getElementById('HousingBtn');
 
     // Toggle the state
@@ -254,7 +261,6 @@ function toggleHousing() {
     } else {
         // Execute another function or no function when the button is not active
         displayCardsDynamically("resources", null)
-        button.classList.remove('active_filter'); // Remove active styling
     }
 }
 
@@ -262,6 +268,7 @@ function toggleHousing() {
 let isWorkActive = false;
 
 function toggleWork() {
+    removeActiveStyles()
     const button = document.getElementById('WorkBtn');
 
     // Toggle the state
@@ -274,7 +281,6 @@ function toggleWork() {
     } else {
         // Execute another function or no function when the button is not active
         displayCardsDynamically("resources", null)
-        button.classList.remove('active_filter'); // Remove active styling
     }
 }
 
