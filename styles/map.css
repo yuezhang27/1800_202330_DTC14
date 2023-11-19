@@ -1,0 +1,10 @@
+/* Map page css */
+.map_container {
+    margin: 20px;
+
+    height: 70vh;
+}
+
+.fixed-bar {
+    position: fixed;
+}

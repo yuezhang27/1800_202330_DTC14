@@ -1,0 +1,39 @@
+/* Bookmark page css */
+.bookmarktitle {
+    margin-top: 5%;
+}
+
+.bmktitle {
+    font-size: 3em;
+}
+
+.bkmiconcontainer{
+    width: 10%;
+}
+
+.bookmarkicon{
+    width: 80%;
+}
+/* font size */
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.25em!important;
+}
+
+
+p {
+    font-size: 1em;
+    line-height: 1.6;
+}
