@@ -99,6 +99,8 @@ main {
     border-color: gray!important;
     width: 18vw;
     height: 5vh;
+    font-size: 0.75em!important;
+    text-align: center!important;
 }
 
 .welcomemessage {
