@@ -144,24 +144,57 @@ function displayCardsDynamically(collection, category) {
 // This function is called whenever the user clicks on the "bookmark" icon.
 // It adds the hike to the "bookmarks" array
 // Then it will change the bookmark icon from the hollow to the solid version. 
-//-----------------------------------------------------------------------------
+// //-----------------------------------------------------------------------------
+// function saveBookmark(event, resourceDocID) {
+//     console.log("call save bookmark")
+//     // Manage the backend process to store the hikeDocID in the database, recording which hike was bookmarked by the user.
+// currentUser.update({
+//                     // Use 'arrayUnion' to add the new bookmark ID to the 'bookmarks' array.
+//             // This method ensures that the ID is added only if it's not already present, preventing duplicates.
+//         bookmarks: firebase.firestore.FieldValue.arrayUnion(resourceDocID)
+//     })
+//             // Handle the front-end update to change the icon, providing visual feedback to the user that it has been clicked.
+//     .then(function () {
+//         console.log("bookmark has been saved for" + resourceDocID);
+//         var iconID = 'save-' + resourceDocID;
+//         //console.log(iconID);
+//                     //this is to change the icon of the hike that was saved to "filled"
+//         document.getElementById(iconID).innerText = 'bookmark';
+//     });
+// }
+
 function saveBookmark(event, resourceDocID) {
-    console.log("call save bookmark")
-    // Manage the backend process to store the hikeDocID in the database, recording which hike was bookmarked by the user.
-currentUser.update({
-                    // Use 'arrayUnion' to add the new bookmark ID to the 'bookmarks' array.
-            // This method ensures that the ID is added only if it's not already present, preventing duplicates.
-        bookmarks: firebase.firestore.FieldValue.arrayUnion(resourceDocID)
-    })
-            // Handle the front-end update to change the icon, providing visual feedback to the user that it has been clicked.
-    .then(function () {
-        console.log("bookmark has been saved for" + resourceDocID);
-        var iconID = 'save-' + resourceDocID;
-        //console.log(iconID);
-                    //this is to change the icon of the hike that was saved to "filled"
-        document.getElementById(iconID).innerText = 'bookmark';
+    currentUser.get().then((doc) => {
+        var userData = doc.data();
+        var bookmarks = userData.bookmarks || [];
+        if (bookmarks.includes(resourceDocID)) {
+            currentUser.update({
+                bookmarks: firebase.firestore.FieldValue.arrayRemove(resourceDocID)
+            })
+            .then(function () {
+                console.log("Bookmark removed for " + resourceDocID);
+                updateBookmarkIcon(resourceDocID, false);
+            });
+        } else {
+            currentUser.update({
+                bookmarks: firebase.firestore.FieldValue.arrayUnion(resourceDocID)
+            })
+            .then(function () {
+                console.log("Bookmark added for " + resourceDocID);
+                updateBookmarkIcon(resourceDocID, true);
+            });
+        }
     });
 }
+
+function updateBookmarkIcon(resourceDocID, isBookmarked) {
+    var iconID = 'save-' + resourceDocID;
+    var icon = document.getElementById(iconID);
+    if (icon) {
+        icon.innerText = isBookmarked ? 'bookmark' : 'bookmark_border';
+    }
+}
+
 
 displayCardsDynamically("resources",null)  //input param is the name of the collection
 let isFoodActive = false;
