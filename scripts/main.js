@@ -72,6 +72,360 @@ mapViewButton.addEventListener('click', function () {
 // });
 // }
 
+// adding real data to firebase 
+function writeResources(){
+    var resourcesRef = db.collection("resources");
+// categoty: food
+    resourcesRef.add({
+        category: "food",
+        code: "harverst_project_nv",
+        name: "Harvest Project",
+        city: "North Vancouver",
+        contactPhone: "(604)-983-9488",
+        description: "Supports North Shore residents facing challenges like job loss, health issues, or family loss. Offers coaching, grocery/clothing support, and information services. Emergency food assistance available",
+        description_detail: "Assists North Shore residents who are experiencing challenging life circumstances such as a job loss, divorce, emotional and physical health issues, or death of a family member. Provides one-to-one coaching/mentoring, a grocery support program, clothing support program, and information and referral services aimed at empowering people to take positive steps in their lives. Also offers an emergency food program in partnership with St Andrew's United Church; see that listing for details. Proof of North Shore residence is required. Accepts donations of clothing and groceries; drop by during business hours, and then phone reception to receive the items. Hours are 10 am to 4 pm Tuesday to Friday, and 10 am to 2 pm on Saturdays; an appointment is required. Nonprofit society, registered charity.",
+        province: "BC",
+        location: "1073 Roosevelt Crescent, North Vancouver, V7P 1M4 BC",
+        lat: 49.321970,
+        lng: -123.104940,
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()  //current system time
+    });
+    resourcesRef.add({
+        category: "food",
+        code: "GVFB_distribution_site-NV",
+        name: "GVFB Distribution Site - North Vancouver",
+        city: "North Vancouver",
+        contactPhone: "(604)-876-3601",
+        description: "Distributes 10-12 weekly food items to North Vancouver residents in need. Requires government ID, proof of address, and one year in Canada for international students. Provides photo membership cards for access. Specialized nutrition programs for families with children and seniors",
+        description_detail:"Provides approximately 10 to 12 food items per client per week to residents of North Vancouver who are experiencing food insecurity. To access services, registration with government-issued identification (ID) for each family member (expired ID and photocopies stamped from the welfare office are acceptable), as well as proof of address for the household is required. International students are required to have been in Canada for at least one year to be eligible for services. Clients will receive a photo membership card that allows them to access food from any of the GVFB distribution sites. Also offers specialized nutrition supplement programs for families with children ages birth to 12, and seniors",
+        
+        province: "BC",
+        location: "225 East 2nd Street, North Vancouver, V7M 1C9",
+        lat: 49.314670,
+        lng: -123.082470,
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    resourcesRef.add({
+        category: "food",
+        code: "Loving_spoonful-VAN",
+        name: "A Loving Spoonful",
+        city: "Vancouver",
+        contactPhone: "(604)-682-6325",
+        description: "A Loving Spoonful is a volunteer-driven, non-partisan Society that provides free, nutritious meals to people living with HIV and co-existing illness in Metro Vancouver and the surrounding areas.",
+        description_detail:"A Loving Spoonful is a volunteer-driven, non-partisan Society that provides free, nutritious meals to people living with HIV and co-existing illness in Metro Vancouver and the surrounding areas.Provides free nutritious meals and groceries to individuals and families living with HIV/AIDS and co-existing illness in Metro Vancouver, based on medical need. Meals and groceries are available for pick-up or delivery. Physician referral required. Office hours are 9 am to 5 pm Monday to Friday. Nonprofit society, registered charity.",
+        
+        province: "BC",
+        location: "1449 Powell Street, Vancouver, V5L 1G8 BC",
+        lat: 49.283440,
+        lng: -123.073070,
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    resourcesRef.add({
+        category: "food",
+        code: "GVFB_distribution_site-NV",
+        name: "GVFB Distribution Site - Vancouver",
+        city: "Vancouver",
+        contactPhone: "(604)-876-3601",
+        description: "Distributes 10-12 weekly food items to North Vancouver residents in need. Requires government ID, proof of address, and one year in Canada for international students. Provides photo membership cards for access. Specialized nutrition programs for families with children and seniors.",
+        description_detail:"Provides approximately 10 to 12 food items per client per week to residents of Vancouver who are experiencing food insecurity. To access services, registration with government-issued identification (ID) for each family member (expired ID and photocopies stamped from the welfare office are acceptable), as well as proof of address for the household is required. International students are required to have been in Canada for at least one year to be eligible for services. Clients will receive a photo membership card that allows them to access food from any of the GVFB distribution sites. Also offers specialized nutrition supplement programs for families with children ages birth to 12, and seniors.",
+        
+        province: "BC",
+        location: "3454 Lougheed Highway, Vancouver, V5M 2A4 BC",
+        lat: 49.262780,
+        lng: -123.028740,
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    resourcesRef.add({
+        category: "food",
+        code: "Food_access_project-VAN",
+        name: "Food Access Project-PIRS",
+        city: "Vancouver",
+        contactPhone: "(604)-298-5888",
+        description: "Distributes weekly healthy food hampers and care packages to low-income families with children. Available through direct delivery. Outreach support workers provide additional assistance, including mental wellness and parenting support, children's resources, and help accessing government financial aid.",
+        description_detail:"Distributes weekly healthy food hampers and care packages to families with children living in a low-income bracket or on social assistance; service available by direct delivery or pick-up at food hub locations in Burnaby (Journey Home, 10:30 am to 1 pm Thursdays) and Vancouver (South Vancouver Family Place, 10:30 am to 2:30 pm Mondays). Outreach support workers connect with families to offer additional help as needed, including mental wellness and parenting support, children's resources, and access to government financial aid. Developed as an emergency response program to help reduce the inflation of food insecurity among the most vulnerable PIRS clients due to the pandemic.",
+        
+        province: "BC",
+        location: "1874 Kingsway, Vancouver, V5N 2S7 BC",
+        lat: 49.245880,
+        lng: -123.066960,
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    resourcesRef.add({
+        category: "food",
+        code: "Aboriginal_Front_Door_society-VAN",
+        name: "Aboriginal Front Door Society",
+        city: "Vancouver",
+        contactPhone: "(604)-428-1908",
+        description: "Creates a supportive space for Downtown Eastside's Aboriginal and non-Aboriginal community, emphasizing traditional healing. Offers Elder/family cultural guidance, community meetings, and social activities. Provides culturally safe referrals to drug and alcohol treatment. The Common Bowl Food Truck serves coffee, meals, and food hampers as supplies permit.",
+        description_detail:"Offers a supportive space where Aboriginal and non-Aboriginal people in the Downtown Eastside can reconnect with traditional approaches to community and healing. Services include Elder/family cultural guidance, community meetings, social/recreational activities, and culturally safe referrals to drug and alcohol treatment. The Common Bowl Food Truck serves coffee, meals, and food hampers as supplies permit; operating hours are 9 am to 5 pm Monday to Friday. Office hours are 8 am to 12 noon and 1 pm to 4 pm Monday to Friday. Nonprofit society.",
+        
+        province: "BC",
+        location: "384 Main Street, Vancouver, V6A 2T1 BC",
+        lat: 49.281814,
+        lng: -123.099647,
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    // categoty: housing
+    resourcesRef.add({
+        category: "housing",
+        code: "Aboriginal_Shelter-VAN",
+        name: "Aboriginal Shelter-VAFCS",
+        city: "Vancouver",
+        contactPhone: "(604)-682-5556",
+        description: "Emergency low-barrier shelter for men, 19 and older, accommodating up to 52 individuals. Opens at 3 pm, first-come, first-served. Curfew at 11 pm, closes at 10 am. Provides hot dinner, breakfast snack, and hygiene supplies.",
+        description_detail:"An emergency low-barrier shelter (with mats and blankets) that accommodates up to 52 men ages 19 and over. Open at 3 pm on a first-come, first-served basis; curfew is at 11 pm and shelter closes at 10 am. Provides a hot dinner around 6:15 pm, and a sandwich/snack for breakfast after 8 am. Also provides personal hygiene supplies. Storage available for 50 lbs or less of personal items; no space for storage of carts or bikes. Zero tolerance for violence or use of alcohol or illegal drugs. Pets are permitted in kennels on a case-by-case basis; dogs must be muzzled. Wheelchair accessible. Open to everyone. Receives funding from BC Housing and City of Vancouver.",
+        
+        province: "BC",
+        location: "201 Central Street, Vancouver, V6A 4A9 BC",
+        lat: 49.271198,
+        lng: -123.098869,
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    resourcesRef.add({
+        category: "housing",
+        code: "Powell_place_shelter-VAN",
+        name: "Powell Place Emergency Shelter for Women",
+        city: "Vancouver",
+        contactPhone: "(604)-606-0403",
+        description: "Provides year-round low-barrier, 24-hour emergency shelter for 52 women, including transgender women, at risk of homelessness. Focuses on autonomy, independence, and skill-building.",
+        description_detail:"Provides year-round low-barrier, 24-hour emergency shelter for 52 women (including transgender women) experiencing, or at risk of homelessness. Women are supported in retaining their autonomy, regaining their independence, and building skills to move forward in life. Services include three meals per day, one-on-one support and advocacy, crisis intervention, referrals, housing search assistance, and accompaniment to appointments. Health-related services include 24-hour access to bed rest, medication storage, home nursing and home care support through referral, oxygen tank storage, and harm reduction supplies (condoms, new needle distribution, information). Referral accepted from self or other. Does not accept pets. Not wheelchair accessible.",
+        
+        province: "BC",
+        location: "329 Powell Street, Vancouver, V6A 1G5 BC",
+        lat: 49.283357,
+        lng: -123.096396,
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()
+     })
+    // resourcesRef.add({
+    //     category: "",
+    //     code: "",
+    //     name: "",
+    //     city: "",
+    //     contactPhone: "",
+    //     description: "",
+    //     description_detail:"",
+        
+    //     province: "",
+    //     location: "",
+    //     lat: 1,
+    //     lng: 1,
+    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    // });
+    // resourcesRef.add({
+    //     category: "",
+    //     code: "",
+    //     name: "",
+    //     city: "",
+    //     contactPhone: "",
+    //     description: "",
+    //     description_detail:"",
+        
+    //     province: "",
+    //     location: "",
+    //     lat: 1,
+    //     lng: 1,
+    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    // });
+    // resourcesRef.add({
+    //     category: "",
+    //     code: "",
+    //     name: "",
+    //     city: "",
+    //     contactPhone: "",
+    //     description: "",
+    //     description_detail:"",
+        
+    //     province: "",
+    //     location: "",
+    //     lat: 1,
+    //     lng: 1,
+    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    // });
+    // // category: money
+    // resourcesRef.add({
+    //     category: "",
+    //     code: "",
+    //     name: "",
+    //     city: "",
+    //     contactPhone: "",
+    //     description: "",
+    //     description_detail:"",
+        
+    //     province: "",
+    //     location: "",
+    //     lat: 1,
+    //     lng: 1,
+    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    // });
+    // resourcesRef.add({
+    //     category: "",
+    //     code: "",
+    //     name: "",
+    //     city: "",
+    //     contactPhone: "",
+    //     description: "",
+    //     description_detail:"",
+        
+    //     province: "",
+    //     location: "",
+    //     lat: 1,
+    //     lng: 1,
+    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    // });
+    // resourcesRef.add({
+    //     category: "",
+    //     code: "",
+    //     name: "",
+    //     city: "",
+    //     contactPhone: "",
+    //     description: "",
+    //     description_detail:"",
+        
+    //     province: "",
+    //     location: "",
+    //     lat: 1,
+    //     lng: 1,
+    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    // });
+    // resourcesRef.add({
+    //     category: "",
+    //     code: "",
+    //     name: "",
+    //     city: "",
+    //     contactPhone: "",
+    //     description: "",
+    //     description_detail:"",
+        
+    //     province: "",
+    //     location: "",
+    //     lat: 1,
+    //     lng: 1,
+    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    // });
+    // resourcesRef.add({
+    //     category: "",
+    //     code: "",
+    //     name: "",
+    //     city: "",
+    //     contactPhone: "",
+    //     description: "",
+    //     description_detail:"",
+        
+    //     province: "",
+    //     location: "",
+    //     lat: 1,
+    //     lng: 1,
+    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    // });
+    // resourcesRef.add({
+    //     category: "",
+    //     code: "",
+    //     name: "",
+    //     city: "",
+    //     contactPhone: "",
+    //     description: "",
+    //     description_detail:"",
+        
+    //     province: "",
+    //     location: "",
+    //     lat: 1,
+    //     lng: 1,
+    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    // });
+    // // category: work
+    // resourcesRef.add({
+    //     category: "",
+    //     code: "",
+    //     name: "",
+    //     city: "",
+    //     contactPhone: "",
+    //     description: "",
+    //     description_detail:"",
+        
+    //     province: "",
+    //     location: "",
+    //     lat: 1,
+    //     lng: 1,
+    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    // });
+    // resourcesRef.add({
+    //     category: "",
+    //     code: "",
+    //     name: "",
+    //     city: "",
+    //     contactPhone: "",
+    //     description: "",
+    //     description_detail:"",
+        
+    //     province: "",
+    //     location: "",
+    //     lat: 1,
+    //     lng: 1,
+    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    // });
+    // resourcesRef.add({
+    //     category: "",
+    //     code: "",
+    //     name: "",
+    //     city: "",
+    //     contactPhone: "",
+    //     description: "",
+    //     description_detail:"",
+        
+    //     province: "",
+    //     location: "",
+    //     lat: 1,
+    //     lng: 1,
+    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    // });
+    // resourcesRef.add({
+    //     category: "",
+    //     code: "",
+    //     name: "",
+    //     city: "",
+    //     contactPhone: "",
+    //     description: "",
+    //     description_detail:"",
+        
+    //     province: "",
+    //     location: "",
+    //     lat: 1,
+    //     lng: 1,
+    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    // });
+    // resourcesRef.add({
+    //     category: "",
+    //     code: "",
+    //     name: "",
+    //     city: "",
+    //     contactPhone: "",
+    //     description: "",
+    //     description_detail:"",
+        
+    //     province: "",
+    //     location: "",
+    //     lat: 1,
+    //     lng: 1,
+    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    // });
+    // resourcesRef.add({
+    //     category: "",
+    //     code: "",
+    //     name: "",
+    //     city: "",
+    //     contactPhone: "",
+    //     description: "",
+    //     description_detail:"",
+        
+    //     province: "",
+    //     location: "",
+    //     lat: 1,
+    //     lng: 1,
+    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    // });
+    // // ------------end or resources-------------------------------------
+}
+
 
 
 // Time Stamp to xx h: xx min : xx s
