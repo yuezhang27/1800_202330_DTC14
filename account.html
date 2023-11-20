@@ -5,23 +5,17 @@
     <title>My BCIT Project</title>
     <meta name="comp1800 template" content="My 1800 App">
 
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Link to styles of your own -->
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/account.css">
+
     <!-- Bootstrap Library CSS CDN go here -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- Boostrap Library JS CDN  go here -->
+    <!-- Bootstrap Library JS CDN  go here -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-
-    <!-- Other libraries go here -->
-    <!-- import font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!------------------------------------------------------->
     <!-- Firebase 8 library related CSS, JS, JQuery go here-->
     <!------------------------------------------------------->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -31,23 +25,40 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <!-- Other libraries go here -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- import font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Link to styles of your own -->
+    <link rel="stylesheet" href="./styles/account.css">
+    <link rel="stylesheet" href="./styles/style.css">
 
 </head>
 
 <body>
 
 
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
-    <!-- Stuff for body goes here -->
     <div id="account-container">
         <div class="account-bg"></div>
-        <div class="avator"><img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle"
-                style="width: 150px;" alt="Avatar" />
-            <div id="user-name">John</div>
+        <div class="profile-img-and-icon">
+            <div class="avator">
+                <div class="img-and-camera-icon">
+                    <img id="mypic-goes-here" src="./images/default-profile-img.jpg" class="rounded-circle"
+                        style="width: 150px;" alt="Avatar" />
+                    <div class="absolute-camera-icon" onclick="changeProfileImg()">
+                        <div id="camera-bg"><i class="fa fa-solid fa-camera"></i></div>
+                    </div>
+                </div>
+                <input type="file" id="mypic-input" accept="image/*">
+                <div id="user-name">Ben</div>
+            </div>
         </div>
-        <i class="fas fa-cog" style="font-size: 30px; color: white;"></i>
+        <!-- <i class="fas fa-cog" style="font-size: 30px; color: white;"></i> -->
     </div>
 
 
@@ -66,7 +77,7 @@
                     <label>Gender</label>
 
                     <select id="genderInput" class="form-control">
-                        <option> -- Choose you gender -- </option>
+                        <option id="Choose-you-gender"> -- Choose you gender -- </option>
                         <option value="Male"> Male </option>
                         <option value="Female"> Female </option>
                         <option value="Non-Binary"> Non-Binary </option>

@@ -1,31 +1,79 @@
-#account-container{
+#account-container {
     position: relative;
     height: 30vh;
 }
-.account-bg{
-    height: 15vh;
+
+.account-bg {
+    padding: 15px;
     background-color: #5C9384;
+    margin-bottom: 20px;
 }
+
 .avator img {
     display: block;
     margin: 0 auto;
+    border: 6px solid #5C9384;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
 }
-.avator{
-    position: absolute;
+.img-and-camera-icon{
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative
+}
+.avator {
+
     width: 100%;
-    top: 5vh;
+
 }
-#user-name{
+#mypic-input{
+    display: none;
+}
+
+#camera-bg {
+    position: relative;
+    border-radius: 50%;
+    background-color: #5C9384;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+
+}
+
+.profile-img-and-icon {
+    position: relative;
+}
+
+.absolute-camera-icon {
+    position: absolute;
+    right: 5%;
+    top: 75%;
+}
+
+i.fa-camera {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white !important;
+    font-size: 20px;
+}
+
+#user-name {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
 }
-.fa-cog{
+
+.fa-cog {
     position: absolute;
     right: 5vw;
     top: 2.5vh;
 }
-#logoutBtn{
+
+#logoutBtn {
     display: block !important;
     padding: 1vh 10% !important;
     margin-left: auto;
@@ -37,11 +85,13 @@
     transform: translate(-50%, -50%);
 
 }
-.btn-logout a{
+
+.btn-logout a {
     text-decoration: none;
     color: rgb(223, 71, 89);
 }
-.btn-logout a:hover{
+
+.btn-logout a:hover {
     color: white;
 }
 
