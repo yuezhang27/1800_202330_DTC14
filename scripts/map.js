@@ -41,7 +41,7 @@ function showMap() {
             console.log(coordinates);
             // Coordinates
             event_name = doc.data().name; // Event Name
-            preview = doc.data().details; // Text Preview
+            preview = doc.data().description; // Text Preview
             // img = doc.data().posterurl; // Image
             // url = doc.data().link; // URL
 
@@ -50,7 +50,7 @@ function showMap() {
             features.push({
               'type': 'Feature',
               'properties': {
-                'description': `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="/hike.html?id=${doc.id}" target="_blank" title="Opens in a new window">Read more</a>`
+                'description': `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="/each_info.html?docID=${doc.id}" target="_blank" title="Opens in a new window">Read more</a>`
               },
               'geometry': {
                 'type': 'Point',
