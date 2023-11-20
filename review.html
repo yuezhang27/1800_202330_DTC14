@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <title>My BCIT Project</title>
     <meta name="comp1800 template" content="My 1800 App">
@@ -8,9 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Link to styles of your own -->
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/review.css">
+
     <!-- Bootstrap Library CSS CDN go here -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -28,10 +23,22 @@
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <!-- Other libraries go here -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome Icon Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+    <!-- google icon -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- Link to styles of your own -->
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/style.css">
 
 </head>
 
@@ -57,7 +64,7 @@
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                     </div>
-                    
+
                 </div>
 
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
@@ -103,8 +110,9 @@
                             <input type="text" class="form-control" id="title" placeholder="Title">
                         </div><br>
                         <div class="form-group">
-                            
-                            <label class="reviewformhead" for="exampleFormControlSelect1">How would you rate the ease of accessing this resource</label>
+
+                            <label class="reviewformhead" for="exampleFormControlSelect1">How would you rate the ease of
+                                accessing this resource</label>
                             <select class="form-control" id="ease">
                                 <option>Easy</option>
                                 <option>Neutral</option>
@@ -112,7 +120,8 @@
                             </select>
                             <br>
                             <div class="form-group">
-                                <label class="reviewformhead" for="exampleFormControlSelect1">Did this resource effectively meet your needs?</label>
+                                <label class="reviewformhead" for="exampleFormControlSelect1">Did this resource
+                                    effectively meet your needs?</label>
                                 <select class="form-control" id="effectiveness">
                                     <option>Completely/Mostly</option>
                                     <option>Partially</option>
@@ -122,7 +131,8 @@
                                 <br>
                             </div>
                             <div class="form-group">
-                                <label class="reviewformhead" for="exampleFormControlSelect1">How likely are you to recommend this resource to others?</label>
+                                <label class="reviewformhead" for="exampleFormControlSelect1">How likely are you to
+                                    recommend this resource to others?</label>
                                 <select class="form-control" id="likelihood">
                                     <option>Likely</option>
                                     <option>Unsure</option>
@@ -132,7 +142,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">What did you think of the resource?</label>
-                                
+
                                 <div class="card commentscard">
                                     <div class="card-body">
                                         <textarea class="form-control" id="description" rows="6"></textarea>
@@ -183,16 +193,11 @@
             <img class="navpic" src="images/person.svg" alt="">
         </a>
     </div>
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
 
     <!-- Link to scripts of your own -->
     <script src="./scripts/firebaseAPI.js"></script>
     <script src="./scripts/skeleton.js"></script>
-    <!-- <script src="./scripts/authentication.js"></script> -->
     <script src="scripts/review.js"></script>
-    <!-- <script src="./scripts/script.js"></script> -->
 
 </body>
 

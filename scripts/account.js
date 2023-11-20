@@ -1,5 +1,5 @@
 
-import 'firebase/storage'
+
 function logOut() {
 
 }

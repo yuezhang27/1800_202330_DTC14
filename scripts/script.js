@@ -9,3 +9,7 @@ function logout() {
         // An error happened.
     });
 }
+
+function navActive(){
+    
+}

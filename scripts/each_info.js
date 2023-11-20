@@ -156,9 +156,3 @@ function updateBookmark(resourceDocID) {
     })
 }
 
-//-----------------------------------------------------------------------------
-// This function is called whenever the user clicks on the "bookmark" icon.
-// It adds the hike to the "bookmarks" array
-// Then it will change the bookmark icon from the hollow to the solid version. 
-//-----------------------------------------------------------------------------
-
