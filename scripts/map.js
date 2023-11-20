@@ -57,15 +57,17 @@ function showMap() {
             // Coordinates
             event_name = doc.data().name; // Event Name
             preview = doc.data().description; // Text Preview
-            // img = doc.data().posterurl; // Image
+            img = doc.data().code; // Image
             // url = doc.data().link; // URL
-
+            resourceCode = doc.data().code;
             // Pushes information into the features array
             // in our application, we have a string description of the resources
             features.push({
               'type': 'Feature',
               'properties': {
-                'description': `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="/each_info.html?docID=${doc.id}" target="_blank" title="Opens in a new window">Read more</a>`
+                'description': `<strong>${event_name}</strong><p>${preview}</p> <br> 
+                <a href="/each_info.html?docID=${doc.id}" target="_blank" title="Opens in a new window">More Info</a> <br>
+                <img src="./images/${resourceCode}.jpg" alt="Resource Image" style="max-width: 100%; max-height: 150px;">`
               },
               'geometry': {
                 'type': 'Point',
