@@ -7,9 +7,24 @@ function showMap() {
   const map = new mapboxgl.Map({
     container: 'map', // Container ID
     style: 'mapbox://styles/mapbox/streets-v11', // Styling URL
-    center: [-122.964274, 49.236082], // Starting position
+    center: [-123.1207, 49.2827], // Starting position
     zoom: 10 // Starting zoom
   });
+  // getting user location to use for center
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      // settinbg user lat and lng
+      const { latitude, longitude} = position.coords;
+      // setting new map cener to user location
+      map.setCenter([longitude, latitude]);
+    },
+    (error) => {
+      console.log("unable to retrieve user location")
+    }
+  );
+
+  
+
 
   // Add user controls to map
   map.addControl(new mapboxgl.NavigationControl());
