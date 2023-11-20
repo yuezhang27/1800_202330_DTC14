@@ -128,6 +128,14 @@ function displayCardsDynamically(collection, category) {
                 newcard.querySelector('i').onclick = () => updateBookmark(docID);
 
                 document.getElementById(collection + "-go-here").appendChild(newcard);
+
+                currentUser.get().then(userDoc => {
+                    //get the user name
+                    var bookmarks = userDoc.data().bookmarks;
+                    if (bookmarks.includes(docID)) {
+                        document.getElementById('save-' + docID).innerText = 'bookmark';
+                    }
+                })
             })
         })
 }

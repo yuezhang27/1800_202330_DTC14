@@ -21,12 +21,13 @@ var uiConfig = {
       //------------------------------------------------------------------------------------------
       var user = authResult.user;                            // get the user object from the Firebase authentication database
       if (authResult.additionalUserInfo.isNewUser) {         //if new user
-        db.collection("users").doc(user.uid).set({         //write to firestore. We are using the UID for the ID in users collection
-          name: user.displayName,                    //"users" collection
-          email: user.email,                         //with authenticated user's ID (user.uid)
-          bookmarks: [],                            //empty array for bookmarks
-          gender: "unknown",                      //optional default profile info      
-          age: "unknown",                          //optional default profile info
+        db.collection("users").doc(user.uid).set({ 
+          name: user.displayName, 
+          email: user.email, 
+          bookmarks: [], 
+          gender: "unknown", 
+          age: "unknown",
+          profileImg: "default-profile-img.jpg"
         }).then(function () {
           console.log("New user added to firestore");
           window.location.assign("main.html");       //re-direct to main.html after signup
