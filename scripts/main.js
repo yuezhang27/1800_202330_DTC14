@@ -21,10 +21,10 @@ doAll();
 mapViewButton.addEventListener('click', function () {
     if (isMapView) {
         // Switch to List View
-        mapViewButton.textContent = 'List View';
+        mapViewButton.textContent = 'Map View';
     } else {
         // Switch to Map View
-        mapViewButton.textContent = 'Map View';
+        mapViewButton.textContent = 'List View';
     }
     isMapView = !isMapView;
 });

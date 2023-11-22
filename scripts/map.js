@@ -1,4 +1,4 @@
-
+const mapViewButton = document.getElementById('map-view-fab');
 function showMap() {
   //-----------------------------------------
   // Define and initialize basic mapbox data
@@ -14,7 +14,7 @@ function showMap() {
   navigator.geolocation.getCurrentPosition(
     (position) => {
       // settinbg user lat and lng
-      const { latitude, longitude} = position.coords;
+      const { latitude, longitude } = position.coords;
       // setting new map cener to user location
       map.setCenter([longitude, latitude]);
     },
@@ -23,7 +23,7 @@ function showMap() {
     }
   );
 
-  
+
 
 
   // Add user controls to map
@@ -211,7 +211,20 @@ function showMap() {
 // Call the function to display the map with the user's location and event pins
 showMap();
 
-
+// map view button
+mapViewButton.addEventListener('click', function () {
+  if (isMapView) {
+    // Switch to List View
+    mapViewButton.textContent = 'Map View';
+    console.log("list")
+  } else {
+    // Switch to Map View
+    mapViewButton.textContent = 'List View';
+    window.location.pathname = "./main.html"
+    console.log("map")
+  }
+  isMapView = !isMapView;
+});
 
 // functions for filter buttons
 function toggleFilter() {
