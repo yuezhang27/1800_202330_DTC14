@@ -8,3 +8,14 @@
 .fixed-bar {
     position: fixed;
 }
+.filtergroup{
+    position: absolute;
+    top: 100px;
+    z-index: 100;
+}
+#map{
+    height: 90vh !important;
+}
+.mapboxgl-canvas{
+    height: 90vh !important;
+}
