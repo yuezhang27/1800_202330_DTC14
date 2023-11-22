@@ -19,3 +19,6 @@
 .mapboxgl-canvas{
     height: 90vh !important;
 }
+#navBtn2 {
+    color: #5C9B98;
+}
