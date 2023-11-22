@@ -4,6 +4,46 @@
 /* color3: #FFBF57 yellow*/
 /* color4: #5C9B98 green*/
 /* color5: #E3F8F3 light green*/
+
+
+
+/* start of navbar css */
+.top-bar {
+    background-color: #5C9B98;
+    padding: 20px 10px;
+    position: relative;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+
+}
+
+.logo_img {
+    width: 30%;
+    display: inline;
+    margin-top: 4px;
+}
+
+
+
+.bi-search {
+    width: 20px;
+}
+
+.material-symbols-outlined.filter-icon {
+    position: absolute;
+    right: 30px;
+    top: 31px;
+    font-size: 28px;
+
+}
+.pixel90-height{
+    height: 90px;
+}
+.pixel80-height{
+    height: 80px;
+}
+/* end of navbar css */
 *{
     font-family: 'Libre Franklin', sans-serif;
     /* font-family: 'Lora', serif; */
@@ -83,15 +123,15 @@ main {
 
 .input-group {
     height: 50px;
-
-    width: 68%;
+    float: right;
+    width: 68% !important;
 }
 .filtericon {
     height: 8vw;
 }
 
 .filtergroup {
-    margin-top: 2vh;
+
     height: 8vh;
 }
 
@@ -107,7 +147,6 @@ main {
 }
 
 .welcomemessage {
-    margin-top: 8vh;
     margin-bottom: 8vh;
     text-align: center;
 }
