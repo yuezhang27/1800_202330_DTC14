@@ -60,17 +60,23 @@
                 <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1"
                     style=" border-radius: 0 50rem 50rem 0!important">
             </div>
-            <span class="material-symbols-outlined filter-icon">
+            <span id="filter-icon" onclick="toggleFilter()" class="material-symbols-outlined filter-icon">
                 tune
             </span>
         </div>
         <!-- a blank block to push everything down -->
         <div class="pixel90-height"></div>
-        <div class="filtergroup container-fluid d-flex justify-content-around">
-            <input id="FoodBtn" class="btn btn-primary filterbtn" type="button" value="Food" onclick="toggleFood()">
-            <input id="MoneyBtn" class="btn btn-primary filterbtn" type="button" value="Money" onclick="toggleMoney()">
-            <input id="HousingBtn" class="btn btn-primary filterbtn" type="button" value="Housing" onclick="toggleHousing()">
-            <input id="WorkBtn" class="btn btn-primary filterbtn" type="button" value="Work" onclick="toggleWork()">
+        <div class="container-fluid">
+            <div id="filtergroup" class="filtergroup">
+                <div class="filters d-flex justify-content-between">
+                    <input id="FoodBtn" class="btn btn-primary filterbtn" type="button" value="Food" onclick="toggleFood()">
+                    <input id="MoneyBtn" class="btn btn-primary filterbtn" type="button" value="Money" onclick="toggleMoney()">
+                    <input id="HousingBtn" class="btn btn-primary filterbtn" type="button" value="Housing" onclick="toggleHousing()">
+                    <input id="WorkBtn" class="btn btn-primary filterbtn" type="button" value="Work" onclick="toggleWork()">
+                </div>
+                <button type="button" class="confirmBtn rounded-pill btn btn-info">Confirm</button>
+                <button type="button" class="clearBtn btn btn-outline-danger rounded-pill">Clear All</button>
+            </div>
         </div>
 
         <!-- MAPBOX -->

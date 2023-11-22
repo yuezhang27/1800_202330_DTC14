@@ -210,3 +210,15 @@ function showMap() {
 
 // Call the function to display the map with the user's location and event pins
 showMap();
+
+
+
+// functions for filter buttons
+function toggleFilter() {
+  var x = document.getElementById("filtergroup");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}

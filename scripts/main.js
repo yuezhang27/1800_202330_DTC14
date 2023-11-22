@@ -533,6 +533,19 @@ function removeActiveStyles() {
 
 let isFoodActive = false;
 // add clicked function on food filter button
+// functions for filter buttons
+function toggleFilter() {
+    var x = document.getElementById("filtergroup");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+
+
+
 
 function toggleFood() {
     removeActiveStyles();

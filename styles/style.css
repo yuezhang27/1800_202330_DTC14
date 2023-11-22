@@ -7,7 +7,7 @@
 
 
 
-/* start of navbar css */
+/* start of top-bar css */
 .top-bar {
     background-color: #5C9B98;
     padding: 20px 10px;
@@ -31,6 +31,7 @@
 }
 
 .material-symbols-outlined.filter-icon {
+    cursor: pointer;
     position: absolute;
     right: 30px;
     top: 31px;
@@ -43,7 +44,7 @@
 .pixel80-height{
     height: 80px;
 }
-/* end of navbar css */
+/* end of top-bar css */
 *{
     font-family: 'Libre Franklin', sans-serif;
     /* font-family: 'Lora', serif; */
@@ -131,19 +132,44 @@ main {
 }
 
 .filtergroup {
+    display: none;
+    position: absolute;
+    top: 120px;
+    z-index: 2;
+    width: 100%;
+    border: 1px solid lightgray !important;
+    background-color: white !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    padding: 10px !important;
+    width: 90%;
+    
+}
+.filtergroup .filters{
+    margin-bottom: 20px;
+    
+}
+.clearBtn{
+    float: right;
+    margin: 0 13px;
+}
+.confirmBtn{
+    background-color: #5C9B98 !important;
+    color: white !important;
+    float: right;
+    border: 0 !important;
 
-    height: 8vh;
 }
 
-.filterbtn {
-    border-radius: 50vh!important;
+.filtergroup .filterbtn {
+    border-radius: 3px !important;
     background-color: white!important;
     color: black!important;
     border-color: gray!important;
     width: 18vw;
-    height: 5vh;
     font-size: 0.75em!important;
     text-align: center!important;
+    padding: 7px !important;
 }
 
 .welcomemessage {
@@ -214,6 +240,7 @@ main {
     left: 0;
     bottom: -1px;
     height: 5rem;
+    z-index: 3;
 
 }
 
