@@ -88,3 +88,6 @@ p {
     font-size: 1em;
     line-height: 1.6;
 }
+.usercommentcard .container{
+    margin-top: 0;
+}
