@@ -25,6 +25,11 @@ const stars = document.querySelectorAll('.star');
 stars.forEach((star, index) => {
     // Add a click event listener to the current star
     star.addEventListener('click', () => {
+        document.getElementById(`star${1}`).textContent = 'star_outline'
+        document.getElementById(`star${2}`).textContent = 'star_outline'
+        document.getElementById(`star${3}`).textContent = 'star_outline'
+        document.getElementById(`star${4}`).textContent = 'star_outline'
+        document.getElementById(`star${5}`).textContent = 'star_outline'
         // Fill in clicked star and stars before it
         for (let i = 0; i <= index; i++) {
             // Change the text content of stars to 'star' (filled)
