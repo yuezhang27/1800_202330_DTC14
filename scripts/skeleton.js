@@ -6,11 +6,15 @@ function loadSkeleton() {
             // User is signed in.
             // Do something for the user here.
             console.log($('.footernav').load('./text/nav_after.html'));
+
         } else {
             // No user is signed in.
             console.log($('.footernav').load('./text/nav_before.html'));
 
+
         }
-    });
+    })
+
 }
 loadSkeleton(); //invoke the function
+
