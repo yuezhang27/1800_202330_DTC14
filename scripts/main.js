@@ -458,12 +458,14 @@ function calculateCountdown(openTimeStr, closeTimeStr) {
     let now = new Date();
     let openTime = new Date(now.toDateString() + ' ' + openTimeStr);
     let closeTime = new Date(now.toDateString() + ' ' + closeTimeStr);
-
+    if (openTime > closeTime) {
+        closeTime.setDate(closeTime.getDate() + 1);
+    }
     if (now < openTime) {
         return 'In ' + timeDifference(now, openTime);
     } else if (now >= openTime && now < closeTime) {
         //opening
-        return 'Is opening, Close In: ' + timeDifference(now, closeTime);
+        return 'Is Opening | Close In: ' + timeDifference(now, closeTime);
     } else {
         let tomorrowOpen = new Date(openTime);
         tomorrowOpen.setDate(tomorrowOpen.getDate() + 1);
