@@ -26,15 +26,14 @@ function insertNameFromFirestore(user) {
 
 }
 
-// functiom to save last page data to loval storage
-function saveLastPageAndRedirect(){
+// functiom to save last page data to local storage
+function saveLastPage(){
     let params = new URL(window.location.href)
-    let currentURL = window.location.href;
     let lastPage = params.pathname;
     localStorage.setItem('lastPage', lastPage);
-    console.log('Stored in local storage:', currentURL);
+    console.log('Stored in local storage:', lastPage);
 }
-saveLastPageAndRedirect()
+saveLastPage()
 
 
 //----------------------------------------------------------

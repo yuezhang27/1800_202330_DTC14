@@ -225,14 +225,13 @@ mapViewButton.addEventListener('click', function () {
 });
 
 // functiom to save last page data to loval storage
-function saveLastPageAndRedirect(){
+function saveLastPage(){
   let params = new URL(window.location.href)
-  let currentURL = window.location.href;
   let lastPage = params.pathname;
   localStorage.setItem('lastPage', lastPage);
-  console.log('Stored in local storage:', currentURL);
+  console.log('Stored in local storage:', lastPage);
 }
-saveLastPageAndRedirect()
+saveLastPage()
 
 
 // functions for filter buttons
