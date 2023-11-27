@@ -50,7 +50,11 @@ function getBookmarks(user) {
 
 					  // Get the Array of bookmarks
             var bookmarks = userDoc.data().bookmarks;
-            console.log(bookmarks);
+            if (bookmarks.length !== 0){
+                document.getElementById("no-bookmark-comment").remove()
+                console.log(bookmarks)
+            }
+
 						
 						// Get pointer the new card template
             let newcardTemplate = document.getElementById("savedCardTemplate");
@@ -74,7 +78,7 @@ function getBookmarks(user) {
                     newcard.querySelector('.card-img-bottom').src = `./images/${resourceCode}.jpg`; //Example: NV01.jpg
                     newcard.querySelector('a').href = "each_info.html?docID=" + docID;
     
-    
+                    
 					//Finally, attach this new card to the gallery
                     resourceCardGroup.appendChild(newcard);
                 })

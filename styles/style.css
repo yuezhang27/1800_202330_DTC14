@@ -41,6 +41,7 @@
     right: 30px;
     top: 31px;
     font-size: 28px !important;
+    z-index: 100;
 
 }
 .pixel90-height{
@@ -139,15 +140,14 @@ main {
 .filtergroup {
     display: none;
     position: absolute;
-    top: 120px;
     z-index: 2;
     width: 100%;
     border: 1px solid lightgray !important;
     background-color: white !important;
     margin-right: auto !important;
     margin-left: auto !important;
-    padding: 10px !important;
-    width: 90%;
+    padding: 10px 20px !important;
+    width: 100%;
     
 }
 .filtergroup .filters{
@@ -168,13 +168,16 @@ main {
 
 .filtergroup .filterbtn {
     border-radius: 3px !important;
-    background-color: white!important;
+
     color: black!important;
     border-color: gray!important;
     width: 18vw;
     font-size: 0.75em!important;
     text-align: center!important;
     padding: 7px !important;
+}
+.filterbtn{
+    background-color: white !important;
 }
 .introducing{
     position: relative;
