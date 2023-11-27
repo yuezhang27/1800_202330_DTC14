@@ -437,21 +437,48 @@ function writeResources(){
 
 
 // Time Stamp to xx h: xx min : xx s
-function formatTimestamp(timestamp) {
-    const fullTimestamp = timestamp.seconds + timestamp.nanoseconds / 1e9;
-    const date = new Date(fullTimestamp * 1000);
+// function formatTimestamp(timestamp) {
+//     const fullTimestamp = timestamp.seconds + timestamp.nanoseconds / 1e9;
+//     const date = new Date(fullTimestamp * 1000);
 
-    const year = date.getFullYear();
-    const month = (date.getMonth() + 1).toString().padStart(2, '0');
-    const day = date.getDate().toString().padStart(2, '0');
-    const hours = date.getHours().toString().padStart(2, '0');
-    const minutes = date.getMinutes().toString().padStart(2, '0');
-    const seconds = date.getSeconds().toString().padStart(2, '0');
+//     const year = date.getFullYear();
+//     const month = (date.getMonth() + 1).toString().padStart(2, '0');
+//     const day = date.getDate().toString().padStart(2, '0');
+//     const hours = date.getHours().toString().padStart(2, '0');
+//     const minutes = date.getMinutes().toString().padStart(2, '0');
+//     const seconds = date.getSeconds().toString().padStart(2, '0');
 
-    const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+//     const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 
-    return formattedDateTime;
+//     return formattedDateTime;
+// }
+
+
+function calculateCountdown(openTimeStr, closeTimeStr) {
+    let now = new Date();
+    let openTime = new Date(now.toDateString() + ' ' + openTimeStr);
+    let closeTime = new Date(now.toDateString() + ' ' + closeTimeStr);
+
+    if (now < openTime) {
+        return 'In ' + timeDifference(now, openTime);
+    } else if (now >= openTime && now < closeTime) {
+        //opening
+        return 'Is opening, Close In: ' + timeDifference(now, closeTime);
+    } else {
+        let tomorrowOpen = new Date(openTime);
+        tomorrowOpen.setDate(tomorrowOpen.getDate() + 1);
+        return 'In ' + timeDifference(now, tomorrowOpen);
+    }
 }
+
+
+function timeDifference(start, end) {
+    let diff = end - start;
+    let hours = Math.floor(diff / 3600000);
+    let minutes = Math.floor((diff % 3600000) / 60000);
+    return `${hours} hrs ${minutes} mins`;
+}
+
 
 // display content according to the filter and database
 function displayCardsDynamically(collection, category, searchType) {
@@ -476,8 +503,11 @@ function displayCardsDynamically(collection, category, searchType) {
             allResources.forEach(doc => { 
                 var title = doc.data().name;
                 var description = doc.data().description;
-                var updateTime = doc.data().last_updated;
-                realTime = formatTimestamp(updateTime);
+                // var updateTime = doc.data().last_updated;
+                // realTime = formatTimestamp(updateTime);
+                var openTime = doc.data().openTime;
+                var closeTime = doc.data().closeTime;
+                var countDownText = calculateCountdown(openTime, closeTime)
                 var resourceCode = doc.data().code;
                 //get ID to each resource to be used for fetching right image
                 var docID = doc.id;
@@ -486,7 +516,8 @@ function displayCardsDynamically(collection, category, searchType) {
 
                 //update title and text and image
                 newcard.querySelector('.card-title').innerHTML = title;
-                newcard.querySelector('.text-muted').innerHTML = "Last update: " + realTime;
+                // newcard.querySelector('.text-muted').innerHTML = "Last update: " + realTime;
+                newcard.querySelector('.text-muted').innerHTML = "Open: "+ countDownText;
                 newcard.querySelector('.description').innerHTML = description;
                 newcard.querySelector('.card-img-bottom').src = `./images/${resourceCode}.jpg`; //Example: NV01.jpg
                 newcard.querySelector('a').href = "each_info.html?docID=" + docID;
@@ -694,4 +725,11 @@ searchIcon.addEventListener("click", function(){
         displayCardsDynamically("resources", null,searchInput)
     }
 })
+
+// 1. 使用时间戳功能，获取当前时间
+// 2. 当前时间转换为年月日星期时间
+// 3. 找到数据库里开门时间对应的1个array:weekday; 2个field：open time和close time
+// 4. array格式应该是 weekday: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]; 
+// 5. 首先对比当前时间，如果在open time到close time中间，就closetime-当前时间，然后对应html元素显示
+// 6. 如果不在这个时间范围内，就用open time+24小时-当前时间，然后显示在html元素上
 
