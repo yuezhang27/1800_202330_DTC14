@@ -27,7 +27,10 @@ function populateUserInfo() {
                     if (userGender != null) {
                         var genderSelect = document.getElementById("genderInput");
 
+
                         for (let i = 0; i < genderSelect.options.length; i++) {
+                            console.log(i);
+
                             if (genderSelect.options[i].value === userGender) {
                                 genderSelect.selectedIndex = i;
                                 break;
@@ -37,7 +40,12 @@ function populateUserInfo() {
                     if (userPic) {
                         storage.ref('images/'+ userPic + ".jpg").getDownloadURL().then
                         ((url)=>{
-                            document.getElementById("mypic-goes-here").src = url;})
+                            document.getElementById("mypic-goes-here").src = url;
+                        }).catch((error) => {
+                            console.error("Error fetching image URL:", error);
+                            // Set a default image in case of error
+                            document.getElementById("mypic-goes-here").src = "./images/default-profile-img.jpg";
+                        });
                     }else{
                         document.getElementById("mypic-goes-here").src = "./images/default-profile-img.jpg"
                     }
