@@ -455,6 +455,9 @@ function writeResources(){
 
 
 function calculateCountdown(openTimeStr, closeTimeStr) {
+    if (openTimeStr ==="0:00"&& closeTimeStr==="24:00" ){
+        return 'Opening | 24hours';
+    }
     let now = new Date();
     let openTime = new Date(now.toDateString() + ' ' + openTimeStr);
     let closeTime = new Date(now.toDateString() + ' ' + closeTimeStr);
