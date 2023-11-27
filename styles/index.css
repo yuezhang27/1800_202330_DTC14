@@ -21,3 +21,15 @@
 #navBtn1{
     color: #5C9B98;
 }
+
+.introducing{
+    position: relative;
+    margin-top: 0;
+}
+.welcomemessage {
+    margin-bottom: 8vh;
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    color: white;
+}

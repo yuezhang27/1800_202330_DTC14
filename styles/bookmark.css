@@ -14,12 +14,20 @@
 .bookmarkicon{
     width: 80%;
 }
+.bookContainer{
+    position: relative;
+    margin-top: 0;
+}
 /* font size */
-#no-bookmark-comment{
+#titleBookmk{
     text-align: center;
     font-size: 30px;
     padding-top: 50px;
+    display: block;
+    position: absolute;
+    top: 50px;
 }
+
 h1 {
     font-size: 2em;
     text-align: center;

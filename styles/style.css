@@ -179,17 +179,6 @@ main {
 .filterbtn{
     background-color: white !important;
 }
-.introducing{
-    position: relative;
-    margin-top: 0;
-}
-.welcomemessage {
-    margin-bottom: 8vh;
-    text-align: center;
-    position: absolute;
-    top: 20px;
-    color: white;
-}
 
 .signup {
     text-align: center;
