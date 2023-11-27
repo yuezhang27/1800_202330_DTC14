@@ -467,11 +467,12 @@ function displayCardsDynamically(collection, category, searchType) {
         query = query.where("category", "==", category)
     }
     if (searchType !== null && searchType.length > 0) {
-        let searchTypeArray = Array.isArray(searchType) ? searchType : [searchType];
-        query = query.where("searchType", "in", searchTypeArray);
+        query = query.where("searchType", "array-contains-any", searchType);
     }
     
+    
     query.get().then(allResources => {
+            console.log(allResources)
             allResources.forEach(doc => { 
                 var title = doc.data().name;
                 var description = doc.data().description;
@@ -685,7 +686,7 @@ var searchIcon = document.getElementById("basic-addon1")
 searchIcon.addEventListener("click", function(){
     var searchInput = document.getElementById("searchInput")
     if (searchInput !== null){
-        searchInput = searchInput.value.toLowerCase()
+        searchInput = [searchInput.value.toLowerCase()]
         displayCardsDynamically("resources", null, searchInput)
         console.log(searchInput)
 
