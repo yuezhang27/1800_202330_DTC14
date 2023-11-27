@@ -70,14 +70,16 @@
         <div class="pixel90-height"></div>
         <div class="container-fluid">
             <div id="filtergroup" class="filtergroup">
-                <div class="filters d-flex justify-content-between">
+                <h3>Categories</h3>
+                <div id="categories" class="filters d-flex justify-content-between">
                     <input id="FoodBtn" class="btn btn-primary filterbtn" type="button" value="Food" onclick="toggleFood()">
                     <input id="MoneyBtn" class="btn btn-primary filterbtn" type="button" value="Money" onclick="toggleMoney()">
-                    <input id="HousingBtn" class="btn btn-primary filterbtn" type="button" value="Housing" onclick="toggleHousing()">
+                    <input id="HousingBtn" class="btn btn-primary filterbtn" type="button" value="Housing"
+                        onclick="toggleHousing()">
                     <input id="WorkBtn" class="btn btn-primary filterbtn" type="button" value="Work" onclick="toggleWork()">
                 </div>
-                <button type="button" class="confirmBtn rounded-pill btn btn-info">Confirm</button>
-                <button type="button" class="clearBtn btn btn-outline-danger rounded-pill">Clear All</button>
+                <button type="button" class="confirmBtn rounded-pill btn btn-info" onclick="applyFilter()">Confirm</button>
+                <button type="button" class="clearBtn btn btn-outline-danger rounded-pill" onclick="clearAll()">Clear All</button>
             </div>
         </div>
 

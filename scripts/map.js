@@ -1,10 +1,11 @@
 const mapViewButton = document.getElementById('map-view-fab');
+let map;
 function showMap() {
   //-----------------------------------------
   // Define and initialize basic mapbox data
   //-----------------------------------------
   mapboxgl.accessToken = 'pk.eyJ1IjoiYWRhbWNoZW4zIiwiYSI6ImNsMGZyNWRtZzB2angzanBjcHVkNTQ2YncifQ.fTdfEXaQ70WoIFLZ2QaRmQ';
-  const map = new mapboxgl.Map({
+  map = new mapboxgl.Map({
     container: 'map', // Container ID
     style: 'mapbox://styles/mapbox/streets-v11', // Styling URL
     center: [-123.1207, 49.2827], // Starting position
@@ -57,9 +58,7 @@ function showMap() {
             // Coordinates
             event_name = doc.data().name; // Event Name
             preview = doc.data().description; // Text Preview
-            img = doc.data().code; // Image
-            // url = doc.data().link; // URL
-            resourceCode = doc.data().code;
+            resourceCode = doc.data().code; // Image
             // Pushes information into the features array
             // in our application, we have a string description of the resources
             features.push({
@@ -90,7 +89,6 @@ function showMap() {
           map.addLayer({
             'id': 'places',
             'type': 'symbol',
-            // source: 'places',
             'source': 'places',
             'layout': {
               'icon-image': 'eventpin', // Pin Icon
@@ -226,6 +224,17 @@ mapViewButton.addEventListener('click', function () {
   isMapView = !isMapView;
 });
 
+// functiom to save last page data to loval storage
+function saveLastPageAndRedirect(){
+  let params = new URL(window.location.href)
+  let currentURL = window.location.href;
+  let lastPage = params.pathname;
+  localStorage.setItem('lastPage', lastPage);
+  console.log('Stored in local storage:', currentURL);
+}
+saveLastPageAndRedirect()
+
+
 // functions for filter buttons
 function toggleFilter() {
   var x = document.getElementById("filtergroup");
@@ -236,12 +245,237 @@ function toggleFilter() {
   }
 }
 
-// functiom to save last page data to loval storage
-function saveLastPageAndRedirect(){
-  let params = new URL(window.location.href)
-  let currentURL = window.location.href;
-  let lastPage = params.pathname;
-  localStorage.setItem('lastPage', lastPage);
-  console.log('Stored in local storage:', currentURL);
+function removeActiveStyles() {
+  document.querySelectorAll('.filterbtn').forEach(button => {
+      button.classList.remove('active_filter');
+  });
 }
-saveLastPageAndRedirect()
+
+let isFoodActive = false;
+let isMoneyActive = false;
+let isHousingActive = false;
+let isWorkActive = false;
+
+// click function for food filter
+function toggleFood() {
+  const button = document.getElementById('FoodBtn');
+  
+  // Toggle the state
+  isFoodActive = !isFoodActive;
+  
+  if (isFoodActive) {
+      removeActiveStyles()
+
+      isMoneyActive = false;
+      isHousingActive = false;
+      isWorkActive = false;
+      // Execute the function when the button is active
+      // displayCardsDynamically("resources", "food")
+      button.classList.add('active_filter'); // Apply active styling
+  } else {
+      // Execute another function or no function when the button is not active
+      // displayCardsDynamically("resources", null)
+      removeActiveStyles()
+  }
+}
+
+// click function for money filter
+function toggleMoney() {
+    
+  const button = document.getElementById('MoneyBtn');
+
+  // Toggle the state
+  isMoneyActive = !isMoneyActive;
+
+  if (isMoneyActive) {
+      removeActiveStyles()
+      isFoodActive = false;
+      isHousingActive = false;
+      isWorkActive = false;
+      // Execute the function when the button is active
+      button.classList.add('active_filter'); // Apply active styling
+  } else {
+      // Execute another function or no function when the button is not active
+      removeActiveStyles()
+  }
+}
+
+// click function for money filter
+function toggleHousing() {
+  const button = document.getElementById('HousingBtn');
+  
+  // Toggle the state
+  isHousingActive = !isHousingActive;
+  
+  if (isHousingActive) {
+      removeActiveStyles()
+      isFoodActive = false;
+      isMoneyActive = false;
+      isWorkActive = false;
+      // Execute the function when the button is active
+      button.classList.add('active_filter'); // Apply active styling
+  } else {
+      // Execute another function or no function when the button is not active
+      removeActiveStyles()
+  }
+}
+
+// click function for work filter
+function toggleWork() {
+  const button = document.getElementById('WorkBtn');
+  
+  // Toggle the state
+  isWorkActive = !isWorkActive;
+  
+  if (isWorkActive) {
+      removeActiveStyles()
+      isFoodActive = false;
+      isMoneyActive = false;
+      isHousingActive = false;
+
+      // Execute the function when the button is active
+      button.classList.add('active_filter'); // Apply active styling
+  } else {
+      // Execute another function or no function when the button is not active
+      removeActiveStyles()
+  }
+}
+
+// click fcuntion for clear all button
+function clearAll(){
+  document.querySelectorAll('.filterbtn').forEach(button => {
+      button.classList.remove('active_filter');
+  });
+}
+
+// confirm button applies filter
+function applyFilter(){
+  var filter = document.getElementById("filtergroup");
+  filter.style.display = "none"
+
+  var activeCategory = document.getElementById("categories").querySelector(".active_filter")
+  if (activeCategory !== null){
+      category = activeCategory.value.toLowerCase()
+      updateMapWithFilteredData(category)
+      console.log(category)
+
+  }else{
+    updateMapWithFilteredData(null)
+  }
+}
+
+function updateMapWithFilteredData(category) {
+  // Clear existing map layers and sources
+  if (map.getLayer('places')) {
+    map.removeLayer('places');
+  }
+  if (map.getSource('places')) {
+    map.removeSource('places');
+  }
+
+  // Fetch filtered data from Firestore based on the selected category
+  if (category !== null) {
+    db.collection('resources').where('category', '==', category).get().then(filteredResources => {
+      const filteredFeatures = [];// empty array for the new filtered resources
+
+      filteredResources.forEach(doc => {
+        lat = doc.data().lat;
+        lng = doc.data().lng;
+        console.log(lat, lng);
+        coordinates = [lng, lat]; // location
+        console.log(coordinates);
+        event_name = doc.data().name; // Event Name
+        preview = doc.data().description; // Text Preview
+        resourceCode = doc.data().code; // Image
+        
+        // enters information into filteredResources array
+        filteredFeatures.push({
+          'type': 'Feature',
+            'properties': {
+              'description': `<strong>${event_name}</strong><p>${preview}</p> <br> 
+              <a href="/each_info.html?docID=${doc.id}" target="_self" title="Opens in a new window">More Info</a> <br>
+              <img src="./images/${resourceCode}.jpg" alt="Resource Image" style="max-width: 100%; max-height: 150px;">`
+            },
+            'geometry': {
+              'type': 'Point',
+              'coordinates': coordinates
+            }
+        });
+
+      });
+
+      // Add filtered features as a source of data for the map
+      map.addSource('places', {
+        'type': 'geojson',
+        'data': {
+          'type': 'FeatureCollection',
+          'features': filteredFeatures
+        }
+      });
+
+      // Create a layer above map displaying pins with filtered sources
+      map.addLayer({
+        'id': 'places',
+        'type': 'symbol',
+        'source': 'places',
+        'layout': {
+          'icon-image': 'eventpin', // Pin Icon
+          'icon-size': 0.1, // Pin Size
+          'icon-allow-overlap': true // Allow icon overlap
+        }
+      });
+    });
+  } else {
+    // If no category is selected, fetch all data from Firestore
+    db.collection('resources').get().then(allResources => {
+      const features = [];
+
+      allResources.forEach(doc => {
+        lat = doc.data().lat;
+        lng = doc.data().lng;
+        console.log(lat, lng);
+        coordinates = [lng, lat];
+        console.log(coordinates);
+        // Coordinates
+        event_name = doc.data().name; // Event Name
+        preview = doc.data().description; // Text Preview
+        resourceCode = doc.data().code; // Image
+        // Pushes information into the features array
+        // in our application, we have a string description of the resources
+        features.push({
+          'type': 'Feature',
+          'properties': {
+            'description': `<strong>${event_name}</strong><p>${preview}</p> <br> 
+            <a href="/each_info.html?docID=${doc.id}" target="_self" title="Opens in a new window">More Info</a> <br>
+            <img src="./images/${resourceCode}.jpg" alt="Resource Image" style="max-width: 100%; max-height: 150px;">`
+          },
+          'geometry': {
+            'type': 'Point',
+            'coordinates': coordinates
+          }
+        });
+      });
+
+      // Add features as a source of data for the map
+      map.addSource('places', {
+        'type': 'geojson',
+        'data': {
+          'type': 'FeatureCollection',
+          'features': features
+        }
+      });
+
+      // Create a layer above the map displaying the pins using the sources
+      map.addLayer({
+        'id': 'places',
+        'type': 'symbol',
+        'source': 'places',
+        'layout': {
+          'icon-image': 'eventpin',
+          'icon-size': 0.1,
+          'icon-allow-overlap': true
+        }
+      });
+    });
+  }
+}
