@@ -8,8 +8,11 @@ function getResourceName(id) {
         .get()
         .then((thisResource) => {
             var resourceName = thisResource.data().name;
+            var resourceCode = thisResource.data().code;
             console.log(resourceName)
+            console.log(resourceCode)
             document.getElementById("resourceName").innerHTML = resourceName;
+            document.querySelector('.card-img-bottom').src = `./images/${resourceCode}.jpg`; //Example: NV01.jpg
         });
 }
 
