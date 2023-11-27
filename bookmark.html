@@ -41,14 +41,14 @@
 
 <body>
 
-    <main class="container">
+    <main>
         <!-- Cards for Results -->
         <div class="container">
             <h1><span id=name-goes-here></span>'s Bookmarks</h1>
-            
+
             <!-- Here is container for cards  -->
             <div class="container">
-                
+
                 <p id="no-bookmark-comment">No bookmark yet</p>
                 <div id="resourceCardGroup" class="row row-cols-auto">
                 </div>
@@ -57,19 +57,24 @@
 
         <!-- Templates for general use, not displayed -->
         <template id="savedCardTemplate">
-            <a class="no_underline" href="#">
-                <div class="card maincard">
+            <div class="card maincard">
+                <!-- bookmark button -->
+                <!-- <button class="save">Save as bookmark</button> -->
+                <i class="material-icons bookmark-icon save">bookmark_border</i>
+                <a class="no_underline" href="#">
                     <div class="card-body">
                         <h4 class="card-title">Result 1</h4>
+                        <div class="gray_line"></div>
                         <p class="card-text description">This is a wider card with supporting text below as a natural
                             lead-in to additional
                             content. This content is a little bit longer.</p>
                         <p class="card-text updateTime"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+                        <img class="card-img-bottom" src="images/hike1.jpg" alt="Card image cap">
                     </div>
-                    <img class="card-img-bottom" src="images/hike1.jpg" alt="Card image cap">
-                </div>
-            </a>
+                </a>
         </template>
+        <div class="pixel90-height"></div>
     </main>
     <div class="blank"></div>
 

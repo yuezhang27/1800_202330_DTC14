@@ -1,8 +1,11 @@
 
+var currentUser;
 
 function doAll() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
+
+            currentUser = db.collection("users").doc(user.uid);
             insertNameFromFirestore(user);
             getBookmarks(user)
         } else {
@@ -77,11 +80,52 @@ function getBookmarks(user) {
                     newcard.querySelector('.description').innerHTML = description;
                     newcard.querySelector('.card-img-bottom').src = `./images/${resourceCode}.jpg`; //Example: NV01.jpg
                     newcard.querySelector('a').href = "each_info.html?docID=" + docID;
+                    newcard.querySelector('i').id = 'save-' + docID;
     
                     
 					//Finally, attach this new card to the gallery
                     resourceCardGroup.appendChild(newcard);
+                    document.querySelector('i').onclick = () => updateBookmark(docID);
+                    currentUser.get().then(userDoc => {
+                        //get the user name
+                        var bookmarks = userDoc.data().bookmarks;
+                        if (bookmarks.includes(docID)) {
+                            document.getElementById('save-' + docID).innerText = 'bookmark';
+                        }
+                    })
+
+                    
                 })
             });
         })
 }
+
+function updateBookmark(resourceDocID) {
+    currentUser.get().then(userDoc => {
+        let bookmarks = userDoc.data().bookmarks;
+        let iconID = 'save-' + resourceDocID;
+        let isBookmarked = bookmarks.includes(resourceDocID)//check if thsi hikeID exist in bookmark array
+        console.log(isBookmarked)
+
+        if (isBookmarked) {
+            currentUser.update({
+                bookmarks: firebase.firestore.FieldValue.arrayRemove(resourceDocID)
+            }).then(() => {
+                console.log("item was removed" + resourceDocID)
+                document.getElementById(iconID).innerText = 'bookmark_border'
+
+            })
+
+        } else {
+            currentUser.update({
+                bookmarks: firebase.firestore.FieldValue.arrayUnion(resourceDocID)
+            }).then(() => {
+                console.log("this item added to the database" + isBookmarked)
+                document.getElementById(iconID).innerText = 'bookmark'
+
+            })
+        }
+
+    })
+}
+

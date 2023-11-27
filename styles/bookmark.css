@@ -6,7 +6,11 @@
 .bmktitle {
     font-size: 3em;
 }
-
+.card {
+    margin: 0 !important;
+    border-radius: 8px !important;
+    margin-bottom: 5% !important;
+}
 .bkmiconcontainer{
     width: 10%;
 }
@@ -35,7 +39,10 @@ h3 {
 }
 
 h4 {
-    font-size: 1.25em!important;
+    font-size: 1.25em !important;
+    width: 80%;
+    font-weight: bold;
+    height: 48px;
 }
 
 
