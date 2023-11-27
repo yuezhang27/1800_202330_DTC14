@@ -712,10 +712,3 @@ searchIcon.addEventListener("click", function(){
     }
 })
 
-// 1. 使用时间戳功能，获取当前时间
-// 2. 当前时间转换为年月日星期时间
-// 3. 找到数据库里开门时间对应的1个array:weekday; 2个field：open time和close time
-// 4. array格式应该是 weekday: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]; 
-// 5. 首先对比当前时间，如果在open time到close time中间，就closetime-当前时间，然后对应html元素显示
-// 6. 如果不在这个时间范围内，就用open time+24小时-当前时间，然后显示在html元素上
-
