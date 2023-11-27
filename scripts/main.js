@@ -465,14 +465,14 @@ function calculateCountdown(openTimeStr, closeTimeStr) {
         closeTime.setDate(closeTime.getDate() + 1);
     }
     if (now < openTime) {
-        return 'In ' + timeDifference(now, openTime);
+        return 'Closed | Next Open: In ' + timeDifference(now, openTime);
     } else if (now >= openTime && now < closeTime) {
         //opening
         return 'Is Opening | Close In: ' + timeDifference(now, closeTime);
     } else {
         let tomorrowOpen = new Date(openTime);
         tomorrowOpen.setDate(tomorrowOpen.getDate() + 1);
-        return 'In ' + timeDifference(now, tomorrowOpen);
+        return 'Closed | Next Open: In ' + timeDifference(now, tomorrowOpen);
     }
 }
 
@@ -522,7 +522,7 @@ function displayCardsDynamically(collection, category, searchType) {
                 //update title and text and image
                 newcard.querySelector('.card-title').innerHTML = title;
                 // newcard.querySelector('.text-muted').innerHTML = "Last update: " + realTime;
-                newcard.querySelector('.text-muted').innerHTML = "Open: "+ countDownText;
+                newcard.querySelector('.text-muted').innerHTML = countDownText;
                 newcard.querySelector('.description').innerHTML = description;
                 newcard.querySelector('.card-img-bottom').src = `./images/${resourceCode}.jpg`; //Example: NV01.jpg
                 newcard.querySelector('a').href = "each_info.html?docID=" + docID;
