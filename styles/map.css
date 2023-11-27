@@ -10,7 +10,6 @@
 }
 .filtergroup{
     position: absolute;
-    top: 100px;
     z-index: 100;
 }
 #map{
