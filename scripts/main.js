@@ -8,7 +8,7 @@ function doAll() {
         if (user) {
             currentUser = db.collection("users").doc(user.uid); //global
 
-            displayCardsDynamically("resources", null)
+            displayCardsDynamically("resources", null, null)
         } else {
             // No user is signed in.
             console.log("No user is signed in");
@@ -454,7 +454,7 @@ function formatTimestamp(timestamp) {
 }
 
 // display content according to the filter and database
-function displayCardsDynamically(collection, category) {
+function displayCardsDynamically(collection, category, searchType) {
     let cardTemplate = document.getElementById("resultTemplate"); // Retrieve the HTML element with the ID "resultTemplate" and store it in the cardTemplate variable. 
     let gallery = document.getElementById(collection + "-go-here");
 
@@ -466,6 +466,11 @@ function displayCardsDynamically(collection, category) {
     if (category !== null) {
         query = query.where("category", "==", category)
     }
+    if (searchType !== null && searchType.length > 0) {
+        let searchTypeArray = Array.isArray(searchType) ? searchType : [searchType];
+        query = query.where("searchType", "in", searchTypeArray);
+    }
+    
     query.get().then(allResources => {
             allResources.forEach(doc => { 
                 var title = doc.data().name;
@@ -660,13 +665,32 @@ function applyFilter(){
     var activeCategory = document.getElementById("categories").querySelector(".active_filter")
     if (activeCategory !== null){
         category = activeCategory.value.toLowerCase()
-        displayCardsDynamically("resources", category)
+        displayCardsDynamically("resources", category, null)
         console.log(category)
 
     }else{
-        displayCardsDynamically("resources", null)
+        displayCardsDynamically("resources", null,null)
     }
 
 
 }
+
+// search bar fucntion
+// 1. get search bar with id
+// 2. add search bar onclick
+// 2.1 in onclick, get the input value with id
+// 2.2 use dynamicDisplay func to search and display
+
+var searchIcon = document.getElementById("basic-addon1")
+searchIcon.addEventListener("click", function(){
+    var searchInput = document.getElementById("searchInput")
+    if (searchInput !== null){
+        searchInput = searchInput.value.toLowerCase()
+        displayCardsDynamically("resources", null, searchInput)
+        console.log(searchInput)
+
+    }else{
+        displayCardsDynamically("resources", null,searchInput)
+    }
+})
 
