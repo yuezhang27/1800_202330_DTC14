@@ -531,7 +531,7 @@ function removeActiveStyles() {
 }
 
 
-let isFoodActive = false;
+
 // add clicked function on food filter button
 // functions for filter buttons
 function toggleFilter() {
@@ -544,84 +544,121 @@ function toggleFilter() {
 }
 
 
-
+let isFoodActive = false;
+let isMoneyActive = false;
+let isHousingActive = false;
+let isWorkActive = false;
 
 
 function toggleFood() {
-    removeActiveStyles();
     const button = document.getElementById('FoodBtn');
-
+    
     // Toggle the state
     isFoodActive = !isFoodActive;
-
+    
     if (isFoodActive) {
+        removeActiveStyles()
+
+        isMoneyActive = false;
+        isHousingActive = false;
+        isWorkActive = false;
         // Execute the function when the button is active
-        displayCardsDynamically("resources", "food")
+        // displayCardsDynamically("resources", "food")
         button.classList.add('active_filter'); // Apply active styling
     } else {
         // Execute another function or no function when the button is not active
-        displayCardsDynamically("resources", null)
+        // displayCardsDynamically("resources", null)
+        removeActiveStyles()
     }
 }
 
 // add clicked function on money filter button
-let isMoneyActive = false;
+
 
 function toggleMoney() {
-    removeActiveStyles()
+    
     const button = document.getElementById('MoneyBtn');
 
     // Toggle the state
     isMoneyActive = !isMoneyActive;
 
     if (isMoneyActive) {
+        removeActiveStyles()
+        isFoodActive = false;
+        isHousingActive = false;
+        isWorkActive = false;
         // Execute the function when the button is active
-        displayCardsDynamically("resources", "money")
         button.classList.add('active_filter'); // Apply active styling
     } else {
         // Execute another function or no function when the button is not active
-        displayCardsDynamically("resources", null)
+        removeActiveStyles()
     }
 }
 
 // add clicked function on housing filter button
-let isHousingActive = false;
+
 
 function toggleHousing() {
-    removeActiveStyles()
     const button = document.getElementById('HousingBtn');
-
+    
     // Toggle the state
     isHousingActive = !isHousingActive;
-
+    
     if (isHousingActive) {
+        removeActiveStyles()
+        isFoodActive = false;
+        isMoneyActive = false;
+        isWorkActive = false;
         // Execute the function when the button is active
-        displayCardsDynamically("resources", "housing")
         button.classList.add('active_filter'); // Apply active styling
     } else {
         // Execute another function or no function when the button is not active
-        displayCardsDynamically("resources", null)
+        removeActiveStyles()
     }
 }
 
 // add clicked function on work filter button
-let isWorkActive = false;
+
 
 function toggleWork() {
-    removeActiveStyles()
     const button = document.getElementById('WorkBtn');
-
+    
     // Toggle the state
     isWorkActive = !isWorkActive;
-
+    
     if (isWorkActive) {
+        removeActiveStyles()
+        isFoodActive = false;
+        isMoneyActive = false;
+        isHousingActive = false;
+
         // Execute the function when the button is active
-        displayCardsDynamically("resources", "work")
         button.classList.add('active_filter'); // Apply active styling
     } else {
         // Execute another function or no function when the button is not active
-        displayCardsDynamically("resources", null)
+        removeActiveStyles()
     }
 }
 
+function clearAll(){
+    document.querySelectorAll('.filterbtn').forEach(button => {
+        button.classList.remove('active_filter');
+    });
+}
+function applyFilter(){
+    var filter = document.getElementById("filtergroup");
+    filter.style.display = "none"
+
+    var activeCategory = document.getElementById("categories").querySelector(".active_filter")
+    if (activeCategory !== null){
+        category = activeCategory.value.toLowerCase()
+        displayCardsDynamically("resources", category)
+        console.log(category)
+
+    }else{
+        displayCardsDynamically("resources", null)
+    }
+
+
+}
 
