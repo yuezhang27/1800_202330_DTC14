@@ -1,5 +1,7 @@
 var resourceDocID = localStorage.getItem("resourceDocID");    //visible to all functions on this page
-
+var lastPage = localStorage.getItem("lastPage");
+let goBackLink = document.getElementById("goBackLink");
+goBackLink.href = `/each_info.html?docID=${resourceDocID}`;
 
 
 function getResourceName(id) {
