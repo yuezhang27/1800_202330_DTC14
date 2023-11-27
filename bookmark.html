@@ -24,6 +24,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <!-- Add this line for Firebase Storage -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <!-- Other libraries go here -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -43,8 +45,11 @@
         <!-- Cards for Results -->
         <div class="container">
             <h1><span id=name-goes-here></span>'s Bookmarks</h1>
+            
             <!-- Here is container for cards  -->
             <div class="container">
+                
+                <p id="no-bookmark-comment">No bookmark yet</p>
                 <div id="resourceCardGroup" class="row row-cols-auto">
                 </div>
             </div>
