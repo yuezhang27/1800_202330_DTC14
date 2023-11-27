@@ -563,6 +563,16 @@ function removeActiveStyles() {
 
 
 
+// functiom to save last page data to loval storage
+function saveLastPageAndRedirect(){
+    let params = new URL(window.location.href)
+    let currentURL = window.location.href;
+    let lastPage = params.pathname;
+    localStorage.setItem('lastPage', lastPage);
+    console.log('Stored in local storage:', currentURL);
+}
+saveLastPageAndRedirect()
+
 // add clicked function on food filter button
 // functions for filter buttons
 function toggleFilter() {

@@ -1,5 +1,9 @@
 //Global variable pointing to the current user's Firestore document
 var currentUser;
+//Global variable pointing to the users last visited page
+var lastPage = localStorage.getItem("lastPage")
+let goBackLink = document.getElementById("goBackLink");
+goBackLink.href = "."+lastPage;
 
 //Function that calls everything needed for the main page  
 function doAll() {
