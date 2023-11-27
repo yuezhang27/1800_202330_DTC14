@@ -15,9 +15,15 @@
     width: 80%;
 }
 /* font size */
-
+#no-bookmark-comment{
+    text-align: center;
+    font-size: 30px;
+    padding-top: 50px;
+}
 h1 {
     font-size: 2em;
+    text-align: center;
+    padding-top: 20px
 }
 
 h2 {
