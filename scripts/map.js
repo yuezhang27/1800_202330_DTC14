@@ -66,7 +66,7 @@ function showMap() {
               'type': 'Feature',
               'properties': {
                 'description': `<strong>${event_name}</strong><p>${preview}</p> <br> 
-                <a href="/each_info.html?docID=${doc.id}" target="_blank" title="Opens in a new window">More Info</a> <br>
+                <a href="/each_info.html?docID=${doc.id}" target="_self" title="Opens in a new window">More Info</a> <br>
                 <img src="./images/${resourceCode}.jpg" alt="Resource Image" style="max-width: 100%; max-height: 150px;">`
               },
               'geometry': {
