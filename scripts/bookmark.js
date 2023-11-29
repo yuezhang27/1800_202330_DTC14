@@ -86,7 +86,7 @@ function getBookmarks(user) {
 
 						
 						// Get pointer the new card template
-            let newcardTemplate = document.getElementById("savedCardTemplate");
+            let bookmarked_list = document.getElementById("savedCardTemplate");
 
 						// Iterate through the ARRAY of bookmarked hikes (document ID's)
             bookmarks.forEach(thisResourceID => {
@@ -99,20 +99,20 @@ function getBookmarks(user) {
                     var countDownText = calculateCountdown(openTime, closeTime)
                     var resourceCode = doc.data().code;    //get ID to each resource to be used for fetching right image
                     var docID = doc.id;
-                    let newcard = newcardTemplate.content.cloneNode(true); // Clone the HTML template to create a new card (newcard) that will be filled with Firestore data.
+                    let newcard = bookmarked_list.content.cloneNode(true); // Clone the HTML template to create a new card (newcard) that will be filled with Firestore data.
     
                     //update title and text and image
                     newcard.querySelector('.card-title').innerHTML = title;
                     newcard.querySelector('.text-muted').innerHTML = countDownText;
                     newcard.querySelector('.description').innerHTML = description;
-                    newcard.querySelector('.card-img-bottom').src = `./images/${resourceCode}.jpg`; //Example: NV01.jpg
+                    newcard.querySelector('.card-img-bottom').src = `./images/${resourceCode}.jpg`; 
                     newcard.querySelector('a').href = "each_info.html?docID=" + docID;
                     newcard.querySelector('i').id = 'save-' + docID;
     
+                    newcard.querySelector('i').onclick = () => updateBookmark(docID);
                     
 					//Finally, attach this new card to the gallery
                     resourceCardGroup.appendChild(newcard);
-                    document.querySelector('i').onclick = () => updateBookmark(docID);
                     currentUser.get().then(userDoc => {
                         //get the user name
                         var bookmarks = userDoc.data().bookmarks;
