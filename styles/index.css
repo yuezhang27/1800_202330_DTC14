@@ -3,16 +3,23 @@
     
 }
 .logo_img {
-
-    display: block;
+    
     margin-left: auto;
     margin-right: auto;
-    height: 100%;
-    width: auto;
+    height: 100% !important;
+    width: auto !important;
+
 
 }
+.img-container{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    width: auto !important;
+}
 .top-bar{
-    padding: 10px;
+    padding: 10px !important;
+    width: 100%;
 }
 .btn.btn-info{
     background-color: #FFBF57 !important;
@@ -30,6 +37,12 @@
     margin-bottom: 8vh;
     text-align: center;
     position: absolute;
+    width: 90%;
+    left: 5%;
     top: 20px;
     color: white;
+}
+.welcome1{
+    font-weight: bold;
+    font-size: 20px;
 }
