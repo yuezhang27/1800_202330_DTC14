@@ -14,7 +14,7 @@ function populateUserInfo() {
                 .then(userDoc => {
                     var userName = userDoc.data().name;
                     var userAge = userDoc.data().age;
-                    var userGender = userDoc.data().genderInput;
+                    var userCity = userDoc.data().city;
                     var userPic = userDoc.data().profileImg;
 
                     if (userName != null) {
@@ -24,18 +24,10 @@ function populateUserInfo() {
                     if (userAge != null) {
                         document.getElementById("ageInput").value = userAge;
                     }
-                    if (userGender != null) {
-                        var genderSelect = document.getElementById("genderInput");
+                    if (userCity != null) {
+                        document.getElementById("cityInput").value = userCity;
 
 
-                        for (let i = 0; i < genderSelect.options.length; i++) {
-                            console.log(i);
-
-                            if (genderSelect.options[i].value === userGender) {
-                                genderSelect.selectedIndex = i;
-                                break;
-                            }
-                        }
                     }
                     if (userPic) {
                         storage.ref('images/'+ userPic + ".jpg").getDownloadURL().then
@@ -74,7 +66,7 @@ function saveUserInfo() {
     savePost()
     userName = document.getElementById('nameInput').value;
     userAge = document.getElementById('ageInput').value;
-    userGender = document.getElementById('genderInput').value;
+    userCity = document.getElementById('cityInput').value;
 
     document.getElementById("user-name").innerText = userName;
 
@@ -83,20 +75,13 @@ function saveUserInfo() {
     currentUser.update({
         name: userName,
         age: userAge,
-        gender: userGender
+        city: userCity
     })
         .then(() => {
             console.log("Document successfully updated!");
 
-            var genderSelect = document.getElementById("genderInput");
 
-            for (let i = 0; i < genderSelect.options.length; i++) {
-                if (genderSelect.options[i].value === userGender) {
-                    genderSelect.selectedIndex = i;
-                    break;
-                }
-            }
-
+            
         })
     //c) disable edit 
     document.getElementById('personalInfoFields').disabled = true;
@@ -124,13 +109,11 @@ function savePost() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             // User is signed in.
-            // Do something for the user here. 
             db.collection("posts").add({
                 owner: user.uid,
                 last_updated: firebase.firestore.FieldValue
                     .serverTimestamp() //current system time
             }).then(doc => {
-                console.log("1. Post document added!");
                 console.log(doc.id);
                 uploadPic(doc.id);
             })
@@ -141,15 +124,7 @@ function savePost() {
     });
 }
 
-//------------------------------------------------
-// So, a new post document has just been added
-// and it contains a bunch of fields.
-// We want to store the image associated with this post,
-// such that the image name is the postid (guaranteed unique).
-// 
-// This function is called AFTER the post has been created, 
-// and we know the post's document id.
-//------------------------------------------------
+
 function uploadPic(postDocID) {
     console.log("inside uploadPic " + postDocID);
     var storageRef = storage.ref("images/" + postDocID + ".jpg");
@@ -158,12 +133,12 @@ function uploadPic(postDocID) {
 
         // AFTER .put() is done
         .then(function () {
-            console.log('2. Uploaded to Cloud Storage.');
+
             storageRef.getDownloadURL()
 
                 // AFTER .getDownloadURL is done
                 .then(function (url) { // Get URL of the uploaded file
-                    console.log("3. Got the download URL.");
+
 
                     // Now that the image is on Storage, we can go back to the
                     // post document, and update it with an "image" field

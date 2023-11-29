@@ -25,7 +25,7 @@ var uiConfig = {
           name: user.displayName, 
           email: user.email, 
           bookmarks: [], 
-          gender: "unknown", 
+          city: "unknown", 
           age: "unknown",
           profileImg: "default-profile-img.jpg"
         }).then(function () {
