@@ -482,7 +482,9 @@ function displayCardsDynamically(collection, category, searchType) {
     if (searchType !== null && searchType.length > 0) {
         query = query.where("searchType", "array-contains-any", searchType);
     }
-    
+    if (searchType == ""){
+        query = db.collection(collection)
+    }
     
     query.get().then(allResources => {
             console.log(allResources)
@@ -716,7 +718,8 @@ searchIcon.addEventListener("click", function(){
         displayCardsDynamically("resources", null, searchInput)
         console.log(searchInput)
 
-    }else{
+    }
+    else{
         displayCardsDynamically("resources", null,searchInput)
     }
 })
