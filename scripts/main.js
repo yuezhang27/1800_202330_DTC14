@@ -85,6 +85,8 @@ function writeResources(){
         contactPhone: "(604)-983-9488",
         description: "Supports North Shore residents facing challenges like job loss, health issues, or family loss. Offers coaching, grocery/clothing support, and information services. Emergency food assistance available",
         description_detail: "Assists North Shore residents who are experiencing challenging life circumstances such as a job loss, divorce, emotional and physical health issues, or death of a family member. Provides one-to-one coaching/mentoring, a grocery support program, clothing support program, and information and referral services aimed at empowering people to take positive steps in their lives. Also offers an emergency food program in partnership with St Andrew's United Church; see that listing for details. Proof of North Shore residence is required. Accepts donations of clothing and groceries; drop by during business hours, and then phone reception to receive the items. Hours are 10 am to 4 pm Tuesday to Friday, and 10 am to 2 pm on Saturdays; an appointment is required. Nonprofit society, registered charity.",
+        closeTime:"16:00",
+        openTime:"10:00",
         province: "BC",
         location: "1073 Roosevelt Crescent, North Vancouver, V7P 1M4 BC",
         lat: 49.321970,
@@ -100,7 +102,8 @@ function writeResources(){
         contactPhone: "(604)-876-3601",
         description: "Distributes 10-12 weekly food items to North Vancouver residents in need. Requires government ID, proof of address, and one year in Canada for international students. Provides photo membership cards for access. Specialized nutrition programs for families with children and seniors",
         description_detail:"Provides approximately 10 to 12 food items per client per week to residents of North Vancouver who are experiencing food insecurity. To access services, registration with government-issued identification (ID) for each family member (expired ID and photocopies stamped from the welfare office are acceptable), as well as proof of address for the household is required. International students are required to have been in Canada for at least one year to be eligible for services. Clients will receive a photo membership card that allows them to access food from any of the GVFB distribution sites. Also offers specialized nutrition supplement programs for families with children ages birth to 12, and seniors",
-        
+        closeTime:"10:00" ,
+        openTime:"15:00",
         province: "BC",
         location: "225 East 2nd Street, North Vancouver, V7M 1C9",
         lat: 49.314670,
@@ -116,7 +119,8 @@ function writeResources(){
         contactPhone: "(604)-682-6325",
         description: "A Loving Spoonful is a volunteer-driven, non-partisan Society that provides free, nutritious meals to people living with HIV and co-existing illness in Metro Vancouver and the surrounding areas.",
         description_detail:"A Loving Spoonful is a volunteer-driven, non-partisan Society that provides free, nutritious meals to people living with HIV and co-existing illness in Metro Vancouver and the surrounding areas.Provides free nutritious meals and groceries to individuals and families living with HIV/AIDS and co-existing illness in Metro Vancouver, based on medical need. Meals and groceries are available for pick-up or delivery. Physician referral required. Office hours are 9 am to 5 pm Monday to Friday. Nonprofit society, registered charity.",
-        
+        closeTime:"17:00" ,
+        openTime:"9:00",
         province: "BC",
         location: "1449 Powell Street, Vancouver, V5L 1G8 BC",
         lat: 49.283440,
@@ -132,7 +136,8 @@ function writeResources(){
         contactPhone: "(604)-876-3601",
         description: "Distributes 10-12 weekly food items to North Vancouver residents in need. Requires government ID, proof of address, and one year in Canada for international students. Provides photo membership cards for access. Specialized nutrition programs for families with children and seniors.",
         description_detail:"Provides approximately 10 to 12 food items per client per week to residents of Vancouver who are experiencing food insecurity. To access services, registration with government-issued identification (ID) for each family member (expired ID and photocopies stamped from the welfare office are acceptable), as well as proof of address for the household is required. International students are required to have been in Canada for at least one year to be eligible for services. Clients will receive a photo membership card that allows them to access food from any of the GVFB distribution sites. Also offers specialized nutrition supplement programs for families with children ages birth to 12, and seniors.",
-        
+        closeTime:"16:00" ,
+        openTime:"10:00",
         province: "BC",
         location: "3454 Lougheed Highway, Vancouver, V5M 2A4 BC",
         lat: 49.262780,
@@ -148,7 +153,8 @@ function writeResources(){
         contactPhone: "(604)-298-5888",
         description: "Distributes weekly healthy food hampers and care packages to low-income families with children. Available through direct delivery. Outreach support workers provide additional assistance, including mental wellness and parenting support, children's resources, and help accessing government financial aid.",
         description_detail:"Distributes weekly healthy food hampers and care packages to families with children living in a low-income bracket or on social assistance; service available by direct delivery or pick-up at food hub locations in Burnaby (Journey Home, 10:30 am to 1 pm Thursdays) and Vancouver (South Vancouver Family Place, 10:30 am to 2:30 pm Mondays). Outreach support workers connect with families to offer additional help as needed, including mental wellness and parenting support, children's resources, and access to government financial aid. Developed as an emergency response program to help reduce the inflation of food insecurity among the most vulnerable PIRS clients due to the pandemic.",
-        
+        closeTime:"14:30" ,
+        openTime:"10:30",
         province: "BC",
         location: "1874 Kingsway, Vancouver, V5N 2S7 BC",
         lat: 49.245880,
@@ -164,7 +170,8 @@ function writeResources(){
         contactPhone: "(604)-428-1908",
         description: "Creates a supportive space for Downtown Eastside's Aboriginal and non-Aboriginal community, emphasizing traditional healing. Offers Elder/family cultural guidance, community meetings, and social activities. Provides culturally safe referrals to drug and alcohol treatment. The Common Bowl Food Truck serves coffee, meals, and food hampers as supplies permit.",
         description_detail:"Offers a supportive space where Aboriginal and non-Aboriginal people in the Downtown Eastside can reconnect with traditional approaches to community and healing. Services include Elder/family cultural guidance, community meetings, social/recreational activities, and culturally safe referrals to drug and alcohol treatment. The Common Bowl Food Truck serves coffee, meals, and food hampers as supplies permit; operating hours are 9 am to 5 pm Monday to Friday. Office hours are 8 am to 12 noon and 1 pm to 4 pm Monday to Friday. Nonprofit society.",
-        
+        closeTime:"17:00" ,
+        openTime:"9:00",
         province: "BC",
         location: "384 Main Street, Vancouver, V6A 2T1 BC",
         lat: 49.281814,
@@ -181,7 +188,8 @@ function writeResources(){
         contactPhone: "(604)-682-5556",
         description: "Emergency low-barrier shelter for men, 19 and older, accommodating up to 52 individuals. Opens at 3 pm, first-come, first-served. Curfew at 11 pm, closes at 10 am. Provides hot dinner, breakfast snack, and hygiene supplies.",
         description_detail:"An emergency low-barrier shelter (with mats and blankets) that accommodates up to 52 men ages 19 and over. Open at 3 pm on a first-come, first-served basis; curfew is at 11 pm and shelter closes at 10 am. Provides a hot dinner around 6:15 pm, and a sandwich/snack for breakfast after 8 am. Also provides personal hygiene supplies. Storage available for 50 lbs or less of personal items; no space for storage of carts or bikes. Zero tolerance for violence or use of alcohol or illegal drugs. Pets are permitted in kennels on a case-by-case basis; dogs must be muzzled. Wheelchair accessible. Open to everyone. Receives funding from BC Housing and City of Vancouver.",
-        
+        closeTime:"10:00" ,
+        openTime:"15:00",
         province: "BC",
         location: "201 Central Street, Vancouver, V6A 4A9 BC",
         lat: 49.271198,
@@ -197,159 +205,196 @@ function writeResources(){
         contactPhone: "(604)-606-0403",
         description: "Provides year-round low-barrier, 24-hour emergency shelter for 52 women, including transgender women, at risk of homelessness. Focuses on autonomy, independence, and skill-building.",
         description_detail:"Provides year-round low-barrier, 24-hour emergency shelter for 52 women (including transgender women) experiencing, or at risk of homelessness. Women are supported in retaining their autonomy, regaining their independence, and building skills to move forward in life. Services include three meals per day, one-on-one support and advocacy, crisis intervention, referrals, housing search assistance, and accompaniment to appointments. Health-related services include 24-hour access to bed rest, medication storage, home nursing and home care support through referral, oxygen tank storage, and harm reduction supplies (condoms, new needle distribution, information). Referral accepted from self or other. Does not accept pets. Not wheelchair accessible.",
-        
+        closeTime:"24:00" ,
+        openTime:"00:00",
         province: "BC",
         location: "329 Powell Street, Vancouver, V6A 1G5 BC",
         lat: 49.283357,
         lng: -123.096396,
         last_updated: firebase.firestore.FieldValue.serverTimestamp()
      })
-    // resourcesRef.add({
-    //     category: "",
-    //     code: "",
-    //     name: "",
-    //     city: "",
-    //     contactPhone: "",
-    //     description: "",
-    //     description_detail:"",
-        
-    //     province: "",
-    //     location: "",
-    //     lat: 1,
-    //     lng: 1,
-    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
-    // });
-    // resourcesRef.add({
-    //     category: "",
-    //     code: "",
-    //     name: "",
-    //     city: "",
-    //     contactPhone: "",
-    //     description: "",
-    //     description_detail:"",
-        
-    //     province: "",
-    //     location: "",
-    //     lat: 1,
-    //     lng: 1,
-    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
-    // });
-    // resourcesRef.add({
-    //     category: "",
-    //     code: "",
-    //     name: "",
-    //     city: "",
-    //     contactPhone: "",
-    //     description: "",
-    //     description_detail:"",
-        
-    //     province: "",
-    //     location: "",
-    //     lat: 1,
-    //     lng: 1,
-    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
-    // });
+    resourcesRef.add({
+        category: "housing",
+        code: "Imouto_Housing-VAN",
+        name: "Imouto Housing for Young Women",
+        city: "Vancouver",
+        searchType: ["housing", "Imouto Housing", "vancouver", "shelter", "youth","woman", "longterm", "homeless"],
+        contactPhone: "604-215-0369",
+        description: "Providing long-term transitional housing for young women aged 16 to 24 facing homelessness or barriers to housing. Offers 24/7 staff support, an intergenerational mentorship program, and a community kitchen.",
+        description_detail:"Offers long-term transitional housing for 16 young women ages 16 to 24 who are homeless, at risk of homelessness, or have other barriers to accessing housing and support services. Staff is on site 24 hours each day, seven days a week and additional supports are offered by a partnership of community agencies. Offers an intergenerational mentorship program, a community kitchen for residents, and garden. Other services include accompaniment, activity groups, advocacy, communal living space, community garden, community kitchen, emotional support, group support, outreach team, and information and referral. Accepts self-referrals. Rent is charged. Also offers two crisis beds where young women can stay up to 72 hours, during which time efforts will be made to connect them with primary health care and related support services. Not wheelchair accessible.",
+        closeTime:"24:00" ,
+        openTime:"00:00",
+        province: "BC",
+        location: "120 Jackson Street, Vancouver, V6A 1B5 BC",
+        lat: 49.280042,
+        lng: -123.101653,
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    resourcesRef.add({
+        category: "housing",
+        code: "SEREENAS_HOUSING-VAN",
+        name: "Sereena Housing for Women",
+        city: "Vancouver",
+        searchType: ["Sereena Housing", "housing", "vancouver", "shelter", "violence", "woman", "abuse", "affordable housing" ],
+        contactPhone: "604-642-2620",
+        description: "Sereenas Housing for Women provides 56 units of supportive housing for women who have been impacted by violence. Offers additional services such as but not limited to accompaniment, advocacy, Emotional Support, and referrals ",
+        description_detail:"rovides 56 units of supportive housing for women who have been impacted by violence and/or substance abuse. Services include accompaniment, activity groups, advocacy, emotional support, group support, an outreach team, and information and referral. Vancouver Coastal Health (VCH) clinical housing team is available onsite to work exclusively with Sereena residents. Rent is charged. No minimum or maximum stay, though a three-month commitment is preferred. Visiting hours are 9 am to 11 pm. Funded by and applications through BC Housing.",
+        closeTime:"23:00",
+        openTime:"9:00",
+        province: "BC",
+        location: "143 Dunlevy Avenue, Vancouver, V6A 3A4 BC",
+        lat: 49.283252,
+        lng: -123.095574,
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    resourcesRef.add({
+        category: "housing",
+        code: "Seniors_Homelessness-NV",
+        name: "Seniors' Homelessness Services",
+        city: "North Vancouver",
+        searchType: ["housing", "Seniors Homelessness", "vancouver", "shelter", "senior", "eviction prevention", "affordable housing", "homeless"],
+        contactPhone: "604-987-8211",
+        description: "Supporting homeless and at-risk adults aged 55 and older through outreach and in-office assistance. Services include eviction prevention, housing search, application support, income assistance, and financial management. Additional offerings include life skills, nutrition support, elder abuse awareness, mentorship training, and community engagement. Emergency subsidies available",
+        description_detail:"Provides outreach and in-office support to older adults, age 55 and older who are homeless or at risk of losing their home. Services include assistance with eviction prevention, searching for suitable and affordable housing, helping to complete application forms, arranging for income support, and financial management. Also offers life and social skills development, nutrition support, elder abuse awareness, mentorship training, community engagement opportunities, and connections to community resources such as mental health care or primary health care. Small emergency subsidies are available to stabilize housing crises. Referral accepted from self or other. Office hours are 8:30 am to 5 pm Monday to Friday. Funded in part by BC Housing.",
+        closeTime:"17:00",
+        openTime:"8:30", 
+        province: "BC",
+        location: "104-267 West Esplanade, North Vancouver, V7M 1A5 BC",
+        lat: 49.312913,
+        lng: -123.085209,
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    });
     // // category: money
-    // resourcesRef.add({
-    //     category: "",
-    //     code: "",
-    //     name: "",
-    //     city: "",
-    //     contactPhone: "",
-    //     description: "",
-    //     description_detail:"",
-        
-    //     province: "",
-    //     location: "",
-    //     lat: 1,
-    //     lng: 1,
-    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
-    // });
-    // resourcesRef.add({
-    //     category: "",
-    //     code: "",
-    //     name: "",
-    //     city: "",
-    //     contactPhone: "",
-    //     description: "",
-    //     description_detail:"",
-        
-    //     province: "",
-    //     location: "",
-    //     lat: 1,
-    //     lng: 1,
-    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
-    // });
-    // resourcesRef.add({
-    //     category: "",
-    //     code: "",
-    //     name: "",
-    //     city: "",
-    //     contactPhone: "",
-    //     description: "",
-    //     description_detail:"",
-        
-    //     province: "",
-    //     location: "",
-    //     lat: 1,
-    //     lng: 1,
-    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
-    // });
-    // resourcesRef.add({
-    //     category: "",
-    //     code: "",
-    //     name: "",
-    //     city: "",
-    //     contactPhone: "",
-    //     description: "",
-    //     description_detail:"",
-        
-    //     province: "",
-    //     location: "",
-    //     lat: 1,
-    //     lng: 1,
-    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
-    // });
-    // resourcesRef.add({
-    //     category: "",
-    //     code: "",
-    //     name: "",
-    //     city: "",
-    //     contactPhone: "",
-    //     description: "",
-    //     description_detail:"",
-        
-    //     province: "",
-    //     location: "",
-    //     lat: 1,
-    //     lng: 1,
-    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
-    // });
-    // resourcesRef.add({
-    //     category: "",
-    //     code: "",
-    //     name: "",
-    //     city: "",
-    //     contactPhone: "",
-    //     description: "",
-    //     description_detail:"",
-        
-    //     province: "",
-    //     location: "",
-    //     lat: 1,
-    //     lng: 1,
-    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
-    // });
+    resourcesRef.add({
+        category: "money",
+        code: "Service_BC_Centre-MR",
+        name: "Service BC Centre - Maple Ridge (Child Care Subsidy Program)",
+        city: "Maple Ridge",
+        searchType: ["subsidy", "Service BC Centre", "Maple Ridge", "Child Care Subsidy", "child care", "Affordable Child Care Benefit", "dependant", "parent"],
+        contactPhone: "604-466-7470",
+        description: "Service BC location that includes in person Affordable Child Care Benefit services",
+        description_detail:"Offers a range of BC government services and information, including BC Hydro payments; birth, death, and marriage certificate applications; business registration; child care subsidy program; residential tenancy information; fish and wildlife licenses; Medical Services Plan (MSP) registration and billing payments; and Legal Aid BC (LABC) forms and access. Services vary by location; see website for full list of services offered. Office hours are 8:30 am to 5 pm Monday to Friday.",
+        closeTime:"17:00",
+        openTime:"8:30",        
+        province: "BC",
+        location: "175-22470 Dewdney Trunk Road, Maple Ridge, V2X 5Z6 BC",
+        lat: 49.219898,
+        lng: -122.599753,
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    resourcesRef.add({
+        category: "money",
+        code: "Service_BC_Centre-SQ",
+        name: "Service BC Centre - Squamish (Child Care Subsidy Program)",
+        city: "Squamish",
+        searchType: ["subsidy", "Service BC Centre", "Squamish", "Child Care Subsidy", "child care", "Affordable Child Care Benefit", "dependant", "parent"],
+        contactPhone: "604-892-2400",
+        description: "Service BC location that includes in person Affordable Child Care Benefit services",
+        description_detail:"Offers a range of BC government services and information, including BC Hydro payments; birth, death, and marriage certificate applications; business registration; child care subsidy program; residential tenancy information; fish and wildlife licenses; Medical Services Plan (MSP) registration and billing payments; and Legal Aid BC (LABC) forms and access. Services vary by location; see website for full list of services offered. Services vary by location; see website for details. Office hours are 8:30 am to 4:30 pm Monday to Friday.",
+        closeTime:"16:30",
+        openTime:"8:30",        
+        province: "BC",
+        location: "1360 Pemberton Street, Squamish BC",
+        lat: 49.703313,
+        lng: -123.153136,
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    resourcesRef.add({
+        category: "money",
+        code: "harverst_project_nv",
+        name: "North Vancouver Rent Bank",
+        city: "North Vancouver",
+        searchType: ["intrest free loan", "financial loan", "rent", "rent bank", "north vancouver", "harvest project", "essentials" ],
+        contactPhone: "604-983-9488",
+        description: "Offering interest-free loans on the North Shore for those facing eviction, utility disconnection, or seeking new rental due to a temporary fund shortage. Loans, up to $1,400 for individuals and $2,000 for families, cover rental arrears, deposits, and essential utilities.",
+        description_detail:"Provides interest free loans to individuals and families on the North Shore who are seeking new rental or at risk of eviction or essential utility disconnection due to a temporary shortage of funds. Loans may be used for rental arrears, security deposits and/or first month's rent, and essential utilities such as hydro and gas. Maximum loan amount can be up to $1,400 for a single person and $2,000 for a family. Maximum repayment period is 24 months. Applicants must be age 19 and over, a resident of the North Shore, eligible for Harvest Project programs, have or will have a steady source of income or be receiving income assistance, not be in the process of bankruptcy, and owe no more than two months' rent. Applicants must provide two pieces of identification, proof of tenancy, and three months of bank records. Applicants require an intake appointment with a Financial Case Worker to assess eligibility. Apply using the online form or by phone. Hours are 10 am to 4 pm Tuesday to Friday, and 10 am to 2 pm Saturdays.",
+        closeTime:"16:00",
+        openTime:"10:00",        
+        province: "BC",
+        location: "1073 Roosevelt Crescent, North Vancouver, V7P 1M4 BC",
+        lat: 49.321752,
+        lng: -123.104324,
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    resourcesRef.add({
+        category: "money",
+        code: "Rent_Bank-VAN",
+        name: "Vancouver Rent Bank",
+        city: "Vancouver",
+        searchType: ["intrest free loan", "financial aid", "rent", "rent bank", "vancouver", "drop in", "essentials"],
+        contactPhone: "604-566-9685",
+        description: "Provides one-time interest free loans to people in danger of eviction, homelessness, or essential utility cut-off due to temporary financial crisis. Loans may be used for security deposits, rent, and essential utilities such as hydro and gas.",
+        description_detail:"Aims to increase housing stability by providing one-time interest free loans to people in danger of eviction, homelessness, or essential utility cut-off due to temporary financial crisis. Loans may be used for security deposits, rent, and essential utilities such as hydro and gas. Maximum loan amount can be up to $1300 for a single person, and $1800 for a family. Maximum repayment period is 24 months, and payments are made through automatic withdrawal. Applicants must be aged 19 and over, a resident of the City of Vancouver, have a steady source of income, qualify as low income, have legal status in Canada, and have an existing bank account. Applicants must provide proof of income, statements of expenses, two pieces of valid identification, and proof of tenancy. Also offers tools to better manage limited financial resources. Serves Vancouver. Office hours vary; appointment required.",
+        closeTime:"16:00",
+        openTime:"10:00",        
+        province: "BC",
+        location: "920 East Hastings Street, Vancouver, BC",
+        lat: 49.2807797,
+        lng: -123.0836165,
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    resourcesRef.add({
+        category: "money",
+        code: "On_Reserve_Income_Assistance-VAN",
+        name: "On-Reserve Income Assistance Program",
+        city: "Vancouver",
+        searchType: ["money", "financial aid", "rent", "essentials", "vancouver", "employment support", "indigenouse", "on reserve", "income assistance"],
+        contactPhone: "1-800-567-9604",
+        description: "Provides financial assitance to on-reserve residents as a last resort. Can aid in coverage of basic needs, and pre-employment and emploment support. In person support done through Indigenous Services Canada.",
+        description_detail:"This program serves as a last resort for eligible individuals and families, either ordinarily residing on reserve or being Status Indians living in Yukon. Income assistance covers basic needs like food, clothing, rent, and utilities, as well as special needs such as essential household items and doctor-recommended diets. Additionally, the program offers pre-employment and employment supports, including life skills and job training, to enhance self-sufficiency. For inquiries, please contact your regional office",
+        closeTime:"16:30",
+        openTime:"8:00",        
+        province: "BC",
+        location: "1138 Melville St 6th floor, Vancouver, BC V6E 4S3",
+        lat: 49.287698,
+        lng: -123.125338,
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    resourcesRef.add({
+        category: "money",
+        code: "Burnaby_Rent_Bank-BR",
+        name: "Burnaby Rent Bank",
+        city: "Burnaby",
+        searchType: ["intrest free loan", "financial aid", "rent", "rent bank", "burnaby", "online application", "essentials"],
+        contactPhone: "778-727-0786",
+        description: "Burnaby Housing Stabilization Program: provides short-term, interest-free loans up to $1,700 for individuals and families aged 19+. Covers eviction risk, moving expenses, and essential arrears. Apply online, prove low income, and stabilize housing for 90+ days. Open Monday to Thursday, 9 am to 4:30 pm. Funded by BC Rent Bank.",
+        description_detail:"Housing stabilization program for low-income residents in Burnaby ages 19 and up. Offers low-fee, short-term loans with no interest to low-income individuals and families residing in Burnaby who are at risk of eviction or essential utility disconnection due to a temporary and unexpected shortage of funds. Loans may also be issued for damage deposits, pet deposits, and first month's rent for low-income individuals and families who are moving into a new residence in Burnaby and are unable to meet these expenses. If approved, loan funds are distributed in cheque form and are written directly to the creditor. Maximum loan amount is $1,400 for individuals, $1,700 for families, and up to $500 for essential utility arrears, with a maximum repayment term of 24 months, subject to a $1/month administration fee. Applicants must complete a pre-assessment form available online. Applicants must have a current bank account, have proof of a regular source of verifiable income which is sufficient to cover rent/living expenses, demonstrate the household is low income, not be more than two months in arrears, have no undischarged bankruptcy, not be able to access any other forms of financial assistance, have two pieces of government-issued ID, and demonstrate that the loan will stabilize their housing situation for 90 plus days. Program hours are 9 am to 4:30 pm Monday to Thursday. Funded by BC Rent Bank.",
+        closeTime:"16:30",
+        openTime:"9:00",        
+        province: "BC",
+        location: "1-4075 Kingsway, Burnaby, V5H 1Y9 BC",
+        lat: 49.233277,
+        lng: -123.01412,
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    });
     // // category: work
+     // resourcesRef.add({
+    //     category: "",
+    //     code: "",
+    //     name: "",
+    //     city: "",
+    //     searchType: [],
+    //     contactPhone: "",
+    //     description: "",
+    //     description_detail:"",
+    //     closeTime:"23:00",
+    //     openTime:"9:00",        
+    //     province: "",
+    //     location: "",
+    //     lat: 1,
+    //     lng: 1,
+    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
     // resourcesRef.add({
     //     category: "",
     //     code: "",
     //     name: "",
     //     city: "",
+    //     searchType: [],
     //     contactPhone: "",
     //     description: "",
     //     description_detail:"",
-        
+    //     closeTime:"23:00",
+    //     openTime:"9:00",        
     //     province: "",
     //     location: "",
     //     lat: 1,
@@ -361,10 +406,12 @@ function writeResources(){
     //     code: "",
     //     name: "",
     //     city: "",
+    //     searchType: [],
     //     contactPhone: "",
     //     description: "",
     //     description_detail:"",
-        
+    //     closeTime:"23:00",
+    //     openTime:"9:00",        
     //     province: "",
     //     location: "",
     //     lat: 1,
@@ -376,10 +423,12 @@ function writeResources(){
     //     code: "",
     //     name: "",
     //     city: "",
+    //     searchType: [],
     //     contactPhone: "",
     //     description: "",
     //     description_detail:"",
-        
+    //     closeTime:"23:00",
+    //     openTime:"9:00",        
     //     province: "",
     //     location: "",
     //     lat: 1,
@@ -391,10 +440,12 @@ function writeResources(){
     //     code: "",
     //     name: "",
     //     city: "",
+    //     searchType: [],
     //     contactPhone: "",
     //     description: "",
     //     description_detail:"",
-        
+    //     closeTime:"23:00",
+    //     openTime:"9:00",        
     //     province: "",
     //     location: "",
     //     lat: 1,
@@ -406,25 +457,12 @@ function writeResources(){
     //     code: "",
     //     name: "",
     //     city: "",
+    //     searchType: [],
     //     contactPhone: "",
     //     description: "",
     //     description_detail:"",
-        
-    //     province: "",
-    //     location: "",
-    //     lat: 1,
-    //     lng: 1,
-    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
-    // });
-    // resourcesRef.add({
-    //     category: "",
-    //     code: "",
-    //     name: "",
-    //     city: "",
-    //     contactPhone: "",
-    //     description: "",
-    //     description_detail:"",
-        
+    //     closeTime:"23:00",
+    //     openTime:"9:00",        
     //     province: "",
     //     location: "",
     //     lat: 1,
