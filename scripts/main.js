@@ -166,7 +166,7 @@ function writeResources(){
         code: "Aboriginal_Front_Door_society-VAN",
         name: "Aboriginal Front Door Society",
         city: "Vancouver",
-        searchType: ["food", "food bank", "aboriginal front door society","vancouver", "aboriginal", "elder", "family"],
+        searchType: ["food", "food bank", "aboriginal front door society","vancouver", "aboriginal", "elder", "family" , "indigenous"],
         contactPhone: "(604)-428-1908",
         description: "Creates a supportive space for Downtown Eastside's Aboriginal and non-Aboriginal community, emphasizing traditional healing. Offers Elder/family cultural guidance, community meetings, and social activities. Provides culturally safe referrals to drug and alcohol treatment. The Common Bowl Food Truck serves coffee, meals, and food hampers as supplies permit.",
         description_detail:"Offers a supportive space where Aboriginal and non-Aboriginal people in the Downtown Eastside can reconnect with traditional approaches to community and healing. Services include Elder/family cultural guidance, community meetings, social/recreational activities, and culturally safe referrals to drug and alcohol treatment. The Common Bowl Food Truck serves coffee, meals, and food hampers as supplies permit; operating hours are 9 am to 5 pm Monday to Friday. Office hours are 8 am to 12 noon and 1 pm to 4 pm Monday to Friday. Nonprofit society.",
@@ -338,7 +338,7 @@ function writeResources(){
         code: "On_Reserve_Income_Assistance-VAN",
         name: "On-Reserve Income Assistance Program",
         city: "Vancouver",
-        searchType: ["money", "financial aid", "rent", "essentials", "vancouver", "employment support", "indigenouse", "on reserve", "income assistance"],
+        searchType: ["money", "financial aid", "rent", "essentials", "vancouver", "employment support", "indigenous", "on reserve", "income assistance"],
         contactPhone: "1-800-567-9604",
         description: "Provides financial assitance to on-reserve residents as a last resort. Can aid in coverage of basic needs, and pre-employment and emploment support. In person support done through Indigenous Services Canada.",
         description_detail:"This program serves as a last resort for eligible individuals and families, either ordinarily residing on reserve or being Status Indians living in Yukon. Income assistance covers basic needs like food, clothing, rent, and utilities, as well as special needs such as essential household items and doctor-recommended diets. Additionally, the program offers pre-employment and employment supports, including life skills and job training, to enhance self-sufficiency. For inquiries, please contact your regional office",
@@ -368,75 +368,59 @@ function writeResources(){
         last_updated: firebase.firestore.FieldValue.serverTimestamp()
     });
     // // category: work
-     // resourcesRef.add({
-    //     category: "",
-    //     code: "",
-    //     name: "",
-    //     city: "",
-    //     searchType: [],
-    //     contactPhone: "",
-    //     description: "",
-    //     description_detail:"",
-    //     closeTime:"23:00",
-    //     openTime:"9:00",        
-    //     province: "",
-    //     location: "",
-    //     lat: 1,
-    //     lng: 1,
-    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
+     resourcesRef.add({
+        category: "work",
+        code: "Service_Canada_Centre-NV",
+        name: "Service Canada Centre - North Shore",
+        city: "North Vancouver",
+        searchType: ["service canada", "north vancouver", "employment insurance", "job bank", "record of employment", "id", "employment help" ],
+        contactPhone: "1-800-926-9105",
+        description: "Provide many federal government services in person such as employment related benifets and financial aid. Service includes obtaining government identification and employment insurance",
+        description_detail:"Provides in-person information and access to a wide range of federal government services and benefits related to employment, financial assistance, and personal identification. Includes programs that assist seniors, families and children, individuals with disabilities, veterans, workers, employers, and self-employed. Acts as single point of access for a number of programs such as Employment Insurance (EI), Canada Pension Plan (CPP), and Old Age Security (OAS). Processes documents such as Social Insurance Numbers (SIN), Records of Employment (ROE) and tax slips. Also offers Veterans Affairs Canada (VAC) services. On-site computers and printers provide access to all Government of Canada websites including the Job Bank, Benefits Finder and My Service Canada Account. As a Passport Receiving Agent, accepts standard passport applications and sends to the Passport Program for processing. Wheelchair accessible. Service offered in English. Many services are also available online, by mail, or by phone where interpretation for many other languages is available. Individuals requiring additional support can complete a request for service. Local offices are open 8:30 am to 4 pm Monday to Friday for in-person service.",
+        closeTime:"16:00",
+        openTime:"8:30",        
+        province: "BC",
+        location: "100-221 Esplanade West, North Vancouver, V7M 1A6 BC",
+        lat: 49.313184,
+        lng: -123.0848,
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    resourcesRef.add({
+        category: "work",
+        code: "Work_BC-BR",
+        name: "WorkBC Centre - Burnaby",
+        city: "Burnaby",
+        searchType: ["burnaby", "work bc", "employment", "employment help", "public computer", "public scanner", "public phone", "skills training", "financial aid"],
+        contactPhone: "778-357-0445",
+        description: "Provides individualized support to help job seekers find and maintain employment and improve employment readiness. Clients must be unemployed or precariously employed and legally allowed to work in BC. Self-serve resource area provides career and job search resources, job postings, career-related books and labour market information, and access to computers, internet, phone, photocopiers, and scanners.",
+        description_detail:"Provides individualized support to help job seekers find and maintain employment and improve employment readiness. Clients must be unemployed or precariously employed and legally allowed to work in BC. Self-serve resource area provides career and job search resources, job postings, career-related books and labour market information, and access to computers, internet, phone, photocopiers, and scanners. Online services include career exploration and labour market information, job search resources, webinars, and self-assessment tools. Offers job search workshops, essential skills training for employment readiness, and short-term training to meet minimum entry requirements or develop specific skills for a job or an industry. Also provides skills training, self-employment services, wage subsidy services, and financial support for apprenticeships, depending on eligibility and suitability. Offers case management and one-to-one employment planning services to individuals needing more guidance and support. Supplemental services such as customized job placement and work experience placement services may be available for clients with significant barriers to employment. May also provide financial assistance for dependent care, transportation to job interviews, and tools. Services are free of charge. Referral accepted from self or other. Registration is online or in-person. Hours are 8:30 am to 5 pm Mondays and Wednesdays, 8:30 am to 6:30 pm Tuesdays and Thursdays, and 8:30 am to 3 pm Fridays. Funded by Ministry of Social Development and Poverty Reduction (MSDPR).",
+        closeTime:"15:00",
+        openTime:"8:30",        
+        province: "BC",
+        location: "101-3999 Henning Drive, Burnaby, V5C 6P9 BC",
+        lat: 49.265246,
+        lng: -123.01507,
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    resourcesRef.add({
+        category: "work",
+        code: "New_Relationship_Trust-NV",
+        name: "New Relationship Trust",
+        city: "North Vancouver",
+        searchType: ["north vancouver", "financial aid", "employment help", "nrt", "New Relationship Trust", "indigenous", "training", "bursaries"],
+        contactPhone: "604-925-3338",
+        description: "helps indigenous persons throguh providing finainical aid towards employment trianing or post-secondary education. Also provides suppoty for language and cultural for both the elderly and youth.",
+        description_detail:"Works to strengthen First Nations in BC through support in governance capacity, education, language and culture, youth and Elders, and economic development. Awards scholarships and bursaries to Indigenous (First Nations, Metis, and Inuit) students pursuing post-secondary education; application form available online. Also provides Elder Grants and Youth Grants to support groups, communities, and organizations that develop and deliver community programs to benefit these groups. Office hours are 8:30 am to 4:30 pm Monday to Friday. Nonprofit society.",
+        closeTime:"16:30",
+        openTime:"8:30",        
+        province: "BC",
+        location: "3188 Alder Court, North Vancouver, BC V7H 2V6",
+        lat: 49.310089,
+        lng: -122.989409,
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    });
     // resourcesRef.add({
-    //     category: "",
-    //     code: "",
-    //     name: "",
-    //     city: "",
-    //     searchType: [],
-    //     contactPhone: "",
-    //     description: "",
-    //     description_detail:"",
-    //     closeTime:"23:00",
-    //     openTime:"9:00",        
-    //     province: "",
-    //     location: "",
-    //     lat: 1,
-    //     lng: 1,
-    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
-    // });
-    // resourcesRef.add({
-    //     category: "",
-    //     code: "",
-    //     name: "",
-    //     city: "",
-    //     searchType: [],
-    //     contactPhone: "",
-    //     description: "",
-    //     description_detail:"",
-    //     closeTime:"23:00",
-    //     openTime:"9:00",        
-    //     province: "",
-    //     location: "",
-    //     lat: 1,
-    //     lng: 1,
-    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
-    // });
-    // resourcesRef.add({
-    //     category: "",
-    //     code: "",
-    //     name: "",
-    //     city: "",
-    //     searchType: [],
-    //     contactPhone: "",
-    //     description: "",
-    //     description_detail:"",
-    //     closeTime:"23:00",
-    //     openTime:"9:00",        
-    //     province: "",
-    //     location: "",
-    //     lat: 1,
-    //     lng: 1,
-    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
-    // });
-    // resourcesRef.add({
-    //     category: "",
+    //     category: "work",
     //     code: "",
     //     name: "",
     //     city: "",
@@ -453,7 +437,24 @@ function writeResources(){
     //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
     // });
     // resourcesRef.add({
-    //     category: "",
+    //     category: "work",
+    //     code: "",
+    //     name: "",
+    //     city: "",
+    //     searchType: [],
+    //     contactPhone: "",
+    //     description: "",
+    //     description_detail:"",
+    //     closeTime:"23:00",
+    //     openTime:"9:00",        
+    //     province: "",
+    //     location: "",
+    //     lat: 1,
+    //     lng: 1,
+    //     last_updated: firebase.firestore.FieldValue.serverTimestamp()
+    // });
+    // resourcesRef.add({
+    //     category: "work",
     //     code: "",
     //     name: "",
     //     city: "",
