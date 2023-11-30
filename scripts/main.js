@@ -472,7 +472,7 @@ function writeResources(){
     // });
     // // ------------end or resources-------------------------------------
 }
-
+// writeResources()
 
 function calculateCountdown(openTimeStr, closeTimeStr) {
     if (openTimeStr ==="0:00"&& closeTimeStr==="24:00" ){
