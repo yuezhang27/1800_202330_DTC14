@@ -88,7 +88,7 @@ function getBookmarks(user) {
 						// Get pointer the new card template
             let bookmarked_list = document.getElementById("savedCardTemplate");
 
-						// Iterate through the ARRAY of bookmarked hikes (document ID's)
+						// Iterate through the ARRAY of bookmarked resources (document ID's)
             bookmarks.forEach(thisResourceID => {
                 console.log(thisResourceID);
                 db.collection("resources").doc(thisResourceID).get().then(doc => {
@@ -131,7 +131,7 @@ function updateBookmark(resourceDocID) {
     currentUser.get().then(userDoc => {
         let bookmarks = userDoc.data().bookmarks;
         let iconID = 'save-' + resourceDocID;
-        let isBookmarked = bookmarks.includes(resourceDocID)//check if thsi hikeID exist in bookmark array
+        let isBookmarked = bookmarks.includes(resourceDocID)//check if thsi resourceID exist in bookmark array
         console.log(isBookmarked)
 
         if (isBookmarked) {

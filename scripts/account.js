@@ -30,15 +30,15 @@ function populateUserInfo() {
 
                     }
                     if (userPic) {
-                        storage.ref('images/'+ userPic + ".jpg").getDownloadURL().then
-                        ((url)=>{
-                            document.getElementById("mypic-goes-here").src = url;
-                        }).catch((error) => {
-                            console.error("Error fetching image URL:", error);
-                            // Set a default image in case of error
-                            document.getElementById("mypic-goes-here").src = "./images/default-profile-img.jpg";
-                        });
-                    }else{
+                        storage.ref('images/' + userPic + ".jpg").getDownloadURL().then
+                            ((url) => {
+                                document.getElementById("mypic-goes-here").src = url;
+                            }).catch((error) => {
+                                console.error("Error fetching image URL:", error);
+                                // Set a default image in case of error
+                                document.getElementById("mypic-goes-here").src = "./images/default-profile-img.jpg";
+                            });
+                    } else {
                         document.getElementById("mypic-goes-here").src = "./images/default-profile-img.jpg"
                     }
                 })
@@ -81,7 +81,7 @@ function saveUserInfo() {
             console.log("Document successfully updated!");
 
 
-            
+
         })
     //c) disable edit 
     document.getElementById('personalInfoFields').disabled = true;
