@@ -44,7 +44,7 @@ stars.forEach((star, index) => {
 });
 
 
-
+// write the review below the main page
 function writeReview() {
     console.log("inside write review");
     let reviewTitle = document.getElementById("title").value;

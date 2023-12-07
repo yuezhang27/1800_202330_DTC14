@@ -159,7 +159,7 @@ function removeActiveStyles() {
 
 
 
-// functiom to save last page data to local storage
+// function to save last page data to local storage
 function saveLastPage() {
     let params = new URL(window.location.href)
     let lastPage = params.pathname;
@@ -186,6 +186,7 @@ let isHousingActive = false;
 let isWorkActive = false;
 
 
+// add clicked function on food filter button
 function toggleFood() {
     const button = document.getElementById('FoodBtn');
 
@@ -194,23 +195,18 @@ function toggleFood() {
 
     if (isFoodActive) {
         removeActiveStyles()
-
         isMoneyActive = false;
         isHousingActive = false;
         isWorkActive = false;
         // Execute the function when the button is active
-        // displayCardsDynamically("resources", "food")
         button.classList.add('active_filter'); // Apply active styling
     } else {
         // Execute another function or no function when the button is not active
-        // displayCardsDynamically("resources", null)
         removeActiveStyles()
     }
 }
 
 // add clicked function on money filter button
-
-
 function toggleMoney() {
 
     const button = document.getElementById('MoneyBtn');
@@ -232,8 +228,6 @@ function toggleMoney() {
 }
 
 // add clicked function on housing filter button
-
-
 function toggleHousing() {
     const button = document.getElementById('HousingBtn');
 
@@ -254,8 +248,6 @@ function toggleHousing() {
 }
 
 // add clicked function on work filter button
-
-
 function toggleWork() {
     const button = document.getElementById('WorkBtn');
 
@@ -276,11 +268,6 @@ function toggleWork() {
     }
 }
 
-function clearAll() {
-    document.querySelectorAll('.filterbtn').forEach(button => {
-        button.classList.remove('active_filter');
-    });
-}
 function applyFilter() {
     var filter = document.getElementById("filtergroup");
     filter.style.display = "none"
@@ -294,11 +281,17 @@ function applyFilter() {
     } else {
         displayCardsDynamically("resources", null, null)
     }
-
-
 }
 
-// search bar fucntion
+
+// clear all the filter button
+function clearAll() {
+    document.querySelectorAll('.filterbtn').forEach(button => {
+        button.classList.remove('active_filter');
+    });
+}
+
+// search bar function
 // 1. get search bar with id
 // 2. add search bar onclick
 // 2.1 in onclick, get the input value with id

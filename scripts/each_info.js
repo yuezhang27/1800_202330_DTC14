@@ -100,11 +100,7 @@ function populateReviews() {
                 var time = doc.data().timestamp.toDate();
                 var rating = doc.data().rating; // Get the rating value
 
-                
-                
-
-                
-
+            
                 let reviewCard = reviewCardTemplate.content.cloneNode(true);
                 reviewCard.querySelector(".title").innerHTML = title;
                 reviewCard.querySelector(".time").innerHTML = new Date(time).toLocaleString();

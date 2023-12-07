@@ -14,9 +14,9 @@ function showMap() {
   // getting user location to use for center
   navigator.geolocation.getCurrentPosition(
     (position) => {
-      // settinbg user lat and lng
+      // setting user lat and lng
       const { latitude, longitude } = position.coords;
-      // setting new map cener to user location
+      // setting new map center to user location
       map.setCenter([longitude, latitude]);
     },
     (error) => {
@@ -224,7 +224,7 @@ mapViewButton.addEventListener('click', function () {
   isMapView = !isMapView;
 });
 
-// functiom to save last page data to loval storage
+// function to save last page data to local storage
 function saveLastPage(){
   let params = new URL(window.location.href)
   let lastPage = params.pathname;

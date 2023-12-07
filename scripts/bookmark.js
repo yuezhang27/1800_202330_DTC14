@@ -1,4 +1,4 @@
-
+// declare a global variable currentUser
 var currentUser;
 
 function doAll() {
@@ -126,7 +126,7 @@ function updateBookmark(resourceDocID) {
     currentUser.get().then(userDoc => {
         let bookmarks = userDoc.data().bookmarks;
         let iconID = 'save-' + resourceDocID;
-        let isBookmarked = bookmarks.includes(resourceDocID)//check if thsi hikeID exist in bookmark array
+        let isBookmarked = bookmarks.includes(resourceDocID)//check if this resourceID exist in bookmark array
         console.log(isBookmarked)
 
         if (isBookmarked) {

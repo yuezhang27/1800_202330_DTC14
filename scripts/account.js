@@ -1,8 +1,5 @@
 
 
-function logOut() {
-
-}
 var currentUser;               //points to the document of the user who is logged in
 function populateUserInfo() {
     firebase.auth().onAuthStateChanged(user => {
@@ -147,14 +144,13 @@ function uploadPic(postDocID) {
 //--------------------------------------------
 function savePostIDforUser(postDocID) {
     firebase.auth().onAuthStateChanged(user => {
-        console.log("user id is: " + user.uid);
-        console.log("postdoc id is: " + postDocID);
+
         db.collection("users").doc(user.uid).update({
             profileImg: postDocID
         })
             .then(() => {
                 console.log("5. Saved to user's document!");
-                alert("Post is complete!");
+                alert("Profile image is uploaded!");
                 //window.location.href = "showposts.html";
             })
             .catch((error) => {
