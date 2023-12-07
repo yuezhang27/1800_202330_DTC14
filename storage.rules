@@ -6,7 +6,11 @@ rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
     match /{allPaths=**} {
+<<<<<<< HEAD
       allow read, write: if false;
+=======
+      allow read, write: if true;
+>>>>>>> a194461c6594b5dc5d3d09fe530a7ab31ab72d3f
     }
   }
 }

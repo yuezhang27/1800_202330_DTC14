@@ -76,6 +76,8 @@ function saveUserInfo() {
         .then(() => {
             console.log("Document successfully updated!");
 
+
+            
         })
     document.getElementById('personalInfoFields').disabled = true;
     document.getElementById('mypic-input').disabled = true;

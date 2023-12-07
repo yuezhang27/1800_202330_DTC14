@@ -126,7 +126,7 @@ function updateBookmark(resourceDocID) {
     currentUser.get().then(userDoc => {
         let bookmarks = userDoc.data().bookmarks;
         let iconID = 'save-' + resourceDocID;
-        let isBookmarked = bookmarks.includes(resourceDocID)
+        let isBookmarked = bookmarks.includes(resourceDocID)//check if thsi hikeID exist in bookmark array
         console.log(isBookmarked)
 
         if (isBookmarked) {
