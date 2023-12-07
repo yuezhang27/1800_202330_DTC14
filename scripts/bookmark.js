@@ -36,11 +36,6 @@ function saveLastPage(){
 saveLastPage()
 
 
-//----------------------------------------------------------
-// This function takes input param User's Firestore document pointer
-// and retrieves the "saved" array (of bookmarks) 
-// and dynamically displays them in the gallery
-//----------------------------------------------------------
 
 function calculateCountdown(openTimeStr, closeTimeStr) {
     if (openTimeStr ==="0:00"&& closeTimeStr==="24:00" ){
@@ -92,7 +87,8 @@ function getBookmarks(user) {
             bookmarks.forEach(thisResourceID => {
                 console.log(thisResourceID);
                 db.collection("resources").doc(thisResourceID).get().then(doc => {
-                    var title = doc.data().name;       // get value of the "name" key
+                    var title = doc.data().name; 
+                    console.log(title)      // get value of the "name" key
                     var description = doc.data().description;  // get value of the "description" key
                     var openTime = doc.data().openTime;
                     var closeTime = doc.data().closeTime;
