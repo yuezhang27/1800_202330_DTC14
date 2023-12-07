@@ -30,15 +30,15 @@ function populateUserInfo() {
 
                     }
                     if (userPic) {
-                        storage.ref('images/'+ userPic + ".jpg").getDownloadURL().then
-                        ((url)=>{
-                            document.getElementById("mypic-goes-here").src = url;
-                        }).catch((error) => {
-                            console.error("Error fetching image URL:", error);
-                            // Set a default image in case of error
-                            document.getElementById("mypic-goes-here").src = "./images/default-profile-img.jpg";
-                        });
-                    }else{
+                        storage.ref('images/' + userPic + ".jpg").getDownloadURL().then
+                            ((url) => {
+                                document.getElementById("mypic-goes-here").src = url;
+                            }).catch((error) => {
+                                console.error("Error fetching image URL:", error);
+                                // Set a default image in case of error
+                                document.getElementById("mypic-goes-here").src = "./images/default-profile-img.jpg";
+                            });
+                    } else {
                         document.getElementById("mypic-goes-here").src = "./images/default-profile-img.jpg"
                     }
                 })
@@ -55,13 +55,9 @@ function editUserInfo() {
     document.getElementById('personalInfoFields').disabled = false;
     document.getElementById('mypic-input').disabled = false;
 }
-//call the function to run it 
+
 populateUserInfo();
 
-// function chooseGender() {
-//     var mylist = document.getElementById("cityInput");
-//     // document.getElementById("favourite").value = mylist.options[mylist.selectedIndex].text;
-// }
 function saveUserInfo() {
     savePost()
     userName = document.getElementById('nameInput').value;
@@ -80,13 +76,9 @@ function saveUserInfo() {
         .then(() => {
             console.log("Document successfully updated!");
 
-
-            
         })
-    //c) disable edit 
     document.getElementById('personalInfoFields').disabled = true;
     document.getElementById('mypic-input').disabled = true;
-
 }
 
 
@@ -114,7 +106,6 @@ function savePost() {
                 last_updated: firebase.firestore.FieldValue
                     .serverTimestamp() //current system time
             }).then(doc => {
-                console.log(doc.id);
                 uploadPic(doc.id);
             })
         } else {
@@ -135,25 +126,13 @@ function uploadPic(postDocID) {
         .then(function () {
 
             storageRef.getDownloadURL()
-
                 // AFTER .getDownloadURL is done
                 .then(function (url) { // Get URL of the uploaded file
-
-
-                    // Now that the image is on Storage, we can go back to the
-                    // post document, and update it with an "image" field
-                    // that contains the url of where the picture is stored.
                     db.collection("posts").doc(postDocID).update({
                         "image": url // Save the URL into users collection
+                    }).then(function () {
+                        savePostIDforUser(postDocID);
                     })
-                        // AFTER .update is done
-                        .then(function () {
-                            console.log('4. Added pic URL to Firestore.');
-                            // One last thing to do:
-                            // save this postID into an array for the OWNER
-                            // so we can show "my posts" in the future
-                            savePostIDforUser(postDocID);
-                        })
                 })
         })
         .catch((error) => {

@@ -15,7 +15,7 @@ function doAll() {
 }
 doAll();
 
-
+// display user name in bookmark page
 function insertNameFromFirestore(user) {
             db.collection("users").doc(user.uid).get().then(userDoc => {
                 console.log(userDoc.data().name)
@@ -26,7 +26,7 @@ function insertNameFromFirestore(user) {
 
 }
 
-// functiom to save last page data to local storage
+// function to save last page data to local storage
 function saveLastPage(){
     let params = new URL(window.location.href)
     let lastPage = params.pathname;
@@ -36,7 +36,7 @@ function saveLastPage(){
 saveLastPage()
 
 
-
+// calculate the countdown time for next available time for the resources
 function calculateCountdown(openTimeStr, closeTimeStr) {
     if (openTimeStr ==="0:00"&& closeTimeStr==="24:00" ){
         return 'Opening | 24hours';
@@ -59,7 +59,7 @@ function calculateCountdown(openTimeStr, closeTimeStr) {
     }
 }
 
-
+// calculate the time difference
 function timeDifference(start, end) {
     let diff = end - start;
     let hours = Math.floor(diff / 3600000);
@@ -67,7 +67,7 @@ function timeDifference(start, end) {
     return `${hours} hrs ${minutes} mins`;
 }
 
-
+// get user bookmark id and retrieve corresponding resource data from the "resources" collection
 function getBookmarks(user) {
     db.collection("users").doc(user.uid).get()
         .then(userDoc => {
@@ -83,7 +83,6 @@ function getBookmarks(user) {
 						// Get pointer the new card template
             let bookmarked_list = document.getElementById("savedCardTemplate");
 
-						// Iterate through the ARRAY of bookmarked hikes (document ID's)
             bookmarks.forEach(thisResourceID => {
                 console.log(thisResourceID);
                 db.collection("resources").doc(thisResourceID).get().then(doc => {
@@ -107,7 +106,7 @@ function getBookmarks(user) {
     
                     newcard.querySelector('i').onclick = () => updateBookmark(docID);
                     
-					//Finally, attach this new card to the gallery
+					//attach this new card to the gallery
                     resourceCardGroup.appendChild(newcard);
                     currentUser.get().then(userDoc => {
                         //get the user name
@@ -127,7 +126,7 @@ function updateBookmark(resourceDocID) {
     currentUser.get().then(userDoc => {
         let bookmarks = userDoc.data().bookmarks;
         let iconID = 'save-' + resourceDocID;
-        let isBookmarked = bookmarks.includes(resourceDocID)//check if thsi hikeID exist in bookmark array
+        let isBookmarked = bookmarks.includes(resourceDocID)
         console.log(isBookmarked)
 
         if (isBookmarked) {
