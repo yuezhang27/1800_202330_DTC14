@@ -65,20 +65,101 @@ Content of the project folder:
 
 ```
  Top level of project folder: 
-├── .gitignore               # Git ignore file
-├── index.html               # landing HTML file, this is what users see when you come to url
-└── README.md
+├── .firebaserc                # Firebase configuration file
+├── .gitignore                 # Git ignore file
+├── 404.html                   # Landing page if hosting service is down
+├── account.html               # User account page
+├── bookmark.html              # User bookmark page
+├── each_info.html             # HTML page containing detailed information
+├── firebase.json              # Firebase configuration settings for app
+├── firestore.indexes.json     # Firestore database indexes configuration
+├── firestore.rules            # Rules and security configurations for the Firebase project
+├── indexBefore.html           # Landing page displayed before user login
+├── index.html                 # Help page for the app
+├── login.html                 # User login page
+├── main.html                  # HTML page for displaying main information
+├── map.html                   # User map page
+├── result.html                # HTML page displaying results
+├── review.html                # User review page
+├── template.html              # Template file
+├── thanks.html                # HTML page displaying gratitude or thank you message
+└── README.md                  # Project README file
+
 
 It has the following subfolders and files:
-├── .git                     # Folder for git repo
-├── images                   # Folder for images
-    /blah.jpg                # Acknowledge source
-├── scripts                  # Folder for scripts
-    /blah.js                 # 
-├── styles                   # Folder for styles
-    /blah.css                # 
+├── .firebase                          # Required for hosting our web app
+├── images                             # Folder for images
+    /Aboriginal_Front_Door_society-VAN.jpg       # Screenshot from Google Map
+    /Aboriginal_Shelter-VAN.jpg                  # Screenshot from Google Map
+    /BCCDA-VAN.jpg                                # Screenshot from Google Map
+    /bookmark-check.svg                           # Open-licensed SVG Vector and Icons
+    /bookmarks.svg                                # Open-licensed SVG Vector and Icons
+    /Burnaby_Rent_Bank-BR.jpg                     # Screenshot from Google Map
+    /chevron-left.svg                             # Open-licensed SVG Vector and Icons
+    /default-profile-img.jpg                      # Screenshot from Google Map
+    /filter.svg                                   # Open-licensed SVG Vector and Icons
+    /foodbank1.jpg                                # Picture from Unsplash
+    /foodbank2.jpg                                # Picture from Unsplash
+    /Food_access_project-VAN.jpg                  # Screenshot from Google Map
+    /GVFB_distribution_site-NV.jpg                # Screenshot from Google Map
+    /harverst_project_nv.jpg                      # Screenshot from Google Map
+    /help.svg                                     # Open-licensed SVG Vector and Icons
+    /house.svg                                    # Open-licensed SVG Vector and Icons
+    /Imouto_Housing-VAN.jpg                       # Screenshot from Google Map
+    /logo.png                                     # Logo image
+    /Loving_spoonful-VAN.jpg                      # Screenshot from Google Map
+    /map.svg                                      # Open-licensed SVG Vector and Icons
+    /New_Relationship_Trust-NV.jpg                # Screenshot from Google Map
+    /On_Reserve_Income_Assistance-VAN.jpg         # Screenshot from Google Map
+    /person.svg                                   # Open-licensed SVG Vector and Icons
+    /pin.svg                                      # Open-licensed SVG Vector and Icons
+    /plus.svg                                     # Open-licensed SVG Vector and Icons
+    /Powell_place_shelter-VAN.jpeg                # Screenshot from Google Map
+    /Powell_place_shelter-VAN.jpg                 # Screenshot from Google Map
+    /realfilter.svg                               # Open-licensed SVG Vector and Icons
+    /Rent_Bank-VAN.jpg                            # Screenshot from Google Map
+    /search.svg                                   # Open-licensed SVG Vector and Icons
+    /searchicon.png                               # Screenshot from Google Map
+    /Seniors_Homelessness-NV.jpg                  # Screenshot from Google Map
+    /SEREENAS_HOUSING-VAN.jpg                     # Screenshot from Google Map
+    /Service_BC_Centre-MR.jpg                     # Screenshot from Google Map
+    /Service_BC_Centre-SQ.jpg                     # Screenshot from Google Map
+    /Service_Canada-VAN.jpg                       # Screenshot from Google Map
+    /Service_Canada_Centre-NV.jpg                 # Screenshot from Google Map
+    /welocme background.jpg                       # Screenshot from Google Map
+    /Work_BC-BR.jpg                               # Screenshot from Google Map
+    /Work_BC_Centre-VAN.jpg                       # Screenshot from Google Map
 
 
+
+
+├── scripts                            # Folder for scripts
+    /account.js          # Handles user account page functionality
+    /authentication.js   # Manages user authentication
+    /bookmark.js         # Manages bookmark page functionality
+    /each_info.js        # Manages each_info page functionality
+    /firebaseAPI.js      # Handles Firebase API interactions
+    /main.js             # Contains main page functionalities
+    /map.js              # Manages mapbox functionality
+    /review.js           # Handles review page functionalities
+    /script.js           # Contains general utility scripts
+    /skeleton.js         # Provides basic script skeletons
+    /writeResource.js    # Manages resource writing functionalities
+
+├── styles                             # Folder for styles
+    /account         # Styling for account page
+    /bookmark        # Styling for bookmark page
+    /each_info        # Styling for each_info page
+    /index           # Styling for index page
+    /info            # Styling for info page
+    /main            # Styling for main page
+    /map             # Styling for map page
+    /review          # Styling for review page
+    /style           # General style definitions
+            
+├── text                                # Folder for text
+    /nav_after.html              # Navbar html when user is logged in
+    /nav_before.html             # Navbar html when user is not logged in
 
 ```
 
